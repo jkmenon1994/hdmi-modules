@@ -158,6 +158,8 @@ extern "C" {
 #include "xvidc.h"
 #include "xv_hdmic.h"
 
+#define dev_dbg dev_info
+
 /************************** Constant Definitions *****************************/
 
 

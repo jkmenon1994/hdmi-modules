@@ -1991,6 +1991,8 @@ static int xlnx_drm_hdmi_create_connector(struct drm_encoder *encoder)
 	struct drm_connector *connector = &xhdmi->connector;
 	int ret;
 
+	dev_dbg(xhdmi->dev, "%s\n", __func__);
+	
 	connector->polled = DRM_CONNECTOR_POLL_HPD;
 	connector->interlace_allowed = true;
 
@@ -2030,7 +2032,7 @@ static int xlnx_drm_hdmi_bind(struct device *dev, struct device *master,
 	 * "xlnx" is drm driver (Xilinx DRM KMS Driver)
 	 * In above case - drm_dev->driver->name = xlnx
 	 */
-
+	dev_dbg(xhdmi->dev, "%s\n", __func__);
 	/*
 	 * TODO: The possible CRTCs are 1 now as per current implementation of
 	 * HDMI tx driver. DRM framework can support more than one CRTCs and

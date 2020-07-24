@@ -62,6 +62,8 @@
 
 #define XVPHY_DRU_REF_CLK_HZ	156250000
 
+#define dev_dbg dev_info
+
 #define hdmi_mutex_lock(x) mutex_lock(x)
 #define hdmi_mutex_unlock(x) mutex_unlock(x)
 
@@ -411,7 +413,7 @@ static int xvphy_probe(struct platform_device *pdev)
 	u32 Data;
 	u16 DrpVal;
 
-	dev_info(&pdev->dev, "probed\n");
+	dev_info(&pdev->dev, "probe: %s\n",__func__);
 	vphydev = devm_kzalloc(&pdev->dev, sizeof(*vphydev), GFP_KERNEL);
 	if (!vphydev)
 		return -ENOMEM;

@@ -224,8 +224,10 @@ static void StubErrCallBack(void *CallBackRef, u32 ErrorMask);
 *
 ******************************************************************************/
 int XVtc_CfgInitialize(XVtc *InstancePtr, XVtc_Config *CfgPtr,
-				UINTPTR EffectiveAddr)
+			UINTPTR EffectiveAddr)
 {
+	printf("%s \n", __func__);
+
 	/* Verify arguments */
 	Xil_AssertNonvoid(InstancePtr != NULL);
 	Xil_AssertNonvoid(CfgPtr != NULL);

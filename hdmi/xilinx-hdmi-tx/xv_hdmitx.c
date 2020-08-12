@@ -119,6 +119,7 @@ int XV_HdmiTx_CfgInitialize(XV_HdmiTx *InstancePtr, XV_HdmiTx_Config *CfgPtr,
 {
     u32 RegValue;
 
+    printf("%s \n", __func__);
     /* Verify arguments. */
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(CfgPtr != NULL);

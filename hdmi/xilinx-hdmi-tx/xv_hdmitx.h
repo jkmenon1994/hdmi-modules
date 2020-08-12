@@ -157,7 +157,7 @@ extern "C" {
 #include "xdebug.h"
 #include "xvidc.h"
 #include "xv_hdmic.h"
-#include "stdio.h"
+#include <stdio.h>
 
 #define dev_dbg dev_info
 

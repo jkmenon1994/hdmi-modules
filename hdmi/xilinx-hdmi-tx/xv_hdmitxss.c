@@ -1659,7 +1659,6 @@ int XV_HdmiTxSs_ReadEdidSegment(XV_HdmiTxSs *InstancePtr, u8 *Buffer, u8 segment
 ******************************************************************************/
 void XV_HdmiTxSs_StreamStart(XV_HdmiTxSs *InstancePtr)
 {
-  dev_dbg("%s \n", __func__);
   u32 TmdsClk;
 
   // Set TX pixel rate

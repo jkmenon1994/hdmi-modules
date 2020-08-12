@@ -449,7 +449,6 @@ int XV_HdmiTxSs_CfgInitialize(XV_HdmiTxSs *InstancePtr,
                               XV_HdmiTxSs_Config *CfgPtr,
                               UINTPTR EffectiveAddr)
 {
-  printf("%s \n", __func__);
   XV_HdmiTxSs *HdmiTxSsPtr = InstancePtr;
 
   /* Verify arguments */

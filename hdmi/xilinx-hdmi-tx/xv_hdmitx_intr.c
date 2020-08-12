@@ -241,7 +241,6 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     u32 Event;
     u32 Data;
 
-    printf("%s \n", __func__);
     /* Read PIO IN Event register.*/
     Event = XV_HdmiTx_ReadReg(InstancePtr->Config.BaseAddress,
                             (XV_HDMITX_PIO_IN_EVT_OFFSET));
@@ -257,7 +256,6 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
 
     /* HPD event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_HPD_TOGGLE_MASK)) {
-	    printf("%s: HPD Event has occured, check toggle callback \n", __func__);
 
         // Check if user callback has been registered
         if (InstancePtr->IsToggleCallbackSet) {
@@ -268,7 +266,6 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     /* HPD event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_HPD_MASK)) {
 
-	    printf("%s: HPD Event has occured, check connect callback \n", __func__);
         // Check the HPD status
         if ((Data) & (XV_HDMITX_PIO_IN_HPD_MASK))
             InstancePtr->Stream.IsConnected = (TRUE);   // Set connected flag

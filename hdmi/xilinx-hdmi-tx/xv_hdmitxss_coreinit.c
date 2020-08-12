@@ -143,7 +143,6 @@ int XV_HdmiTxSs_SubcoreInitVtc(XV_HdmiTxSs *HdmiTxSsPtr)
                                 HdmiTxSsPtr->Config.Vtc.AbsAddr);
 
     if (Status != XST_SUCCESS) {
-	    printf(" %s: VTC initialization failed \n", __func__);
       xdbg_printf(XDBG_DEBUG_GENERAL,
                   "HDMITXSS ERR:: VTC Initialization failed\r\n");
       return(XST_FAILURE);

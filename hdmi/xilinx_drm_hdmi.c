@@ -238,16 +238,15 @@ static void XV_HdmiTxSs_IntrDisable(XV_HdmiTxSs *HdmiTxSsPtr)
 /* XV_HdmiTx_IntrHandler */
 static irqreturn_t hdmitx_irq_handler(int irq, void *dev_id)
 {
-	struct xlnx_drm_hdmi *xhdmi;
+	struct xlnx_drm_hdmi *xhdmi;	
 
-	
-	dev_dbg(xhdmi->dev,"%s \n", __func__);
 	XV_HdmiTxSs *HdmiTxSsPtr;
 	unsigned long flags;
 
 	xhdmi = (struct xlnx_drm_hdmi *)dev_id;
 	HdmiTxSsPtr = (XV_HdmiTxSs *)&xhdmi->xv_hdmitxss;
 
+	dev_dbg(xhdmi->dev,"%s \n", __func__);
 	if (HdmiTxSsPtr->IsReady != XIL_COMPONENT_IS_READY) {
 		dev_dbg(xhdmi->dev, "hdmitx_irq_handler(): HDMI TX SS is not initialized?!\n");
 	}

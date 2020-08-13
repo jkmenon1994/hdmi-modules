@@ -241,6 +241,7 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     u32 Event;
     u32 Data;
 
+    xdbg_printf(XDBG_DEBUG_GENERAL,"PIO Interrupt handler ..........\n");
     /* Read PIO IN Event register.*/
     Event = XV_HdmiTx_ReadReg(InstancePtr->Config.BaseAddress,
                             (XV_HDMITX_PIO_IN_EVT_OFFSET));

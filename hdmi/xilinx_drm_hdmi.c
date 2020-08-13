@@ -287,8 +287,10 @@ static irqreturn_t hdmitx_irq_thread(int irq, void *dev_id)
 
 	/* call baremetal interrupt handler, this in turn will
 	 * call the registed callbacks functions */
-	if (xhdmi->IntrStatus) HdmiTx_PioIntrHandler(HdmiTxSsPtr->HdmiTxPtr);
-
+	if (xhdmi->IntrStatus) {
+		dev_dbg(xhdmi->dev, "calling HdmiTx_PioIntrHandler......... \n");
+		HdmiTx_PioIntrHandler(HdmiTxSsPtr->HdmiTxPtr);
+	}
 	hdmi_mutex_unlock(&xhdmi->hdmi_mutex);
 
 	spin_lock_irqsave(&xhdmi->irq_lock, flags);

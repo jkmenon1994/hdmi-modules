@@ -227,13 +227,11 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr);
 
 static void XV_HdmiTxSs_IntrEnable(XV_HdmiTxSs *HdmiTxSsPtr)
 {
-	dev_dbg("%s \n", __func__);
 	XV_HdmiTx_PioIntrEnable(HdmiTxSsPtr->HdmiTxPtr);
 }
 
 static void XV_HdmiTxSs_IntrDisable(XV_HdmiTxSs *HdmiTxSsPtr)
 {
-	dev_dbg("%s \n", __func__);
 	XV_HdmiTx_PioIntrDisable(HdmiTxSsPtr->HdmiTxPtr);
 }
 
@@ -243,7 +241,7 @@ static irqreturn_t hdmitx_irq_handler(int irq, void *dev_id)
 	struct xlnx_drm_hdmi *xhdmi;
 
 	
-	dev_dbg("%s \n", __func__);
+	dev_dbg(xhdmi->dev,"%s \n", __func__);
 	XV_HdmiTxSs *HdmiTxSsPtr;
 	unsigned long flags;
 

@@ -267,6 +267,7 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     /* HPD event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_HPD_MASK)) {
 
+	    printk("%s: Event reg val: %x \n", Event);
         // Check the HPD status
         if ((Data) & (XV_HDMITX_PIO_IN_HPD_MASK))
             InstancePtr->Stream.IsConnected = (TRUE);   // Set connected flag

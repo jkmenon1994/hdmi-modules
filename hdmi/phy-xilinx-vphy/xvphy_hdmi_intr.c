@@ -1173,9 +1173,11 @@ void XVphy_HdmiGtHandler(XVphy *InstancePtr)
 
 	u8 QuadId = 0;
 
+	printk("%s \n", __func__);
 	/* Read Interrupt Status register */
 	Event = XVphy_ReadReg(InstancePtr->Config.BaseAddr, XVPHY_INTR_STS_REG);
 
+	printk("%s: Read VPHY interrupt status register %x \n", __func__,Event);
 	EventAck = EventMask & Event;
 
 	/* Read States for Quad=0 Ch1 */
@@ -1183,6 +1185,7 @@ void XVphy_HdmiGtHandler(XVphy *InstancePtr)
 	RxStatePtr = &InstancePtr->Quads[QuadId].Ch1.RxState;
 
 	if (Event & XVPHY_INTR_TXMMCMUSRCLK_LOCK_MASK) {
+		printk("%s: XVPHY_INTR_TXMMCMUSRCLK_LOCK_MASK %x \n", __func__, Event);
 		XVphy_HdmiTxMmcmLockHandler(InstancePtr);
 	}
 	if (Event & XVPHY_INTR_RXMMCMUSRCLK_LOCK_MASK) {
@@ -1192,9 +1195,13 @@ void XVphy_HdmiGtHandler(XVphy *InstancePtr)
 	    (Event & XVPHY_INTR_QPLL1_LOCK_MASK)) {
 #if (XPAR_VPHY_0_TRANSCEIVER == XVPHY_GTPE2)
 		if (Event & XVPHY_INTR_QPLL0_LOCK_MASK) { /* PLL0. */
+
+			printk("%s: XVPHY_INTR_QPLL0_LOCK_MASK %x \n", __func__, Event);
 			XVphy_HdmiGtpPllLockHandler(InstancePtr, 0);
 		}
 		if (Event & XVPHY_INTR_QPLL1_LOCK_MASK) { /* PLL1. */
+
+			printk("%s: XVPHY_INTR_QPLL1_LOCK_MASK %x \n", __func__, Event);
 			XVphy_HdmiGtpPllLockHandler(InstancePtr, 1);
 		}
 #else
@@ -1203,19 +1210,26 @@ void XVphy_HdmiGtHandler(XVphy *InstancePtr)
 	}
 #if (XPAR_VPHY_0_TRANSCEIVER != XVPHY_GTPE2)
 	if (Event & XVPHY_INTR_CPLL_LOCK_MASK) {
+
+		printk("%s: XVPHY_INTR_CPLL_LOCK_MASK %x \n", __func__, Event);
 		XVphy_HdmiCpllLockHandler(InstancePtr);
 	}
 #endif
 	if ((Event & XVPHY_INTR_TXRESETDONE_MASK)
 			&& (*TxStatePtr == XVPHY_GT_STATE_RESET)) {
+
+		printk("%s: XVPHY_INTR_TXRESETDONE_MASK %x \n", __func__, Event);
 		XVphy_HdmiGtTxResetDoneLockHandler(InstancePtr);
 	}
 	if ((Event & XVPHY_INTR_TXALIGNDONE_MASK)
 			&& (*TxStatePtr == XVPHY_GT_STATE_ALIGN)) {
+
+		printk("%s: XVPHY_INTR_TXALIGNDONE_MASK %x \n", __func__, Event);
 		XVphy_HdmiGtTxAlignDoneLockHandler(InstancePtr);
 	}
 	if ((Event & XVPHY_INTR_RXRESETDONE_MASK)
 			&& (*RxStatePtr == XVPHY_GT_STATE_RESET)) {
+
 		XVphy_HdmiGtRxResetDoneLockHandler(InstancePtr);
 	}
 
@@ -1246,21 +1260,31 @@ void XVphy_ClkDetHandler(XVphy *InstancePtr)
 				XVPHY_INTR_TXTMRTIMEOUT_MASK |
 				XVPHY_INTR_RXTMRTIMEOUT_MASK;
 
+	printk("%s \n",__func__);
 	/* Read Interrupt Status register */
 	Event = XVphy_ReadReg(InstancePtr->Config.BaseAddr, XVPHY_INTR_STS_REG);
 
+	printk("%s: Read vphy interrupt status register %x \n", __func__,Event ); 
 	EventAck = EventMask & Event;
 
 	if (Event & XVPHY_INTR_TXCLKDETFREQCHANGE_MASK) {
+
+		printk("%s: XVPHY_INTR_TXCLKDETFREQCHANGE_MASK %x \n", __func__,Event ); 
 		XVphy_HdmiTxClkDetFreqChangeHandler(InstancePtr);
 	}
 	if (Event & XVPHY_INTR_RXCLKDETFREQCHANGE_MASK) {
+
+		printk("%s: XVPHY_INTR_RXCLKDETFREQCHANGE_MASK %x \n", __func__,Event ); 
 		XVphy_HdmiRxClkDetFreqChangeHandler(InstancePtr);
 	}
 	if (Event & XVPHY_INTR_TXTMRTIMEOUT_MASK) {
+
+		printk("%s: XVPHY_INTR_TXTMRTIMEOUT_MASK  %x \n", __func__,Event ); 
 		XVphy_HdmiTxTimerTimeoutHandler(InstancePtr);
 	}
 	if (Event & XVPHY_INTR_RXTMRTIMEOUT_MASK) {
+		printk("%s: XVPHY_INTR_RXTMRTIMEOUT_MASK %x \n", __func__,Event ); 
+
 		XVphy_HdmiRxTimerTimeoutHandler(InstancePtr);
 	}
 

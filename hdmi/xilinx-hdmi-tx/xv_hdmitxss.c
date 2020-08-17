@@ -2255,10 +2255,14 @@ int XV_HdmiTxSs_DetectHdmi20(XV_HdmiTxSs *InstancePtr)
 void XV_HdmiTxSs_RefClockChangeInit(XV_HdmiTxSs *InstancePtr)
 {
 
+      printk("%S \n", __func__);
+
+      printk("Asserting VIDEO_IN bridge resets \n");
       /* Assert VID_IN bridge resets */
       XV_HdmiTxSs_SYSRST(InstancePtr, TRUE);
       XV_HdmiTxSs_VRST(InstancePtr, TRUE);
 
+      printk("Asserting HDMI TxCore resets \n");
       /* Assert HDMI TXCore resets */
       XV_HdmiTxSs_TXCore_LRST(InstancePtr, TRUE);
       XV_HdmiTxSs_TXCore_VRST(InstancePtr, TRUE);

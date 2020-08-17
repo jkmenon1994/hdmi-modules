@@ -70,7 +70,7 @@
 #include "xil_printf.h"
 #include <linux/string.h>
 #include <linux/delay.h>
-
+#include  <linux/module.h>
 /************************** Constant Definitions *****************************/
 
 
@@ -172,13 +172,17 @@ int XV_HdmiTx_CfgInitialize(XV_HdmiTx *InstancePtr, XV_HdmiTx_Config *CfgPtr,
     RegValue = XV_HdmiTx_ReadReg(InstancePtr->Config.BaseAddress,
     (XV_HDMITX_PIO_ID_OFFSET));
 
+    printk("%s: XV_HDMITX_PIO_ID_OFFSET %x:%x \n",__func__,XV_HDMITX_PIO_ID_OFFSET, RegValue);
+
     RegValue = ((RegValue) >> (XV_HDMITX_SHIFT_16)) &
     (XV_HDMITX_MASK_16);
     if (RegValue != (XV_HDMITX_PIO_ID)) {
         return (XST_FAILURE);
     }
 
+    printk("XV_HDMITX_PIO_ID_OFFSET (after shift) %x:%x:%x \n",__func__,XV_HDMITX_PIO_ID_OFFSET, RegValue, XV_HDMITX_PIO_ID);
     /* PIO: Set event rising edge masks */
+    
     XV_HdmiTx_WriteReg(InstancePtr->Config.BaseAddress,
     (XV_HDMITX_PIO_IN_EVT_RE_OFFSET),
             (XV_HDMITX_PIO_IN_BRDG_UNDERFLOW_MASK) |
@@ -832,6 +836,7 @@ void XV_HdmiTx_INT_VRST(XV_HdmiTx *InstancePtr, u8 Reset)
     Xil_AssertVoid(InstancePtr != NULL);
 
     if (Reset) {
+	    printk("%s: HDMI TX Core Internal Video reset virtual:%x: 0xB000005C:%x \n", __func__, (InstancePtr)->Config.BaseAddress + (XV_HDMITX_PIO_OUT_CLR_OFFSET), XV_HDMITX_PIO_OUT_INT_VRST_MASK);
         XV_HdmiTx_WriteReg((InstancePtr)->Config.BaseAddress,
         (XV_HDMITX_PIO_OUT_CLR_OFFSET), (XV_HDMITX_PIO_OUT_INT_VRST_MASK));
     }
@@ -866,6 +871,7 @@ void XV_HdmiTx_INT_LRST(XV_HdmiTx *InstancePtr, u8 Reset)
     Xil_AssertVoid(InstancePtr != NULL);
 
     if (Reset) {
+	    printk("%s: HDMI TX internal Link Reset virtual:%x:0xB000005C:%x \n",__func__, (InstancePtr)->Config.BaseAddress + (XV_HDMITX_PIO_OUT_CLR_OFFSET), XV_HDMITX_PIO_OUT_INT_LRST_MASK);
         XV_HdmiTx_WriteReg((InstancePtr)->Config.BaseAddress,
         (XV_HDMITX_PIO_OUT_CLR_OFFSET), (XV_HDMITX_PIO_OUT_INT_LRST_MASK));
     }
@@ -900,6 +906,7 @@ void XV_HdmiTx_EXT_VRST(XV_HdmiTx *InstancePtr, u8 Reset)
     Xil_AssertVoid(InstancePtr != NULL);
 
     if (Reset) {
+	    printk("%s: Asserting video reset virtual:%x:0xB000005C:%x \n",__func__,(InstancePtr)->Config.BaseAddress + (XV_HDMITX_PIO_OUT_CLR_OFFSET), XV_HDMITX_PIO_OUT_EXT_VRST_MASK);
         XV_HdmiTx_WriteReg((InstancePtr)->Config.BaseAddress,
         (XV_HDMITX_PIO_OUT_CLR_OFFSET), (XV_HDMITX_PIO_OUT_EXT_VRST_MASK));
     }
@@ -934,6 +941,7 @@ void XV_HdmiTx_EXT_SYSRST(XV_HdmiTx *InstancePtr, u8 Reset)
     Xil_AssertVoid(InstancePtr != NULL);
 
     if (Reset) {
+	 printk("%s: Asserting system reset (virtual:%x:0xB000005C:%x \n",__func__,(InstancePtr)->Config.BaseAddress+(XV_HDMITX_PIO_OUT_CLR_OFFSET),XV_HDMITX_PIO_OUT_EXT_SYSRST_MASK);
         XV_HdmiTx_WriteReg((InstancePtr)->Config.BaseAddress,
         (XV_HDMITX_PIO_OUT_CLR_OFFSET), (XV_HDMITX_PIO_OUT_EXT_SYSRST_MASK));
     }

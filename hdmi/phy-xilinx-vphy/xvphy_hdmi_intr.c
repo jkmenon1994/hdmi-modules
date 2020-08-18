@@ -845,7 +845,7 @@ void XVphy_HdmiTxTimerTimeoutHandler(XVphy *InstancePtr)
 	XVphy_PllType PllType;
 	u8 Id, Id0, Id1;
 
-	printk("%s \n", __func__);
+	printk(KERN_ERR "%s ................\n", __func__);
 
 #if (XPAR_VPHY_0_TRANSCEIVER == XVPHY_GTXE2)
 	/* Check if timer timed out while waiting for TX Alignment
@@ -854,7 +854,7 @@ void XVphy_HdmiTxTimerTimeoutHandler(XVphy *InstancePtr)
 	XVphy_Ch2Ids(InstancePtr, XVPHY_CHANNEL_ID_CHA, &Id0, &Id1);
 	if (InstancePtr->Quads[0].Plls[XVPHY_CH2IDX(Id0)].TxState ==
 			XVPHY_GT_STATE_ALIGN) {
-		printk("%s:XVPHY_LOG_EVT_TX_ALIGN_TMOUT \n",__func__);
+		printk(KERN_ERR "%s:XVPHY_LOG_EVT_TX_ALIGN_TMOUT \n",__func__);
 	
 		XVphy_LogWrite(InstancePtr, XVPHY_LOG_EVT_TX_ALIGN_TMOUT, 1);
 		/* GT TX reset. */
@@ -873,19 +873,19 @@ void XVphy_HdmiTxTimerTimeoutHandler(XVphy *InstancePtr)
 
 	XVphy_LogWrite(InstancePtr, XVPHY_LOG_EVT_TX_TMR, 1);
 
-	printk("%s: Determining PLL type \n");
+	printk(KERN_ERR "%s: Determining PLL type \n",__func__);
 	/* Determine PLL type. */
 	PllType = XVphy_GetPllType(InstancePtr, 0, XVPHY_DIR_TX,
 			XVPHY_CHANNEL_ID_CH1);
 	/* Determine which channel(s) to operate on. */
-	printk("%s: Determining which channel to operate on \n");
+	printk(KERN_ERR "%s: Determining which channel to operate on \n",__func__);
 	ChId = XVphy_GetRcfgChId(InstancePtr, 0, XVPHY_DIR_TX, PllType);
 
 #if (XPAR_VPHY_0_TRANSCEIVER == XVPHY_GTXE2)
 	if (!XVphy_IsBonded(InstancePtr, 0, XVPHY_CHANNEL_ID_CH1)) {
 #endif
 	/* Start TX MMCM. */
-	printk("%s: starting TX MMCM \n");
+	printk(KERN_ERR "%s: starting TX MMCM \n",__func__);
 	XVphy_MmcmStart(InstancePtr, 0, XVPHY_DIR_TX);
 #if (XPAR_VPHY_0_TRANSCEIVER == XVPHY_GTXE2)
 	}
@@ -893,7 +893,7 @@ void XVphy_HdmiTxTimerTimeoutHandler(XVphy *InstancePtr)
 
 	/* Enable PLL. */
 	if (InstancePtr->Config.XcvrType != XVPHY_GT_TYPE_GTPE2) {
-		printk("%s: Enable PLL \n");
+		printk(KERN_ERR "%s: Enable PLL \n",__func__);
 		XVphy_PowerDownGtPll(InstancePtr, 0,
 			(PllType == XVPHY_PLL_TYPE_CPLL) ?
 			XVPHY_CHANNEL_ID_CHA : XVPHY_CHANNEL_ID_CMNA, FALSE);
@@ -917,7 +917,7 @@ void XVphy_HdmiTxTimerTimeoutHandler(XVphy *InstancePtr)
 	}
 	XVphy_DirReconfig(InstancePtr, 0, XVPHY_CHANNEL_ID_CHA, XVPHY_DIR_TX);
 
-	printk("%s: Asserting PLL reset \n");
+	printk(KERN_ERR "%s: Asserting PLL reset \n",__func__);
 	/* Assert PLL reset. */
 	XVphy_ResetGtPll(InstancePtr, 0, XVPHY_CHANNEL_ID_CHA,
 			XVPHY_DIR_TX, TRUE);
@@ -1282,9 +1282,9 @@ void XVphy_ClkDetHandler(XVphy *InstancePtr)
 
 	if (Event & XVPHY_INTR_TXCLKDETFREQCHANGE_MASK) {
 
-		printk(KERNEL_WARNING "%s: XVPHY_INTR_TXCLKDETFREQCHANGE_MASK %x \n", __func__,Event ); 
+		printk(KERN_WARNING "%s: XVPHY_INTR_TXCLKDETFREQCHANGE_MASK %x \n", __func__,Event ); 
 		
-		printk(KERNEL_ERROR "%s: XVPHY_INTR_TXCLKDETFREQCHANGE_MASK %x \n", __func__,Event ); 
+		printk(KERN_ERR "%s: XVPHY_INTR_TXCLKDETFREQCHANGE_MASK %x \n", __func__,Event ); 
 		XVphy_HdmiTxClkDetFreqChangeHandler(InstancePtr);
 	}
 	if (Event & XVPHY_INTR_RXCLKDETFREQCHANGE_MASK) {

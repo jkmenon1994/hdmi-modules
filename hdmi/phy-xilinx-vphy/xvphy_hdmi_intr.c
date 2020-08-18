@@ -430,6 +430,7 @@ void XVphy_HdmiCpllLockHandler(XVphy *InstancePtr)
 	u8 Id, Id0, Id1;
 	XVphy_ChannelId ChId;
 
+	prink(KERN_WARNING "%s \n", __func__);
 	/* Determine PLL type. */
 	TxPllType = XVphy_GetPllType(InstancePtr, 0, XVPHY_DIR_TX,
 			XVPHY_CHANNEL_ID_CH1);
@@ -925,6 +926,7 @@ void XVphy_HdmiTxTimerTimeoutHandler(XVphy *InstancePtr)
 	/* Assert GT TX reset. */
 	if ((InstancePtr->Config.XcvrType == XVPHY_GT_TYPE_GTXE2) ||
 	    (InstancePtr->Config.XcvrType == XVPHY_GT_TYPE_GTPE2)) {
+		printk(KERN_WARNING "%s Asserting GT TX Reset \n",__func__);
 		XVphy_ResetGtTxRx(InstancePtr, 0, XVPHY_CHANNEL_ID_CHA,
 							XVPHY_DIR_TX, TRUE);
 	}
@@ -937,6 +939,7 @@ void XVphy_HdmiTxTimerTimeoutHandler(XVphy *InstancePtr)
 	    (InstancePtr->Config.XcvrType == XVPHY_GT_TYPE_GTHE4) ||
         (InstancePtr->Config.XcvrType == XVPHY_GT_TYPE_GTYE4)) {
 		/* Clear GT alignment. */
+		printk(KERN_WARNING "%s Clearing GT alignment \n",__func__);
 		XVphy_TxAlignStart(InstancePtr, ChId, FALSE);
 	}
 
@@ -1182,11 +1185,11 @@ void XVphy_HdmiGtHandler(XVphy *InstancePtr)
 
 	u8 QuadId = 0;
 
-	printk("%s \n", __func__);
+	printk(KERN_WARNING "%s \n", __func__);
 	/* Read Interrupt Status register */
 	Event = XVphy_ReadReg(InstancePtr->Config.BaseAddr, XVPHY_INTR_STS_REG);
 
-	printk("%s: Read VPHY interrupt status register %x \n", __func__,Event);
+	printk(KERN_WARNING "%s: Read VPHY interrupt status register %x \n", __func__,Event);
 	EventAck = EventMask & Event;
 
 	/* Read States for Quad=0 Ch1 */
@@ -1194,7 +1197,7 @@ void XVphy_HdmiGtHandler(XVphy *InstancePtr)
 	RxStatePtr = &InstancePtr->Quads[QuadId].Ch1.RxState;
 
 	if (Event & XVPHY_INTR_TXMMCMUSRCLK_LOCK_MASK) {
-		printk("%s: XVPHY_INTR_TXMMCMUSRCLK_LOCK_MASK %x \n", __func__, Event);
+		printk(KERN_WARNING "%s: XVPHY_INTR_TXMMCMUSRCLK_LOCK_MASK %x \n", __func__, Event);
 		XVphy_HdmiTxMmcmLockHandler(InstancePtr);
 	}
 	if (Event & XVPHY_INTR_RXMMCMUSRCLK_LOCK_MASK) {
@@ -1205,12 +1208,12 @@ void XVphy_HdmiGtHandler(XVphy *InstancePtr)
 #if (XPAR_VPHY_0_TRANSCEIVER == XVPHY_GTPE2)
 		if (Event & XVPHY_INTR_QPLL0_LOCK_MASK) { /* PLL0. */
 
-			printk("%s: XVPHY_INTR_QPLL0_LOCK_MASK %x \n", __func__, Event);
+			printk(KERN_WARNING "%s: XVPHY_INTR_QPLL0_LOCK_MASK %x \n", __func__, Event);
 			XVphy_HdmiGtpPllLockHandler(InstancePtr, 0);
 		}
 		if (Event & XVPHY_INTR_QPLL1_LOCK_MASK) { /* PLL1. */
 
-			printk("%s: XVPHY_INTR_QPLL1_LOCK_MASK %x \n", __func__, Event);
+			printk(KERN_WARNING "%s: XVPHY_INTR_QPLL1_LOCK_MASK %x \n", __func__, Event);
 			XVphy_HdmiGtpPllLockHandler(InstancePtr, 1);
 		}
 #else
@@ -1220,20 +1223,20 @@ void XVphy_HdmiGtHandler(XVphy *InstancePtr)
 #if (XPAR_VPHY_0_TRANSCEIVER != XVPHY_GTPE2)
 	if (Event & XVPHY_INTR_CPLL_LOCK_MASK) {
 
-		printk("%s: XVPHY_INTR_CPLL_LOCK_MASK %x \n", __func__, Event);
+		printk(KERN_WARNING "%s: XVPHY_INTR_CPLL_LOCK_MASK %x \n", __func__, Event);
 		XVphy_HdmiCpllLockHandler(InstancePtr);
 	}
 #endif
 	if ((Event & XVPHY_INTR_TXRESETDONE_MASK)
 			&& (*TxStatePtr == XVPHY_GT_STATE_RESET)) {
 
-		printk("%s: XVPHY_INTR_TXRESETDONE_MASK %x \n", __func__, Event);
+		printk(KERN_WARNING "%s: XVPHY_INTR_TXRESETDONE_MASK %x \n", __func__, Event);
 		XVphy_HdmiGtTxResetDoneLockHandler(InstancePtr);
 	}
 	if ((Event & XVPHY_INTR_TXALIGNDONE_MASK)
 			&& (*TxStatePtr == XVPHY_GT_STATE_ALIGN)) {
 
-		printk("%s: XVPHY_INTR_TXALIGNDONE_MASK %x \n", __func__, Event);
+		printk(KERN_WARNING "%s: XVPHY_INTR_TXALIGNDONE_MASK %x \n", __func__, Event);
 		XVphy_HdmiGtTxAlignDoneLockHandler(InstancePtr);
 	}
 	if ((Event & XVPHY_INTR_RXRESETDONE_MASK)

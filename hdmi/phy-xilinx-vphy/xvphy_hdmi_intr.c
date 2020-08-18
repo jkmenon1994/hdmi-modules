@@ -431,7 +431,7 @@ void XVphy_HdmiCpllLockHandler(XVphy *InstancePtr)
 	u8 Id, Id0, Id1;
 	XVphy_ChannelId ChId;
 
-	prink(KERN_WARNING "%s \n", __func__);
+	printk(KERN_WARNING "%s \n", __func__);
 	/* Determine PLL type. */
 	TxPllType = XVphy_GetPllType(InstancePtr, 0, XVPHY_DIR_TX,
 			XVPHY_CHANNEL_ID_CH1);

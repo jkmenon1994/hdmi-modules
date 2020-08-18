@@ -209,7 +209,7 @@ void XVphy_InterruptHandler(XVphy *InstancePtr)
 	IntrStatus = XVphy_ReadReg(InstancePtr->Config.BaseAddr,
 			XVPHY_INTR_STS_REG);
 
-	printk("%s: Type of Interrupt received %x \n", IntrStatus);
+	printk("%s: Type of Interrupt received %x \n",__func__, IntrStatus);
 	if (IntrStatus & XVPHY_INTR_CPLL_LOCK_MASK) {
 		printk("%s: IntrStatus: XVPHY_INTR_CPLL_LOCK_MASK %x \n", __func__, IntrStatus);
 		InstancePtr->IntrCpllLockHandler(

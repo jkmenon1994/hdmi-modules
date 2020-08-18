@@ -1076,6 +1076,7 @@ static void XV_HdmiTxSs_ConnectCallback(void *CallbackRef)
 {
   XV_HdmiTxSs *HdmiTxSsPtr = (XV_HdmiTxSs *)CallbackRef;
 
+  printk("1.%s \n"__func__);
   /* Is the cable connected */
   if (XV_HdmiTx_IsStreamConnected(HdmiTxSsPtr->HdmiTxPtr)) {
 #ifdef XV_HDMITXSS_LOG_ENABLE
@@ -1121,6 +1122,8 @@ static void XV_HdmiTxSs_ConnectCallback(void *CallbackRef)
 
   /* Check if user callback has been registered */
   if (HdmiTxSsPtr->ConnectCallback) {
+
+    printk("2.%s userConnectCallback \n"__func__);
     HdmiTxSsPtr->ConnectCallback(HdmiTxSsPtr->ConnectRef);
   }
 }

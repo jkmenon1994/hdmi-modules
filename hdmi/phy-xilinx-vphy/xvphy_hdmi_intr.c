@@ -61,6 +61,7 @@
 #include "xvphy_i.h"
 #include "xvphy_hdmi.h"
 #include "xvphy_gt.h"
+#include <linux/module.h>
 
 /************************** Function Prototypes ******************************/
 

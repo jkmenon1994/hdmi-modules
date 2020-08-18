@@ -1270,15 +1270,21 @@ void XVphy_ClkDetHandler(XVphy *InstancePtr)
 				XVPHY_INTR_RXTMRTIMEOUT_MASK;
 
 	printk(KERN_WARNING "%s \n",__func__);
+	
+	printk(KERN_ERR "%s \n",__func__);
 	/* Read Interrupt Status register */
 	Event = XVphy_ReadReg(InstancePtr->Config.BaseAddr, XVPHY_INTR_STS_REG);
 
 	printk(KERN_WARNING "%s: Read vphy interrupt status register %x \n", __func__,Event ); 
+	
+	printk(KERN_ERR "%s: Read vphy interrupt status register %x \n", __func__,Event ); 
 	EventAck = EventMask & Event;
 
 	if (Event & XVPHY_INTR_TXCLKDETFREQCHANGE_MASK) {
 
-		printk("%s: XVPHY_INTR_TXCLKDETFREQCHANGE_MASK %x \n", __func__,Event ); 
+		printk(KERNEL_WARNING "%s: XVPHY_INTR_TXCLKDETFREQCHANGE_MASK %x \n", __func__,Event ); 
+		
+		printk(KERNEL_ERROR "%s: XVPHY_INTR_TXCLKDETFREQCHANGE_MASK %x \n", __func__,Event ); 
 		XVphy_HdmiTxClkDetFreqChangeHandler(InstancePtr);
 	}
 	if (Event & XVPHY_INTR_RXCLKDETFREQCHANGE_MASK) {
@@ -1289,10 +1295,11 @@ void XVphy_ClkDetHandler(XVphy *InstancePtr)
 	if (Event & XVPHY_INTR_TXTMRTIMEOUT_MASK) {
 
 		printk(KERN_WARNING "%s: XVPHY_INTR_TXTMRTIMEOUT_MASK  %x \n", __func__,Event ); 
+		
+		printk(KERN_ERR "%s: XVPHY_INTR_TXTMRTIMEOUT_MASK  %x \n", __func__,Event ); 
 		XVphy_HdmiTxTimerTimeoutHandler(InstancePtr);
 	}
 	if (Event & XVPHY_INTR_RXTMRTIMEOUT_MASK) {
-		printk("%s: XVPHY_INTR_RXTMRTIMEOUT_MASK %x \n", __func__,Event ); 
 
 		XVphy_HdmiRxTimerTimeoutHandler(InstancePtr);
 	}

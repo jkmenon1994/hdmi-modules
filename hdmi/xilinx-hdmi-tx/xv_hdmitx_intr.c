@@ -271,13 +271,13 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     /* HPD event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_HPD_MASK)) {
 
-	    printk("%s: Event reg val at HPD event: %x \n", Event);
+	    printk("%s: Event reg val at HPD event: %x \n",__func__, Event);
 
-	    printk("%s: PIO Data reg val at HPD event: %x \n", Data);
+	    printk("%s: PIO Data reg val at HPD event: %x \n",__func__, Data);
         // Check the HPD status
         if ((Data) & (XV_HDMITX_PIO_IN_HPD_MASK))
 	{
-		printk("Checked HPD status: set connect flag \n");
+		printk("%s: Checked HPD status: set connect flag \n",__func__);
             InstancePtr->Stream.IsConnected = (TRUE);   // Set connected flag
 	}
 	else
@@ -292,7 +292,7 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     /* Bridge Unlocked event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_BRDG_LOCKED_MASK)) {
 
-	    printk("Bridge Unlock event occures : %x \n", Event);
+	    printk("%s:Bridge Unlock event occures : %x \n",__func__, Event);
         // Check if user callback has been registered
         if (InstancePtr->IsBrdgUnlockedCallbackSet) {
             InstancePtr->BrdgUnlockedCallback(InstancePtr->BrdgUnlockedRef);

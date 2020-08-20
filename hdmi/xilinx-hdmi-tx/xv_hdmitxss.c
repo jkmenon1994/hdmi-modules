@@ -833,6 +833,7 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
   /* Set up source select */
   memset((void *)&SourceSelect, 0, sizeof(SourceSelect));
 
+  printk(KERN_WARNING "%s: starting VTC setup \n", __func__);
   /* 1 = Generator registers, 0 = Detector registers */
   SourceSelect.VChromaSrc = 1;
   SourceSelect.VActiveSrc = 1;
@@ -1023,6 +1024,7 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
     XVtc_WriteReg(HdmiTxSsPtr->VtcPtr->Config.BaseAddress, 0x68, 0x2);
   }
 
+  printk(KERN_WARNING "%s: VTC setup is done \n", __func__);
   /* Enable generator module */
   XVtc_Enable(HdmiTxSsPtr->VtcPtr);
   XVtc_EnableGenerator(HdmiTxSsPtr->VtcPtr);
@@ -1297,6 +1299,7 @@ static void XV_HdmiTxSs_StreamUpCallback(void *CallbackRef)
   XV_HdmiTxSs_TXCore_VRST(HdmiTxSsPtr, FALSE);
 
   if (HdmiTxSsPtr->VtcPtr) {
+	  printk(KERN_WARNING "%s Starting VTC setup... \n",__func__);
     /* Setup VTC */
     XV_HdmiTxSs_VtcSetup(HdmiTxSsPtr);
   }
@@ -2504,6 +2507,7 @@ static void XV_HdmiTxSs_ConfigBridgeMode(XV_HdmiTxSs *InstancePtr) {
     XHdmiC_AVI_InfoFrame *AviInfoFramePtr;
     AviInfoFramePtr = XV_HdmiTxSs_GetAviInfoframe(InstancePtr);
 
+    printk(KERN_WARNING "%s configure Video bridge for YUV420 & repeater functionality \n", __func__);
     // Pixel Repetition factor of 3 and above are not supported by the bridge
     if (AviInfoFramePtr->PixelRepetition > XHDMIC_PIXEL_REPETITION_FACTOR_2) {
 #ifdef XV_HDMITXSS_LOG_ENABLE

@@ -280,6 +280,8 @@ void XVtc_EnableGenerator(XVtc *InstancePtr)
 	/* Change the value according to the enabling type and write it back */
 	CtrlRegValue |= XVTC_CTL_GE_MASK;
 
+	printk(KERN_WARNING "%s: Enabling the VTC Generator core \n", __func__);
+
 	XVtc_WriteReg(InstancePtr->Config.BaseAddress, (XVTC_CTL_OFFSET),
 			CtrlRegValue);
 }

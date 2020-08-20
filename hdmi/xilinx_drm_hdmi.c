@@ -1242,12 +1242,14 @@ static void xlnx_drm_hdmi_encoder_atomic_mode_set(struct drm_encoder *encoder,
 	adjusted_mode->clock = VphyPtr->HdmiTxRefClkHz / 1000;
 	dev_dbg(xhdmi->dev,"adjusted_mode->clock = %u Hz\n", adjusted_mode->clock);
 
+#if 0
 	/* request required tmds clock rate */
 	ret = clk_set_rate(xhdmi->tmds_clk, adjusted_mode->clock * 1000);
 	if (ret) {
 		dev_err(xhdmi->dev, "failed to set tmds clock rate to %d: %d\n",
 					(adjusted_mode->clock * 1000), ret);
 	}
+#endif
 	/* When switching between modes with same Phy RefClk phy tx_refxlk_rdy_en
 	 * signal must be toggled (asserted and de-asserted) to reset phy's
 	 * internal frequency detection state machine

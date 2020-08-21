@@ -850,28 +850,42 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
   XVtc_SetSource(HdmiTxSsPtr->VtcPtr, &SourceSelect);
 
   VideoTiming.HActiveVideo = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.HActive;
+  printk(KERN_WARNING "%s: VideoTiming.HActiveVideo: %d \n", __func__, VideoTiming.HActiveVideo);
   VideoTiming.HFrontPorch = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.HFrontPorch;
+  printk(KERN_WARNING "%s: VideoTiming.HFrontPorch:  %d \n", __func__, VideoTiming.HFrontPorch);
   VideoTiming.HSyncWidth = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.HSyncWidth;
+  printk(KERN_WARNING "%s: VideoTiming.HSyncWidth: %d \n", __func__, VideoTiming.HSyncWidth);
   VideoTiming.HBackPorch = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.HBackPorch;
+  printk(KERN_WARNING "%s: VideoTiming.HBackPorch: %d \n", __func__, VideoTiming.HBackPorch);
   VideoTiming.HSyncPolarity = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.HSyncPolarity;
-
+  printk(KERN_WARNING "%s: VideoTiming.HSyncPolarity: %d \n", __func__, VideoTiming.HSyncPolarity);
+  
   /* Vertical Timing */
   VideoTiming.VActiveVideo = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.VActive;
-
+  printk(KERN_WARNING "%s: VideoTiming.VActiveVideo: %d \n", __func__, VideoTiming.VActiveVideo);
   VideoTiming.V0FrontPorch = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.F0PVFrontPorch;
+  printk(KERN_WARNING "%s: VideoTiming.V0FrontPorch: %d \n", __func__, VideoTiming.V0FrontPorch);
   VideoTiming.V0BackPorch = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.F0PVBackPorch;
+  printk(KERN_WARNING "%s: VideoTiming.V0BackPorch: %d \n", __func__, VideoTiming.V0BackPorch);
   VideoTiming.V0SyncWidth = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.F0PVSyncWidth;
-
+  printk(KERN_WARNING "%s: VideoTiming.V0SyncWidth: %d \n", __func__, VideoTiming.V0SyncWidth);
+  
   VideoTiming.V1FrontPorch = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.F1VFrontPorch;
+  printk(KERN_WARNING "%s: VideoTiming.V1FrontPorch: %d \n", __func__, VideoTiming.V1FrontPorch);
   VideoTiming.V1SyncWidth = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.F1VSyncWidth;
+  printk(KERN_WARNING "%s: VideoTiming.V1SyncWidth: %d \n", __func__, VideoTiming.V1SyncWidth);
   VideoTiming.V1BackPorch = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.F1VBackPorch;
-
+  printk(KERN_WARNING "%s: VideoTiming.V1BackPorch: %d \n", __func__, VideoTiming.V1BackPorch);
+  
   VideoTiming.VSyncPolarity = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.VSyncPolarity;
+  printk(KERN_WARNING "%s: VideoTiming.VSyncPolarity: %d \n", __func__, VideoTiming.VSyncPolarity);
 
   VideoTiming.Interlaced = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.IsInterlaced;
-
+  printk(KERN_WARNING "%s: VideoTiming.Interlaced: %d \n", __func__, VideoTiming.Interlaced);
+  
     /* 4 pixels per clock */
     if (HdmiTxSsPtr->HdmiTxPtr->Stream.Video.PixPerClk == XVIDC_PPC_4) {
+	    printk(KERN_WARNING "%s timing modification for 4PPC \n", __func__);
     	/* If the parameters below are not divisible by the current PPC setting,
     	 * log an error as VTC does not support such video timing
     	 */
@@ -890,6 +904,8 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
 
     /* 2 pixels per clock */
     else if (HdmiTxSsPtr->HdmiTxPtr->Stream.Video.PixPerClk == XVIDC_PPC_2) {
+
+	    printk(KERN_WARNING "%s timing modification for 2PPC \n", __func__);
     	/* If the parameters below are not divisible by the current PPC setting,
     	 * log an error as VTC does not support such video timing
     	 */
@@ -908,6 +924,8 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
 
     /* 1 pixels per clock */
     else {
+
+	    printk(KERN_WARNING "%s timing modification for 1PPC \n", __func__);
 		VideoTiming.HActiveVideo = VideoTiming.HActiveVideo;
 		VideoTiming.HFrontPorch = VideoTiming.HFrontPorch;
 		VideoTiming.HBackPorch = VideoTiming.HBackPorch;
@@ -952,14 +970,17 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
         VideoTiming.HBackPorch +
         VideoTiming.HSyncWidth;
 
+    printk(KERN_WARNING "%s: vtc horizontal blanking: Vtc_Hblank: %d \n", __func__,Vtc_Hblank);
     // Quad pixel mode
     if (HdmiTxSsPtr->HdmiTxPtr->Stream.Video.PixPerClk == XVIDC_PPC_4) {
       Vtc_Hblank *= 4;
+  	printk(KERN_WARNING "%s: Quad Pixel Mode: Vtc_Hblank*4 = %d \n", __func__, Vtc_Hblank);
     }
 
     // Dual pixel mode
     else if (HdmiTxSsPtr->HdmiTxPtr->Stream.Video.PixPerClk == XVIDC_PPC_2) {
       Vtc_Hblank *= 2;
+	printk(KERN_WARNING "%s: Dual Pixel Mode: Vtc_Hblank*2 = %d \n", __func__, Vtc_Hblank);
     }
 
     // Single pixel mode
@@ -981,6 +1002,7 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
   } while (Vtc_Hblank < HdmiTx_Hblank);
 
   if (Vtc_Hblank != HdmiTx_Hblank) {
+	  printk(KERNEL_WARNING "%s: Error! Current format with total Hblank \n", __func__);
       xdbg_printf(XDBG_DEBUG_GENERAL,
                   "Error! Current format with total Hblank (%d) cannot \r\n",
                   HdmiTx_Hblank);

@@ -1002,7 +1002,7 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
   } while (Vtc_Hblank < HdmiTx_Hblank);
 
   if (Vtc_Hblank != HdmiTx_Hblank) {
-	  printk(KERNEL_WARNING "%s: Error! Current format with total Hblank \n", __func__);
+	  printk(KERN_WARNING "%s: Error! Current format with total Hblank \n", __func__);
       xdbg_printf(XDBG_DEBUG_GENERAL,
                   "Error! Current format with total Hblank (%d) cannot \r\n",
                   HdmiTx_Hblank);

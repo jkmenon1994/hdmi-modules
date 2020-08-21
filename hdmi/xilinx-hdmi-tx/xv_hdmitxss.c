@@ -2532,6 +2532,7 @@ static void XV_HdmiTxSs_ConfigBridgeMode(XV_HdmiTxSs *InstancePtr) {
     printk(KERN_WARNING "%s configure Video bridge for YUV420 & repeater functionality \n", __func__);
     // Pixel Repetition factor of 3 and above are not supported by the bridge
     if (AviInfoFramePtr->PixelRepetition > XHDMIC_PIXEL_REPETITION_FACTOR_2) {
+	    printk(KERN_WARNING "%s: Pixel Repetition factor of 3 and above are not supported by the bridge \n", __func__);
 #ifdef XV_HDMITXSS_LOG_ENABLE
     	XV_HdmiTxSs_LogWrite(InstancePtr, XV_HDMITXSS_LOG_EVT_PIX_REPEAT_ERR,
     			AviInfoFramePtr->PixelRepetition);
@@ -2540,6 +2541,7 @@ static void XV_HdmiTxSs_ConfigBridgeMode(XV_HdmiTxSs *InstancePtr) {
     }
 
     if (HdmiTxSsVidStreamPtr->ColorFormatId == XVIDC_CSF_YCRCB_420) {
+	    printk(KERN_WARNING "%s: XV_HdmiTxSs_BridgePixelRepeat \n", __func__);
         /*********************************************************
          * 420 Support
          *********************************************************/
@@ -2551,6 +2553,7 @@ static void XV_HdmiTxSs_ConfigBridgeMode(XV_HdmiTxSs *InstancePtr) {
         if ((AviInfoFramePtr->PixelRepetition ==
 					XHDMIC_PIXEL_REPETITION_FACTOR_2))
         {
+		printk(KERN_WARNING "%s: XV_HdmiTxSs_BridgeYuv420 \n", __func__);
             /*********************************************************
              * NTSC/PAL Support
              *********************************************************/
@@ -2558,6 +2561,7 @@ static void XV_HdmiTxSs_ConfigBridgeMode(XV_HdmiTxSs *InstancePtr) {
              XV_HdmiTxSs_BridgePixelRepeat(InstancePtr, TRUE);
         }
         else {
+		printk(KERN_WARNING "%s: XV_HdmiTxSs_BridgeYuv420 \n", __func__);
             XV_HdmiTxSs_BridgeYuv420(InstancePtr, FALSE);
             XV_HdmiTxSs_BridgePixelRepeat(InstancePtr, FALSE);
             AviInfoFramePtr->PixelRepetition =

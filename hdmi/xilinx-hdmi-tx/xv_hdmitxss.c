@@ -897,9 +897,13 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
 #endif
 		}
 		VideoTiming.HActiveVideo = VideoTiming.HActiveVideo/4;
+		printk(KERN_WARNING "%s VideoTiming.HActiveVideo/4 = %d \n", __func__, VideoTiming.HActiveVideo); 
 		VideoTiming.HFrontPorch = VideoTiming.HFrontPorch/4;
+		printk(KERN_WARNING "%s VideoTiming.HFrontPorch/4 = %d \n", __func__, VideoTiming.HFrontPorch); 
 		VideoTiming.HBackPorch = VideoTiming.HBackPorch/4;
+		printk(KERN_WARNING "%s VideoTiming.HBackPorch/4 = %d \n", __func__, VideoTiming.HBackPorch); 
 		VideoTiming.HSyncWidth = VideoTiming.HSyncWidth/4;
+		printk(KERN_WARNING "%s VideoTiming.HSyncWidth/4 = %d \n", __func__, VideoTiming.HSyncWidth); 
     }
 
     /* 2 pixels per clock */
@@ -963,6 +967,7 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
   HdmiTx_Hblank = HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.HFrontPorch +
     HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.HSyncWidth +
     HdmiTxSsPtr->HdmiTxPtr->Stream.Video.Timing.HBackPorch;
+ printk(KERN_WARNING "%s HdmiTx_Hblank=HFrontPorch+HSyncWidth+HBackPorch : %d \n", __func__, HdmiTx_Hblank);
 
   do {
     // Calculate vtc horizontal blanking
@@ -970,7 +975,7 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
         VideoTiming.HBackPorch +
         VideoTiming.HSyncWidth;
 
-    printk(KERN_WARNING "%s: vtc horizontal blanking: Vtc_Hblank: %d \n", __func__,Vtc_Hblank);
+    printk(KERN_WARNING "%s: Vtc_Hblank=HFrontPorch+HBackPorch+HSyncWidth: %d \n", __func__,Vtc_Hblank);
     // Quad pixel mode
     if (HdmiTxSsPtr->HdmiTxPtr->Stream.Video.PixPerClk == XVIDC_PPC_4) {
       Vtc_Hblank *= 4;
@@ -1042,6 +1047,7 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
     XVtc_WriteReg(HdmiTxSsPtr->VtcPtr->Config.BaseAddress, 0x68, 0x42);
   }
   else {
+	printk(KERN_WARNING "%s: progressive mode set \n",__func__);
     /* Progressive mode */
     XVtc_WriteReg(HdmiTxSsPtr->VtcPtr->Config.BaseAddress, 0x68, 0x2);
   }
@@ -1334,6 +1340,7 @@ static void XV_HdmiTxSs_StreamUpCallback(void *CallbackRef)
 
   /* Configure video bridge mode according to HW setting and video format */
   XV_HdmiTxSs_ConfigBridgeMode(HdmiTxSsPtr);
+  printk(KERN_WARNING "%s configure brifdge mode done \n",__func__);
 #ifdef XV_HDMITXSS_LOG_ENABLE
   XV_HdmiTxSs_LogWrite(HdmiTxSsPtr, XV_HDMITXSS_LOG_EVT_STREAMUP, 0);
 #endif
@@ -2561,7 +2568,7 @@ static void XV_HdmiTxSs_ConfigBridgeMode(XV_HdmiTxSs *InstancePtr) {
              XV_HdmiTxSs_BridgePixelRepeat(InstancePtr, TRUE);
         }
         else {
-		printk(KERN_WARNING "%s: XV_HdmiTxSs_BridgeYuv420 \n", __func__);
+		printk(KERN_WARNING "%s: 2.XV_HdmiTxSs_BridgeYuv420 \n", __func__);
             XV_HdmiTxSs_BridgeYuv420(InstancePtr, FALSE);
             XV_HdmiTxSs_BridgePixelRepeat(InstancePtr, FALSE);
             AviInfoFramePtr->PixelRepetition =

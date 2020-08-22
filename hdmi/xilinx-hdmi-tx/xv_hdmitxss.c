@@ -827,6 +827,7 @@ static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)
 
   /* Disable Generator */
   XVtc_Reset(HdmiTxSsPtr->VtcPtr);
+  printk(KERN_ERR "%s VTC reset Done \n", __func__);
   XVtc_DisableGenerator(HdmiTxSsPtr->VtcPtr);
   XVtc_Disable(HdmiTxSsPtr->VtcPtr);
 

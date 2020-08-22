@@ -376,11 +376,14 @@ void XVtc_DisableGenerator(XVtc *InstancePtr)
 	CtrlRegValue = XVtc_ReadReg(InstancePtr->Config.BaseAddress,
 					(XVTC_CTL_OFFSET));
 
+	printk(KERN_WARNING "%s: Reading control register value VTC: %x \n", __func__, CtrlRegValue );
 	/* Change the value according to the disabling type and write it
 	 * back
 	 */
 	CtrlRegValue &= (u32)(~(XVTC_CTL_GE_MASK));
 
+
+	printk(KERN_WARNING "%s: writing control register value VTC: %x \n", __func__, CtrlRegValue );
 	XVtc_WriteReg(InstancePtr->Config.BaseAddress, (XVTC_CTL_OFFSET),
 			CtrlRegValue);
 }
@@ -441,13 +444,16 @@ void XVtc_Disable(XVtc *InstancePtr)
 	Xil_AssertVoid(InstancePtr != NULL);
 	Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
+	printk(KERN_WARNING "%s: \n", __func__);
 	/* Read Control register value back */
 	CtrlRegValue = XVtc_ReadReg(InstancePtr->Config.BaseAddress,
 					(XVTC_CTL_OFFSET));
 
+	printk(KERN_WARNING "%s: Read control register back %x \n", __func__, CtrlRegValue); 
 	/* Change the value, clearing Core Enable, and write it back*/
 	CtrlRegValue &= ~XVTC_CTL_SW_MASK;
 
+	printk(KERN_WARNING "%s clearing core Enable, writing %x \n",__func__, CtrlRegValue);
 	XVtc_WriteReg(InstancePtr->Config.BaseAddress, (XVTC_CTL_OFFSET),
 			CtrlRegValue);
 }

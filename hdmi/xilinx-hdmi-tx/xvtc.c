@@ -371,7 +371,7 @@ void XVtc_DisableGenerator(XVtc *InstancePtr)
 	/* Verify arguments. */
 	Xil_AssertVoid(InstancePtr != NULL);
 	Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-
+	printk(KERN_WARNING "%s : \n", __func__);
 	/* Read Control register value back */
 	CtrlRegValue = XVtc_ReadReg(InstancePtr->Config.BaseAddress,
 					(XVTC_CTL_OFFSET));

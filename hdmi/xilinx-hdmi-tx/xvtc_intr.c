@@ -156,6 +156,7 @@ void XVtc_IntrHandler(void *InstancePtr)
 	u32 ErrorStatus;
 	XVtc *XVtcPtr = (XVtc *) InstancePtr;
 
+	printk(KERN_WARNING "%s: \n", __func__);
 	/* Verify arguments. */
 	Xil_AssertVoid(XVtcPtr != NULL);
 	Xil_AssertVoid(XVtcPtr->IsReady == XIL_COMPONENT_IS_READY);
@@ -163,35 +164,48 @@ void XVtc_IntrHandler(void *InstancePtr)
 	/* Get pending interrupts */
 	PendingIntr = XVtc_IntrGetPending(XVtcPtr);
 
+	printk(KERN_WARNING "%s: VTC interrupt status: %x \n", __func__, PendingIntr);
 	/* Clear pending interrupt(s) */
 	XVtc_IntrClear(XVtcPtr, PendingIntr);
 
 	/* Spurious interrupt has happened */
 	if (0 == (PendingIntr | XVTC_IXR_ALLINTR_MASK)) {
+		
+		printk(KERN_WARNING "%s:spurious interrupt has happened: %x \n", __func__, PendingIntr);
 		ErrorStatus = 0;
 		XVtcPtr->ErrCallBack(XVtcPtr->ErrRef, ErrorStatus);
 		return;
 	}
 
 	/* A generator event has happened */
-	if ((PendingIntr & XVTC_IXR_G_ALL_MASK))
+	if ((PendingIntr & XVTC_IXR_G_ALL_MASK)){
+		
+		printk(KERN_WARNING "%s:Generator event %x \n", __func__, PendingIntr);
 		XVtcPtr->GeneratorCallBack(XVtcPtr->GeneratorRef,
 		PendingIntr);
+	}
 
 	/* A detector event has happened */
 	if ((PendingIntr & XVTC_IXR_D_ALL_MASK))
+	{	
+		printk(KERN_WARNING "%s:Detector event has occured: %x \n", __func__,PendingIntr);
 		XVtcPtr->DetectorCallBack(XVtcPtr->DetectorRef,
 		PendingIntr);
-
+	}
 	/* A frame sync is done */
-	if ((PendingIntr & XVTC_IXR_FSYNCALL_MASK))
+	if ((PendingIntr & XVTC_IXR_FSYNCALL_MASK)){
+		printk(KERN_WARNING "%s frame sync is done: %x \n", __func__, PendingIntr);
 		XVtcPtr->FrameSyncCallBack(XVtcPtr->FrameSyncRef,
 		PendingIntr);
+	}
 
 	/* A signal lock is detected */
-	if ((PendingIntr & XVTC_IXR_LOCKALL_MASK))
+	if ((PendingIntr & XVTC_IXR_LOCKALL_MASK)){
+		
+		printk(KERN_WARNING "%s:signal lock %x \n", __func__, PendingIntr);
 		XVtcPtr->LockCallBack(XVtcPtr->LockRef,
 		PendingIntr);
+	}
 }
 
 

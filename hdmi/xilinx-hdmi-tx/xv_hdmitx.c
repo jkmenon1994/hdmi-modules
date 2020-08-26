@@ -765,7 +765,10 @@ XVidC_3DInfo *Info3D)
     * Therefore if the colorspace is YUV422, then force the colordepth
     * to 12 bits. */
     if (ColorFormat == XVIDC_CSF_YCRCB_422) {
-        InstancePtr->Stream.Video.ColorDepth = XVIDC_BPC_12;
+	   printk(KERN_WARNING "%s: Forcing color depth to 10 bits \n", __func__);
+	InstancePtr->Stream.Video.ColorDepth = XVIDC_BPC_10;
+        /* Temporary Forcing to 10 bits since SDI provides 10 bits data by default*/
+	//InstancePtr->Stream.Video.ColorDepth = XVIDC_BPC_12;
     }
 
     InstancePtr->Stream.Vic = XV_HdmiTx_LookupVic(

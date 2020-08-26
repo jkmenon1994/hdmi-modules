@@ -1182,6 +1182,7 @@ void XV_HdmiTx_SetColorFormat(XV_HdmiTx *InstancePtr)
             break;
     }
 
+    printk(KERN_WARNING "%s: Colour format reg value: %x \n", __func__, RegValue);
     /* Write color space into PIO Out register */
     XV_HdmiTx_WriteReg(InstancePtr->Config.BaseAddress,
         (XV_HDMITX_PIO_OUT_OFFSET),
@@ -1234,6 +1235,7 @@ void XV_HdmiTx_SetColorDepth(XV_HdmiTx *InstancePtr)
             break;
     }
 
+    printk(KERN_WARNING "%s: color depth BPC %x \n", __func__, RegValue); 
     /* Write color depth into PIO Out register */
     XV_HdmiTx_WriteReg(InstancePtr->Config.BaseAddress,
         (XV_HDMITX_PIO_OUT_OFFSET),

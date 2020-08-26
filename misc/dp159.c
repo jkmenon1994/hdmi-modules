@@ -102,7 +102,7 @@ int clk_tx_set_rate(struct clk_hw *hw, unsigned long rate, unsigned long parent_
 {
 	struct clk_tx_linerate *clk;
 	clk = to_clk_tx_linerate(hw);
-	//printk(KERN_INFO "dp159: clk_tx_set_rate(): rate = %lu, parent_rate = %lu\n", rate, parent_rate);
+	printk(KERN_INFO "dp159: clk_tx_set_rate(): rate = %lu, parent_rate = %lu\n", rate, parent_rate);
 	clk->rate = rate;
 	dp159_program(clk->client, rate);
 	return 0;
@@ -138,6 +138,7 @@ static int dp159_probe(struct i2c_client *client,
 	struct clk_init_data init;
 	int ret;
 
+	printk(KERN_WARNING "%s: probing... \n", __func__);
 	/* Check if the adapter supports the needed features */
 	if (!i2c_check_functionality(client->adapter, I2C_FUNC_SMBUS_BYTE_DATA))
 		return -EIO;

@@ -102,7 +102,8 @@ int clk_tx_set_rate(struct clk_hw *hw, unsigned long rate, unsigned long parent_
 {
 	struct clk_tx_linerate *clk;
 	clk = to_clk_tx_linerate(hw);
-	printk(KERN_INFO "dp159: clk_tx_set_rate(): rate = %lu, parent_rate = %lu\n", rate, parent_rate);
+	//printk(KERN_INFO "dp159: clk_tx_set_rate(): rate = %lu, parent_rate = %lu\n", rate, parent_rate);
+	dev_info(&clk->client->dev, "dp159: clk_tx_set_rate(): rate = %lu, parent_rate = %lu\n", rate, parent_rate);
 	clk->rate = rate;
 	dp159_program(clk->client, rate);
 	return 0;
@@ -179,7 +180,7 @@ static int dp159_probe(struct i2c_client *client,
 	clk_tx->clk = clk;
 	/* reference to clk_tx in client */
 	i2c_set_clientdata(client, (void *)clk_tx);
-	//dev_info(&client->dev, "DP159 retimer.\n");
+	dev_info(&client->dev, "DP159 retimer.\n");
 
 	ret = of_clk_add_provider(client->dev.of_node, of_clk_src_simple_get,
 		to_clk_tx_linerate(&clk_tx->hw));

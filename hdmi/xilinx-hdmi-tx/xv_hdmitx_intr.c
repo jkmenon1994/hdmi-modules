@@ -322,7 +322,7 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     /* Vsync event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_VS_MASK)) {
 
-	    printk(KERN_WARNING "%s: Vsync Event Occured : %x \n",__func__, Event);
+	    //printk(KERN_WARNING "%s: Vsync Event Occured : %x \n",__func__, Event);
         // Check if user callback has been registered
         if (InstancePtr->IsVsCallbackSet) {
             InstancePtr->VsCallback(InstancePtr->VsRef);

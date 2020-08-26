@@ -246,7 +246,7 @@ static irqreturn_t hdmitx_irq_handler(int irq, void *dev_id)
 	xhdmi = (struct xlnx_drm_hdmi *)dev_id;
 	HdmiTxSsPtr = (XV_HdmiTxSs *)&xhdmi->xv_hdmitxss;
 
-	dev_dbg(xhdmi->dev,"%s \n", __func__);
+	//dev_dbg(xhdmi->dev,"%s \n", __func__);
 	if (HdmiTxSsPtr->IsReady != XIL_COMPONENT_IS_READY) {
 		dev_dbg(xhdmi->dev, "hdmitx_irq_handler(): HDMI TX SS is not initialized?!\n");
 	}
@@ -288,7 +288,7 @@ static irqreturn_t hdmitx_irq_thread(int irq, void *dev_id)
 	/* call baremetal interrupt handler, this in turn will
 	 * call the registed callbacks functions */
 	if (xhdmi->IntrStatus) {
-		dev_dbg(xhdmi->dev, "calling HdmiTx_PioIntrHandler......... \n");
+		//dev_dbg(xhdmi->dev, "calling HdmiTx_PioIntrHandler......... \n");
 		HdmiTx_PioIntrHandler(HdmiTxSsPtr->HdmiTxPtr);
 	}
 	hdmi_mutex_unlock(&xhdmi->hdmi_mutex);

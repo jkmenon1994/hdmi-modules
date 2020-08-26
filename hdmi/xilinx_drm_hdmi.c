@@ -1015,6 +1015,7 @@ static u32 hdmitx_find_media_bus(struct xlnx_drm_hdmi *xhdmi, u32 drm_fourcc)
 		return XVIDC_CSF_YCRCB_444;
 
 	case DRM_FORMAT_YUYV: //packed, 8b
+	case DRM_FORMAT_YVYU:
 	case DRM_FORMAT_UYVY: //packed, 8b
 	case DRM_FORMAT_NV16: //semi-planar, 8b
 		xhdmi->xvidc_colordepth = XVIDC_BPC_8;

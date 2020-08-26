@@ -1327,7 +1327,7 @@ static void XV_HdmiTxSs_StreamUpCallback(void *CallbackRef)
   XV_HdmiTxSs_TXCore_LRST(HdmiTxSsPtr, FALSE);
   XV_HdmiTxSs_TXCore_VRST(HdmiTxSsPtr, FALSE);
 
-#if 0
+#if 1
   if (HdmiTxSsPtr->VtcPtr) {
     printk(KERN_WARNING "%s Starting VTC setup... \n",__func__);
     /* Setup VTC */

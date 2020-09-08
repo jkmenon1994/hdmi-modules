@@ -1079,6 +1079,8 @@ static void xlnx_drm_hdmi_encoder_atomic_mode_set(struct drm_encoder *encoder,
 
 	drm_fourcc = encoder->crtc->primary->state->fb->format->format;
 	xhdmi->xvidc_colorfmt = hdmitx_find_media_bus(xhdmi, drm_fourcc);
+	/* forcing color format temporary */
+	xhdmi->xvidc_colorfmt = XVIDC_CSF_YCRCB_444;
 	dev_dbg(xhdmi->dev,"xvidc_colorfmt = %d\n", xhdmi->xvidc_colorfmt);
 	dev_dbg(xhdmi->dev,"xvidc_colordepth = %d\n", xhdmi->xvidc_colordepth);
 

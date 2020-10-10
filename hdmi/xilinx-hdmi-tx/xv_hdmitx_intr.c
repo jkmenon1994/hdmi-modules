@@ -265,10 +265,11 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
 
     /* HPD event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_HPD_MASK)) {
-
-        // Check the HPD status
+	
+	    // Check the HPD status
         if ((Data) & (XV_HDMITX_PIO_IN_HPD_MASK))
-            InstancePtr->Stream.IsConnected = (TRUE);   // Set connected flag
+            printk(KERN_WARNING "%s: Checked HPD status: set connect flag \n",__func__);
+	    InstancePtr->Stream.IsConnected = (TRUE);   // Set connected flag
         else
             InstancePtr->Stream.IsConnected = (FALSE);  // Clear connected flag
 
@@ -280,7 +281,7 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
 
     /* Bridge Unlocked event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_BRDG_LOCKED_MASK)) {
-
+	printk(KERN_WARNING "%s:Bridge Unlock event occures : %x \n",__func__, Event);
         // Check if user callback has been registered
         if (InstancePtr->IsBrdgUnlockedCallbackSet) {
             InstancePtr->BrdgUnlockedCallback(InstancePtr->BrdgUnlockedRef);
@@ -289,7 +290,7 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
 
     /* Bridge Overflow event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_BRDG_OVERFLOW_MASK)) {
-
+	printk(KERN_WARNING "Bridge Overflow event occured:%x \n", Event );
         // Check if user callback has been registered
         if (InstancePtr->IsBrdgOverflowCallbackSet) {
             InstancePtr->BrdgOverflowCallback(InstancePtr->BrdgOverflowRef);
@@ -298,6 +299,7 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
 
     /* Bridge Underflow event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_BRDG_UNDERFLOW_MASK)) {
+        printk(KERN_WARNING "Bridge Underflow event occured %x \n", Event);
 
         // Check if user callback has been registered
         if (InstancePtr->IsBrdgUnderflowCallbackSet) {
@@ -316,10 +318,13 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
 
     /* Link ready event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_LNK_RDY_MASK)) {
+            printk("%s: Link read event: %x \n", __func__, Event );
 
         // Check the link status
         if ((Data) & (XV_HDMITX_PIO_IN_LNK_RDY_MASK)) {
-            // Set stream status to up
+                printk("Link ready mask is set %x \n", Data);
+
+    		// Set stream status to up
             InstancePtr->Stream.State = XV_HDMITX_STATE_STREAM_UP;
 
             /* Enable the AUX peripheral */
@@ -339,7 +344,9 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
 
         // Link down
         else {
-            // Set stream status to down
+                printk("Link goig down ....... \n");
+
+    		// Set stream status to down
             InstancePtr->Stream.State = XV_HDMITX_STATE_STREAM_DOWN;
 
             /* Disable Audio */

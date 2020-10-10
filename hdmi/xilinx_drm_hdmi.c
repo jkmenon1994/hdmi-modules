@@ -270,6 +270,7 @@ static irqreturn_t hdmitx_irq_handler(int irq, void *dev_id)
 	xhdmi = (struct xlnx_drm_hdmi *)dev_id;
 	HdmiTxSsPtr = (XV_HdmiTxSs *)&xhdmi->xv_hdmitxss;
 
+	dev_dbg(xhdmi->dev,"%s \n", __func__);
 	if (HdmiTxSsPtr->IsReady != XIL_COMPONENT_IS_READY) {
 		dev_dbg(xhdmi->dev, "hdmitx_irq_handler(): HDMI TX SS is not initialized?!\n");
 	}
@@ -2015,6 +2016,9 @@ static int xlnx_drm_hdmi_create_connector(struct drm_encoder *encoder)
 	struct drm_connector *connector = &xhdmi->connector;
 	int ret;
 
+
+	dev_dbg(xhdmi->dev, "%s\n", __func__);
+
 	connector->polled = DRM_CONNECTOR_POLL_HPD;
 	connector->interlace_allowed = true;
 
@@ -2066,6 +2070,8 @@ static int xlnx_drm_hdmi_bind(struct device *dev, struct device *master,
 	drm_encoder_init(drm_dev, encoder, &xlnx_drm_hdmi_encoder_funcs,
 			 DRM_MODE_ENCODER_TMDS, NULL);
 	drm_encoder_helper_add(encoder, &xlnx_drm_hdmi_encoder_helper_funcs);
+
+	dev_dbg(xhdmi->dev, "%s\n", __func__);
 
 	/* create connector */
 	ret = xlnx_drm_hdmi_create_connector(encoder);

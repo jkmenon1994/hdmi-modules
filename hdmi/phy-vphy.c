@@ -65,6 +65,9 @@
 #define hdmi_mutex_lock(x) mutex_lock(x)
 #define hdmi_mutex_unlock(x) mutex_unlock(x)
 
+
+#define dev_dbg dev_info
+
 /**
  * struct xvphy_lane - representation of a lane
  * @phy: pointer to the kernel PHY device
@@ -428,6 +431,7 @@ static int xvphy_probe(struct platform_device *pdev)
 	u16 DrpVal;
 
 	dev_info(&pdev->dev, "probed\n");
+	dev_info(&pdev->dev, "probe: %s\n",__func__);
 	vphydev = devm_kzalloc(&pdev->dev, sizeof(*vphydev), GFP_KERNEL);
 	if (!vphydev)
 		return -ENOMEM;

@@ -157,6 +157,10 @@ extern "C" {
 #include "xdebug.h"
 #include "xvidc.h"
 #include "xv_hdmic.h"
+#include <linux/module.h>
+
+
+#define dev_dbg dev_info
 
 /************************** Constant Definitions *****************************/
 

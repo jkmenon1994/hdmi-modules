@@ -203,27 +203,34 @@ void XVphy_InterruptHandler(XVphy *InstancePtr)
 	Xil_AssertVoid(InstancePtr != NULL);
 	Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
+	printk("%s: Type of Interrupt received %x \n", IntrStatus);
 	/* Determine what kind of interrupts have occurred. */
 	IntrStatus = XVphy_ReadReg(InstancePtr->Config.BaseAddr,
 			XVPHY_INTR_STS_REG);
 
 	if (IntrStatus & XVPHY_INTR_CPLL_LOCK_MASK) {
+		printk("%s: IntrStatus: XVPHY_INTR_CPLL_LOCK_MASK %x \n", __func__, IntrStatus);
+
 		InstancePtr->IntrCpllLockHandler(
 				InstancePtr->IntrCpllLockCallbackRef);
 	}
 	if (IntrStatus & XVPHY_INTR_QPLL_LOCK_MASK) {
+		printk("%s: IntrStatus: XVPHY_INTR_QPLL_LOCK_MASK %x \n", __func__, IntrStatus);
 		InstancePtr->IntrQpllLockHandler(
 				InstancePtr->IntrQpllLockCallbackRef);
 	}
 	if (IntrStatus & XVPHY_INTR_QPLL1_LOCK_MASK) {
+		printk("%s: IntrStatus: XVPHY_INTR_QPLL1_LOCK_MASK %x \n", __func__, IntrStatus);
 		InstancePtr->IntrQpll1LockHandler(
 				InstancePtr->IntrQpll1LockCallbackRef);
 	}
 	if (IntrStatus & XVPHY_INTR_TXRESETDONE_MASK) {
+		printk("%s: IntrStatus: XVPHY_INTR_TXRESETDONE_MASK %x \n", __func__, IntrStatus);
 		InstancePtr->IntrTxResetDoneHandler(
 				InstancePtr->IntrTxResetDoneCallbackRef);
 	}
 	if (IntrStatus & XVPHY_INTR_TXALIGNDONE_MASK) {
+		printk("%s: IntrStatus: XVPHY_INTR_TXALIGNDONE_MASK %x \n", __func__, IntrStatus);
 		InstancePtr->IntrTxAlignDoneHandler(
 				InstancePtr->IntrTxAlignDoneCallbackRef);
 	}
@@ -232,6 +239,8 @@ void XVphy_InterruptHandler(XVphy *InstancePtr)
 				InstancePtr->IntrRxResetDoneCallbackRef);
 	}
 	if (IntrStatus & XVPHY_INTR_TXCLKDETFREQCHANGE_MASK) {
+		 printk("%s: IntrStatus: XVPHY_INTR_TXCLKDETFREQCHANGE_MASK %x \n", __func__, IntrStatus);
+
 		InstancePtr->IntrTxClkDetFreqChangeHandler(
 				InstancePtr->IntrTxClkDetFreqChangeCallbackRef);
 	}
@@ -240,6 +249,8 @@ void XVphy_InterruptHandler(XVphy *InstancePtr)
 				InstancePtr->IntrRxClkDetFreqChangeCallbackRef);
 	}
 	if (IntrStatus & XVPHY_INTR_TXMMCMUSRCLK_LOCK_MASK) {
+	       printk("%s: IntrStatus: XVPHY_INTR_TXMMCMUSRCLK_LOCK_MASK %x \n", __func__, IntrStatus);
+
 		InstancePtr->IntrTxMmcmLockHandler(
 				InstancePtr->IntrTxMmcmLockCallbackRef);
 	}
@@ -248,6 +259,8 @@ void XVphy_InterruptHandler(XVphy *InstancePtr)
 				InstancePtr->IntrRxMmcmLockCallbackRef);
 	}
 	if (IntrStatus & XVPHY_INTR_TXTMRTIMEOUT_MASK) {
+	                printk("%s: IntrStatus: XVPHY_INTR_TXTMRTIMEOUT_MASK %x \n", __func__, IntrStatus);
+
 		InstancePtr->IntrTxTmrTimeoutHandler(
 				InstancePtr->IntrTxTmrTimeoutCallbackRef);
 	}

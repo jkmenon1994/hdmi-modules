@@ -2084,7 +2084,7 @@ static void xlnx_drm_hdmi_initialize(struct xlnx_drm_hdmi *xhdmi)
 	u32 Status;
 	int ret;
 
-	dev_dbg(xhdmi->dev, " INIT...%s\n", __func__);
+	dev_info(xhdmi->dev, " INIT...%s\n", __func__);
 
 	hdmi_mutex_lock(&xhdmi->hdmi_mutex);
 	HdmiTxSsPtr = (XV_HdmiTxSs *)&xhdmi->xv_hdmitxss;

@@ -1,4 +1,5 @@
 /*
+	oint8_t reg0 = 0x44;
  * dp159 redriver and retimer
  * Copyright (C) 2016, 2017 Leon Woestenberg <leon@sidebranch.com>
  *
@@ -137,10 +138,16 @@ static int dp159_probe(struct i2c_client *client,
 	struct clk *clk;
 	struct clk_init_data init;
 	int ret;
+	uint8_t reg_00h, reg_01h;
 
 	/* Check if the adapter supports the needed features */
 	if (!i2c_check_functionality(client->adapter, I2C_FUNC_SMBUS_BYTE_DATA))
 		return -EIO;
+
+	reg_00h = dp159_read(client, 0);
+	reg_01h = dp159_read(client, 1);
+
+	dev_info(&client->dev, "DEVICE ID reg:00h = %d  reg:01h = %d \n",reg_00h, reg_01h);
 
 	if ((dp159_read(client, 0) != 'D') || (dp159_read(client, 1) != 'P')) {
 		dev_err(&client->dev, "Identification registers do not indicate DP159 presence.\n");

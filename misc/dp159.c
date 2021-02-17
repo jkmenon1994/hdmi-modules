@@ -138,7 +138,7 @@ static int dp159_probe(struct i2c_client *client,
 	struct clk *clk;
 	struct clk_init_data init;
 	int ret;
-	int reg_val;
+	uint8_t reg_val;
 	int i;
 
 	/* Check if the adapter supports the needed features */

@@ -246,22 +246,22 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     Event = XV_HdmiTx_ReadReg(InstancePtr->Config.BaseAddress,
                             (XV_HDMITX_PIO_IN_EVT_OFFSET));
 
-    //printk("%s: Reading PIO IN Event register: 0xB0000068: %x \n", __func__, Event);
+    printk("%s: Reading PIO IN Event register: 0xB0000068: %x \n", __func__, Event);
     /* Clear event flags */
     XV_HdmiTx_WriteReg(InstancePtr->Config.BaseAddress,
                     (XV_HDMITX_PIO_IN_EVT_OFFSET),
                     (Event));
 
-    //printk("%s: Event Reg clear flags val %x: %x \n", __func__, XV_HDMITX_PIO_IN_EVT_OFFSET, Event);
+    printk("%s: Event Reg clear flags val %x: %x \n", __func__, XV_HDMITX_PIO_IN_EVT_OFFSET, Event);
     /* Read data */
     Data = XV_HdmiTx_ReadReg(InstancePtr->Config.BaseAddress,
                             (XV_HDMITX_PIO_IN_OFFSET));
 
-    //printk("%s: XV_HDMITX_PIO_IN_OFFSET(%x): %x\n",__func__, XV_HDMITX_PIO_IN_OFFSET, Data);
+    printk("%s: XV_HDMITX_PIO_IN_OFFSET(%x): %x\n",__func__, XV_HDMITX_PIO_IN_OFFSET, Data);
     /* HPD event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_HPD_TOGGLE_MASK)) {
 
-	   // printk("HPD toggle maske check \n");
+	    printk("HPD toggle maske check \n");
         // Check if user callback has been registered
         if (InstancePtr->IsToggleCallbackSet) {
             InstancePtr->ToggleCallback(InstancePtr->ToggleRef);
@@ -271,9 +271,9 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     /* HPD event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_HPD_MASK)) {
 
-	    //printk("%s: Event reg val at HPD event: %x \n",__func__, Event);
+	    printk("%s: Event reg val at HPD event: %x \n",__func__, Event);
 
-	    //printk("%s: PIO Data reg val at HPD event: %x \n",__func__, Data);
+	    printk("%s: PIO Data reg val at HPD event: %x \n",__func__, Data);
         // Check the HPD status
         if ((Data) & (XV_HDMITX_PIO_IN_HPD_MASK))
 	{

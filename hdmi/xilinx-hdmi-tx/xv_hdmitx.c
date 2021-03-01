@@ -500,6 +500,7 @@ int XV_HdmiTx_Scrambler(XV_HdmiTx *InstancePtr) {
     // Update TMDS configuration
     // Only when it is a HDMI 2.0 sink device
     if (InstancePtr->Stream.IsHdmi20) {
+	printk("%s: Updating TMDS configuration \n",__func__);
 
         DdcBuf[0] = 0x20;   // Offset scrambler status
         Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1,
@@ -533,6 +534,7 @@ int XV_HdmiTx_Scrambler(XV_HdmiTx *InstancePtr) {
 
         // Write failed
         else {
+		printk("%s: TMDS scrambler bit write failed \n",__func__);
             return XST_FAILURE;
         }
     }
@@ -564,6 +566,7 @@ int XV_HdmiTx_ClockRatio(XV_HdmiTx *InstancePtr) {
     // Update TMDS configuration
     // Only when it is a HDMI 2.0 sink device
     if (InstancePtr->Stream.IsHdmi20) {
+	    printk("%s: Updating TMDS configuration for clock ratio \n", __func__);
 
         DdcBuf[0] = 0x20;   // Offset scrambler status
         Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));
@@ -571,6 +574,7 @@ int XV_HdmiTx_ClockRatio(XV_HdmiTx *InstancePtr) {
         // Check if write was successful
         if (Status == (XST_SUCCESS)) {
 
+		prink("%s: write successfull \n", __func__);
             // Read TMDS configuration
             Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1,
                 (u8*)&DdcBuf, (TRUE));

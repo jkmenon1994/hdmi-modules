@@ -1713,6 +1713,8 @@ void XV_HdmiTxSs_StreamStart(XV_HdmiTxSs *InstancePtr)
 				 InstancePtr->HdmiTxPtr->Stream.Video.ColorFormatId,
 				 InstancePtr->HdmiTxPtr->Stream.Video.ColorDepth);
 
+  printk("%s: TmdsCLK : %d \n", __func__, TmdsClk);
+ 
   // Set TX scrambler
   XV_HdmiTx_Scrambler(InstancePtr->HdmiTxPtr);
 
@@ -1723,6 +1725,7 @@ void XV_HdmiTxSs_StreamStart(XV_HdmiTxSs *InstancePtr)
 #endif
   if ((InstancePtr->HdmiTxPtr->Stream.IsHdmi20 == (FALSE))
   		&& (TmdsClk > 340000000)) {
+	 printk("%s: SPEC not supporting ....\n",__func__);
       xdbg_printf(XDBG_DEBUG_GENERAL,
                   "\r\nWarning: Sink does not support HDMI 2.0\r\n");
       xdbg_printf(XDBG_DEBUG_GENERAL,

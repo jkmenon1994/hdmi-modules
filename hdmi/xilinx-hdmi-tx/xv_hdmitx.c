@@ -530,6 +530,9 @@ int XV_HdmiTx_Scrambler(XV_HdmiTx *InstancePtr) {
             // Write back TMDS configuration
             Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 2,
             (u8*)&DdcBuf, (TRUE));
+
+	    printk("%s:DDC scrambler bit status update: status: %d, DdcBuf[0]: 0x%x, DdcBuf[1]: 0x%x \n",
+			   __func__, Status, DdcBuf[0], DdcBuf[1]); 
         }
 
         // Write failed
@@ -598,6 +601,9 @@ int XV_HdmiTx_ClockRatio(XV_HdmiTx *InstancePtr) {
             // Write back TMDS configuration
             Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 2,
                 (u8*)&DdcBuf, (TRUE));
+	    printk("%s:DDC TMDS clock ratio bit status update: status: %d, DdcBuf[0]: 0x%x, DdcBuf[1]: 0x%x \n",
+			   __func__, Status, DdcBuf[0], DdcBuf[1]); 
+ 
         }
     	return XST_SUCCESS;
     }
@@ -676,7 +682,7 @@ void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)
     /* Check if write was successful */
     if (Status == (XST_SUCCESS)) {
         Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
-        xil_printf("HDMI TX: SCDC 0x01 : %0x\r\n", DdcBuf[0]);
+        printk("HDMI TX: SCDC 0x01 : %0x\r\n", DdcBuf[0]);
     }
 
     /* TMDS configuration. Offset Scrambler status */
@@ -686,7 +692,7 @@ void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)
     /* Check if write was successful */
     if (Status == (XST_SUCCESS)) {
         Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
-        xil_printf("HDMI TX: SCDC 0x20 : %0x\r\n", DdcBuf[0]);
+        printk("HDMI TX: SCDC 0x20 : %0x\r\n", DdcBuf[0]);
     }
 
     /* Scrambler status. Offset Scrambler status */
@@ -696,7 +702,7 @@ void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)
     /* Check if write was successful */
     if (Status == (XST_SUCCESS)) {
         Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
-        xil_printf("HDMI TX: SCDC 0x21 : %0x\r\n", DdcBuf[0]);
+        printk("HDMI TX: SCDC 0x21 : %0x\r\n", DdcBuf[0]);
     }
 
     /* Status flags. Offset Scrambler status */
@@ -706,7 +712,7 @@ void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)
     /* Check if write was successful */
     if (Status == (XST_SUCCESS)) {
         Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
-        xil_printf("HDMI TX: SCDC 0x40 : %0x\r\n", DdcBuf[0]);
+        printk("HDMI TX: SCDC 0x40 : %0x\r\n", DdcBuf[0]);
     }
 }
 

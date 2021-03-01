@@ -515,6 +515,8 @@ static void TxConnectCallback(void *CallbackRef)
 		xhdmi->is_hdmi_20_sink = (xst_hdmi20 == XST_SUCCESS);
 		XVphy_IBufDsEnable(VphyPtr, 0, XVPHY_DIR_TX, (TRUE));
 		XV_HdmiTxSs_StreamStart(HdmiTxSsPtr);
+		dev_dbg(xhdmi->dev,"Showing the SCDC status bits \n");
+		XV_HdmiTxSs_ShowSCDC(HdmiTxSsPtr);
 		/* stream never goes down on disconnect. Force hdcp event */
 		if (xhdmi->hdmi_stream_up &&
 			XV_HdmiTxSs_HdcpIsReady(HdmiTxSsPtr) &&

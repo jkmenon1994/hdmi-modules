@@ -2280,6 +2280,13 @@ int XV_HdmiTxSs_DetectHdmi20(XV_HdmiTxSs *InstancePtr)
       return (XV_HdmiTx_DetectHdmi20(InstancePtr->HdmiTxPtr));
 }
 
+
+int XV_HdmiTxSs_ShowSCDC(XV_HdmiTxSs *InstancePtr)
+{
+      return (XV_HdmiTx_ShowSCDC(InstancePtr->HdmiTxPtr));
+}
+
+
 /*****************************************************************************/
 /**
 *

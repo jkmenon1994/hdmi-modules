@@ -503,6 +503,7 @@ void XV_HdmiTxSs_SetVideoStreamScramblingOverrideFlag(XV_HdmiTxSs *InstancePtr,
 void XV_HdmiTxSs_SetTmdsClockRatio(XV_HdmiTxSs *InstancePtr, u8 Ratio);
 u32 XV_HdmiTxSs_GetTmdsClockFreqHz(XV_HdmiTxSs *InstancePtr);
 int XV_HdmiTxSs_DetectHdmi20(XV_HdmiTxSs *InstancePtr);
+void XV_HdmiTxSs_ShowSCDC(XV_HdmiTxSs *InstancePtr);
 void XV_HdmiTxSs_RefClockChangeInit(XV_HdmiTxSs *InstancePtr);
 void XV_HdmiTxSs_ReportInfo(XV_HdmiTxSs *InstancePtr);
 int XV_HdmiTxSs_IsStreamUp(XV_HdmiTxSs *InstancePtr);

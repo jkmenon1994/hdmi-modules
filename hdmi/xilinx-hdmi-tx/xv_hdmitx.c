@@ -574,7 +574,7 @@ int XV_HdmiTx_ClockRatio(XV_HdmiTx *InstancePtr) {
         // Check if write was successful
         if (Status == (XST_SUCCESS)) {
 
-		prink("%s: write successfull \n", __func__);
+		printk("%s: write successfull \n", __func__);
             // Read TMDS configuration
             Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1,
                 (u8*)&DdcBuf, (TRUE));

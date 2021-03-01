@@ -2281,9 +2281,9 @@ int XV_HdmiTxSs_DetectHdmi20(XV_HdmiTxSs *InstancePtr)
 }
 
 
-int XV_HdmiTxSs_ShowSCDC(XV_HdmiTxSs *InstancePtr)
+void XV_HdmiTxSs_ShowSCDC(XV_HdmiTxSs *InstancePtr)
 {
-      return (XV_HdmiTx_ShowSCDC(InstancePtr->HdmiTxPtr));
+      XV_HdmiTx_ShowSCDC(InstancePtr->HdmiTxPtr);
 }
 
 

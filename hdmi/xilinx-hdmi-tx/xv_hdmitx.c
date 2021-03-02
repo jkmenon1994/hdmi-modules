@@ -724,18 +724,22 @@ void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)
     /* Check if write was successful */
     if (Status == (XST_SUCCESS)) {
         Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
-        printk("HDMI TX: SCDC 0xD3-0xDA : %x\r\n", DdcBuf[0]);
+        printk("HDMI TX: SCDC 0x%x: %x\r\n", 0xD3 + i, DdcBuf[0]);
     }
    }
-
-    DdcBuf[0] = 0xD5;
+     int j;
+    /* Device ID string  */
+    for ( j = 0; j < 22; j ++) {
+    DdcBuf[0] = 0xDE + j;
+    printk("Reading offset 0x%x \n", DdcBuf[0]);
     Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));
     /* Check if write was successful */
     if (Status == (XST_SUCCESS)) {
         Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
-        printk("HDMI TX: SCDC 0xD5 : %x\r\n", DdcBuf[0]);
+        printk("HDMI TX: SCDC 0x%x : %x\r\n", 0xDE + j, DdcBuf[0]);
     }
-   
+   }
+ 
     /* Manufacturer first octet */
     DdcBuf[0] = 0xD2;
     Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));
@@ -764,6 +768,37 @@ void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)
     if (Status == (XST_SUCCESS)) {
         Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
         printk("HDMI TX: SCDC 0xD0 : %x\r\n", DdcBuf[0]);
+    }
+
+    /* Hardware major revision | minor version*/
+    DdcBuf[0] = 0xDB;
+    Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));
+
+    /* Check if write was successful */
+    if (Status == (XST_SUCCESS)) {
+        Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
+        printk("HDMI TX: SCDC 0xDB : %x\r\n", DdcBuf[0]);
+    }
+
+
+    /* software major revision*/
+    DdcBuf[0] = 0xDC;
+    Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));
+
+    /* Check if write was successful */
+    if (Status == (XST_SUCCESS)) {
+        Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
+        printk("HDMI TX: SCDC 0xDC : %x\r\n", DdcBuf[0]);
+    }
+
+    /* software minor revision*/
+    DdcBuf[0] = 0xDD;
+    Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));
+
+    /* Check if write was successful */
+    if (Status == (XST_SUCCESS)) {
+        Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
+        printk("HDMI TX: SCDC 0xDD : %x\r\n", DdcBuf[0]);
     }
 
 

@@ -719,8 +719,8 @@ void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)
     /* Device ID string  */
     for ( i = 0; i < 8; i ++) {
     DdcBuf[0] = 0xD3 + i;
+    printk("Reading offset 0x%x \n", DdcBuf[0]);
     Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));
-
     /* Check if write was successful */
     if (Status == (XST_SUCCESS)) {
         Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
@@ -728,6 +728,14 @@ void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)
     }
    }
 
+    DdcBuf[0] = 0xD5;
+    Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));
+    /* Check if write was successful */
+    if (Status == (XST_SUCCESS)) {
+        Status = XV_HdmiTx_DdcRead(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (TRUE));
+        printk("HDMI TX: SCDC 0xD5 : %0x\r\n", DdcBuf[0]);
+    }
+   
     /* Manufacturer first octet */
     DdcBuf[0] = 0xD2;
     Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));

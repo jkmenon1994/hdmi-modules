@@ -889,6 +889,8 @@ static int xlnx_drm_hdmi_get_edid_block(void *data, u8 *buf, unsigned int block,
 
 	/* then copy the requested 128-byte block(s) */
 	memcpy(buf, buffer + block * 128, len);
+
+	dev_dbg(xhdmi->dev, "EDID Raw data %d \n", *buf);
 	/* free our local buffer */
 	kfree(buffer);
 	return 0;

@@ -715,8 +715,9 @@ void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)
         printk("HDMI TX: SCDC 0x40 : %0x\r\n", DdcBuf[0]);
     }
 
+    int i;
     /* Device ID string  */
-    for ( int i = 0; i < 8; i ++) {
+    for ( i = 0; i < 8; i ++) {
     DdcBuf[0] = 0xD3 + i;
     Status = XV_HdmiTx_DdcWrite(InstancePtr, 0x54, 1, (u8*)&DdcBuf, (FALSE));
 

@@ -2314,6 +2314,49 @@ error_phy:
 
 }
 
+
+struct xlnx_hdmitx_audio_data *hdmitx_get_audio_data(struct device *dev)
+{
+        struct dlnx_hdmi_tx *xhdmi = dev_get_drvdata(dev);
+
+        if (!xhdmi)
+                return NULL;
+        else
+                return xhdmi->tx_audio_data;
+}
+
+
+void hdmitx_audio_startup(struct device *dev)
+{
+        XV_HdmiTxSs *HdmiTxSsPtr;
+        struct dlnx_hdmi_tx *xhdmi = dev_get_drvdata(dev);
+        XV_HdmiTxSs *xv_hdmitxss = (XV_HdmiTxSs *)&xhdmi->xv_hdmitxss;
+
+        hdmi_mutex_lock(&xhdmi->hdmi_mutex);
+        XV_HdmiTxSs_AudioMute(xv_hdmitxss, 0);
+        hdmi_mutex_unlock(&xhdmi->hdmi_mutex);
+}
+
+void hdmitx_audio_shutdown(struct device *dev)
+{
+        XV_HdmiTxSs *HdmiTxSsPtr;
+        struct dlnx_hdmi_tx *xhdmi = dev_get_drvdata(dev);
+        XV_HdmiTxSs *xv_hdmitxss = (XV_HdmiTxSs *)&xhdmi->xv_hdmitxss;
+
+        hdmi_mutex_lock(&xhdmi->hdmi_mutex);
+        XV_HdmiTxSs_AudioMute(xv_hdmitxss, 1);
+        hdmi_mutex_unlock(&xhdmi->hdmi_mutex);
+}
+
+void hdmitx_audio_mute(struct device *dev, bool enable)
+{
+        if (enable)
+                hdmitx_audio_shutdown(dev);
+        else
+                hdmitx_audio_startup(dev);
+}
+
+
 static int dlnx_hdmi_tx_remove(struct platform_device *pdev)
 {
 	printk(KERN_ERR "%s: \n",__func__);

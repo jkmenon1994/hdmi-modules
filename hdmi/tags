@@ -413,14 +413,14 @@ HBackPorchStart	xilinx-hdmi-tx/xvtc.h	/^	u16 HBackPorchStart;	\/**< Horizontal B
 HBlankPol	xilinx-hdmi-tx/xvtc.h	/^	u8 HBlankPol;		\/**< Horizontal Blank Output$/;"	m	struct:__anon231
 HBlankPolSrc	xilinx-hdmi-tx/xvtc.h	/^	u8 HBlankPolSrc;	\/**< Horizontal Blank Output Polarity Source *\/$/;"	m	struct:__anon232
 HDCP14_KEY1_OFFSET	xilinx-hdmirx.c	1460;"	d	file:
-HDCP14_KEY1_OFFSET	xilinx_drm_hdmi.c	1803;"	d	file:
+HDCP14_KEY1_OFFSET	xilinx_drm_hdmi.c	1811;"	d	file:
 HDCP14_KEY2_OFFSET	xilinx-hdmirx.c	1461;"	d	file:
-HDCP14_KEY2_OFFSET	xilinx_drm_hdmi.c	1804;"	d	file:
+HDCP14_KEY2_OFFSET	xilinx_drm_hdmi.c	1812;"	d	file:
 HDCP1X_CIPHER_BIT_REPEATER_ENABLE	phy-xilinx-vphy/xhdcp1x_cipher.h	89;"	d
 HDCP22_CERTIFICATE_OFFSET	xilinx-hdmirx.c	1459;"	d	file:
-HDCP22_CERTIFICATE_OFFSET	xilinx_drm_hdmi.c	1802;"	d	file:
+HDCP22_CERTIFICATE_OFFSET	xilinx_drm_hdmi.c	1810;"	d	file:
 HDCP22_LC128_OFFSET	xilinx-hdmirx.c	1458;"	d	file:
-HDCP22_LC128_OFFSET	xilinx_drm_hdmi.c	1801;"	d	file:
+HDCP22_LC128_OFFSET	xilinx_drm_hdmi.c	1809;"	d	file:
 HDMIRXSS_H	xilinx-hdmi-rx/xv_hdmirxss.h	89;"	d
 HDMITXSS_H	xilinx-hdmi-tx/xv_hdmitxss.h	95;"	d
 HDMI_MAX_LANES	xilinx-hdmirx.c	48;"	d	file:
@@ -1031,7 +1031,7 @@ SHA256_SIZE	phy-xilinx-vphy/hmac.c	45;"	d	file:
 SIG0	phy-xilinx-vphy/sha2.c	54;"	d	file:
 SIG1	phy-xilinx-vphy/sha2.c	55;"	d	file:
 SIGNATURE_OFFSET	xilinx-hdmirx.c	1457;"	d	file:
-SIGNATURE_OFFSET	xilinx_drm_hdmi.c	1800;"	d	file:
+SIGNATURE_OFFSET	xilinx_drm_hdmi.c	1808;"	d	file:
 SKESendEks	phy-xilinx-vphy/xhdcp22_rx_i.h	/^	XHdcp22_Rx_SKESendEks         		SKESendEks;$/;"	m	union:__anon94
 SKESendEks	phy-xilinx-vphy/xhdcp22_tx_i.h	/^	XHdcp22_Tx_SKESendEks         SKESendEks;$/;"	m	union:__anon17
 SLEEP_H	phy-xilinx-vphy/sleep.h	18;"	d
@@ -1121,7 +1121,7 @@ TXSS_HDCP14_TIMER_OFFSET	xilinx_drm_hdmi.c	67;"	d	file:
 TXSS_HDCP22_OFFSET	xilinx_drm_hdmi.c	68;"	d	file:
 TXSS_TX_OFFSET	xilinx_drm_hdmi.c	64;"	d	file:
 TXSS_VTC_OFFSET	xilinx_drm_hdmi.c	65;"	d	file:
-TX_DEVICE_ID_BASE	xilinx_drm_hdmi.c	1442;"	d	file:
+TX_DEVICE_ID_BASE	xilinx_drm_hdmi.c	1450;"	d	file:
 TX_HDCP22_CIPHER_OFFSET	xilinx_drm_hdmi.c	70;"	d	file:
 TX_HDCP22_RNG_OFFSET	xilinx_drm_hdmi.c	72;"	d	file:
 TX_HDCP22_TIMER_OFFSET	xilinx_drm_hdmi.c	71;"	d	file:
@@ -1268,7 +1268,7 @@ VChromaSrc	xilinx-hdmi-tx/xvtc.h	/^	u8 VChromaSrc;		\/**< Start of Active Chroma
 VFrontPorchSrc	xilinx-hdmi-tx/xvtc.h	/^	u8 VFrontPorchSrc;	\/**< Vertical Front Porch Start Register Source$/;"	m	struct:__anon232
 VIC	phy-xilinx-vphy/xv_hdmic.h	/^	unsigned char VIC;$/;"	m	struct:XHDMIC_AVI_InfoFrame
 VICTABLE_SIZE	phy-xilinx-vphy/xv_hdmic.h	53;"	d
-VPHY_DEVICE_ID_BASE	phy-vphy.c	297;"	d	file:
+VPHY_DEVICE_ID_BASE	phy-vphy.c	299;"	d	file:
 VPrime	phy-xilinx-vphy/xhdcp22_rx.h	/^	u8 VPrime[32];$/;"	m	struct:__anon153
 VPrime	phy-xilinx-vphy/xhdcp22_rx_i.h	/^	u8 VPrime[16];$/;"	m	struct:__anon90
 VPrime	phy-xilinx-vphy/xhdcp22_tx_i.h	/^	u8 VPrime[XHDCP22_TX_V_PRIME_SIZE];$/;"	m	struct:__anon13
@@ -5412,6 +5412,7 @@ XV_HdmiTxSs_SetVideoStreamScramblingFlag	xilinx-hdmi-tx/xv_hdmitxss.c	/^void XV_
 XV_HdmiTxSs_SetVideoStreamScramblingOverrideFlag	xilinx-hdmi-tx/xv_hdmitxss.c	/^void XV_HdmiTxSs_SetVideoStreamScramblingOverrideFlag(XV_HdmiTxSs *InstancePtr,$/;"	f
 XV_HdmiTxSs_SetVideoStreamType	xilinx-hdmi-tx/xv_hdmitxss.c	/^void XV_HdmiTxSs_SetVideoStreamType(XV_HdmiTxSs *InstancePtr, u8 StreamType)$/;"	f
 XV_HdmiTxSs_ShowInfo	xilinx-hdmi-tx/xv_hdmitxss.c	/^int XV_HdmiTxSs_ShowInfo(XV_HdmiTxSs *InstancePtr, char *buff, int buff_size)$/;"	f
+XV_HdmiTxSs_ShowSCDC	xilinx-hdmi-tx/xv_hdmitxss.c	/^int XV_HdmiTxSs_ShowSCDC(XV_HdmiTxSs *InstancePtr)$/;"	f
 XV_HdmiTxSs_Start	xilinx-hdmi-tx/xv_hdmitxss.c	/^void XV_HdmiTxSs_Start(XV_HdmiTxSs *InstancePtr)$/;"	f
 XV_HdmiTxSs_Stop	xilinx-hdmi-tx/xv_hdmitxss.c	/^void XV_HdmiTxSs_Stop(XV_HdmiTxSs *InstancePtr)$/;"	f
 XV_HdmiTxSs_StreamDownCallback	xilinx-hdmi-tx/xv_hdmitxss.c	/^static void XV_HdmiTxSs_StreamDownCallback(void *CallbackRef)$/;"	f	file:
@@ -5431,35 +5432,35 @@ XV_HdmiTxSs_ToggleCallback	xilinx-hdmi-tx/xv_hdmitxss.c	/^static void XV_HdmiTxS
 XV_HdmiTxSs_VRST	xilinx-hdmi-tx/xv_hdmitxss.c	/^void XV_HdmiTxSs_VRST(XV_HdmiTxSs *InstancePtr, u8 Reset)$/;"	f
 XV_HdmiTxSs_VsCallback	xilinx-hdmi-tx/xv_hdmitxss.c	/^static void XV_HdmiTxSs_VsCallback(void *CallbackRef)$/;"	f	file:
 XV_HdmiTxSs_VtcSetup	xilinx-hdmi-tx/xv_hdmitxss.c	/^static int XV_HdmiTxSs_VtcSetup(XV_HdmiTxSs *HdmiTxSsPtr)$/;"	f	file:
-XV_HdmiTx_AudioDisable	xilinx-hdmi-tx/xv_hdmitx.h	761;"	d
-XV_HdmiTx_AudioEnable	xilinx-hdmi-tx/xv_hdmitx.h	740;"	d
+XV_HdmiTx_AudioDisable	xilinx-hdmi-tx/xv_hdmitx.h	762;"	d
+XV_HdmiTx_AudioEnable	xilinx-hdmi-tx/xv_hdmitx.h	741;"	d
 XV_HdmiTx_AudioFormatType	xilinx-hdmi-tx/xv_hdmitx.h	/^} XV_HdmiTx_AudioFormatType;$/;"	t	typeref:enum:__anon239
-XV_HdmiTx_AudioMute	xilinx-hdmi-tx/xv_hdmitx.h	802;"	d
+XV_HdmiTx_AudioMute	xilinx-hdmi-tx/xv_hdmitx.h	803;"	d
 XV_HdmiTx_AudioStream	xilinx-hdmi-tx/xv_hdmitx.h	/^} XV_HdmiTx_AudioStream;$/;"	t	typeref:struct:__anon241
-XV_HdmiTx_AudioUnmute	xilinx-hdmi-tx/xv_hdmitx.h	781;"	d
-XV_HdmiTx_AuxDisable	xilinx-hdmi-tx/xv_hdmitx.h	689;"	d
-XV_HdmiTx_AuxEnable	xilinx-hdmi-tx/xv_hdmitx.h	668;"	d
-XV_HdmiTx_AuxIntrDisable	xilinx-hdmi-tx/xv_hdmitx.h	723;"	d
-XV_HdmiTx_AuxIntrEnable	xilinx-hdmi-tx/xv_hdmitx.h	706;"	d
+XV_HdmiTx_AudioUnmute	xilinx-hdmi-tx/xv_hdmitx.h	782;"	d
+XV_HdmiTx_AuxDisable	xilinx-hdmi-tx/xv_hdmitx.h	690;"	d
+XV_HdmiTx_AuxEnable	xilinx-hdmi-tx/xv_hdmitx.h	669;"	d
+XV_HdmiTx_AuxIntrDisable	xilinx-hdmi-tx/xv_hdmitx.h	724;"	d
+XV_HdmiTx_AuxIntrEnable	xilinx-hdmi-tx/xv_hdmitx.h	707;"	d
 XV_HdmiTx_AuxSend	xilinx-hdmi-tx/xv_hdmitx.c	/^u32 XV_HdmiTx_AuxSend(XV_HdmiTx *InstancePtr)$/;"	f
-XV_HdmiTx_Bridge_pixel	xilinx-hdmi-tx/xv_hdmitx.h	471;"	d
-XV_HdmiTx_Bridge_yuv420	xilinx-hdmi-tx/xv_hdmitx.h	442;"	d
+XV_HdmiTx_Bridge_pixel	xilinx-hdmi-tx/xv_hdmitx.h	472;"	d
+XV_HdmiTx_Bridge_yuv420	xilinx-hdmi-tx/xv_hdmitx.h	443;"	d
 XV_HdmiTx_Callback	xilinx-hdmi-tx/xv_hdmitx.h	/^typedef void (*XV_HdmiTx_Callback)(void *CallbackRef);$/;"	t
 XV_HdmiTx_CfgInitialize	xilinx-hdmi-tx/xv_hdmitx.c	/^int XV_HdmiTx_CfgInitialize(XV_HdmiTx *InstancePtr, XV_HdmiTx_Config *CfgPtr,$/;"	f
 XV_HdmiTx_Clear	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_Clear(XV_HdmiTx *InstancePtr)$/;"	f
 XV_HdmiTx_ClearGcpAvmuteBit	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_ClearGcpAvmuteBit(XV_HdmiTx *InstancePtr)$/;"	f
 XV_HdmiTx_ClearGcpClearAvmuteBit	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_ClearGcpClearAvmuteBit(XV_HdmiTx *InstancePtr)$/;"	f
-XV_HdmiTx_ClearMode	xilinx-hdmi-tx/xv_hdmitx.h	837;"	d
+XV_HdmiTx_ClearMode	xilinx-hdmi-tx/xv_hdmitx.h	838;"	d
 XV_HdmiTx_ClockRatio	xilinx-hdmi-tx/xv_hdmitx.c	/^int XV_HdmiTx_ClockRatio(XV_HdmiTx *InstancePtr) {$/;"	f
 XV_HdmiTx_Config	xilinx-hdmi-tx/xv_hdmitx.h	/^} XV_HdmiTx_Config;$/;"	t	typeref:struct:__anon240
 XV_HdmiTx_ConfigTable	xilinx_drm_hdmi.c	/^XV_HdmiTx_Config XV_HdmiTx_ConfigTable[XPAR_XV_HDMITX_NUM_INSTANCES];$/;"	v
-XV_HdmiTx_DdcDisable	xilinx-hdmi-tx/xv_hdmitx.h	600;"	d
-XV_HdmiTx_DdcEnable	xilinx-hdmi-tx/xv_hdmitx.h	583;"	d
+XV_HdmiTx_DdcDisable	xilinx-hdmi-tx/xv_hdmitx.h	601;"	d
+XV_HdmiTx_DdcEnable	xilinx-hdmi-tx/xv_hdmitx.h	584;"	d
 XV_HdmiTx_DdcGetAck	xilinx-hdmi-tx/xv_hdmitx.c	/^static int XV_HdmiTx_DdcGetAck(XV_HdmiTx *InstancePtr)$/;"	f	file:
 XV_HdmiTx_DdcInit	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_DdcInit(XV_HdmiTx *InstancePtr, u32 Frequency)$/;"	f
-XV_HdmiTx_DdcIntrClear	xilinx-hdmi-tx/xv_hdmitx.h	651;"	d
-XV_HdmiTx_DdcIntrDisable	xilinx-hdmi-tx/xv_hdmitx.h	634;"	d
-XV_HdmiTx_DdcIntrEnable	xilinx-hdmi-tx/xv_hdmitx.h	617;"	d
+XV_HdmiTx_DdcIntrClear	xilinx-hdmi-tx/xv_hdmitx.h	652;"	d
+XV_HdmiTx_DdcIntrDisable	xilinx-hdmi-tx/xv_hdmitx.h	635;"	d
+XV_HdmiTx_DdcIntrEnable	xilinx-hdmi-tx/xv_hdmitx.h	618;"	d
 XV_HdmiTx_DdcRead	xilinx-hdmi-tx/xv_hdmitx.c	/^int XV_HdmiTx_DdcRead(XV_HdmiTx *InstancePtr, u8 Slave, u16 Length,$/;"	f
 XV_HdmiTx_DdcReadData	xilinx-hdmi-tx/xv_hdmitx.c	/^static u8 XV_HdmiTx_DdcReadData(XV_HdmiTx *InstancePtr)$/;"	f	file:
 XV_HdmiTx_DdcWaitForDone	xilinx-hdmi-tx/xv_hdmitx.c	/^static int XV_HdmiTx_DdcWaitForDone(XV_HdmiTx *InstancePtr)$/;"	f	file:
@@ -5469,38 +5470,38 @@ XV_HdmiTx_DebugInfo	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_DebugInfo(XV_Hdm
 XV_HdmiTx_DetectHdmi20	xilinx-hdmi-tx/xv_hdmitx.c	/^int XV_HdmiTx_DetectHdmi20(XV_HdmiTx *InstancePtr)$/;"	f
 XV_HdmiTx_EXT_SYSRST	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_EXT_SYSRST(XV_HdmiTx *InstancePtr, u8 Reset)$/;"	f
 XV_HdmiTx_EXT_VRST	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_EXT_VRST(XV_HdmiTx *InstancePtr, u8 Reset)$/;"	f
-XV_HdmiTx_GetAudioChannels	xilinx-hdmi-tx/xv_hdmitx.h	887;"	d
+XV_HdmiTx_GetAudioChannels	xilinx-hdmi-tx/xv_hdmitx.h	888;"	d
 XV_HdmiTx_GetAudioFormat	xilinx-hdmi-tx/xv_hdmitx.c	/^XV_HdmiTx_AudioFormatType XV_HdmiTx_GetAudioFormat(XV_HdmiTx *InstancePtr)$/;"	f
-XV_HdmiTx_GetMode	xilinx-hdmi-tx/xv_hdmitx.h	856;"	d
-XV_HdmiTx_GetPixelPackingPhase	xilinx-hdmi-tx/xv_hdmitx.h	901;"	d
-XV_HdmiTx_GetSampleRate	xilinx-hdmi-tx/xv_hdmitx.h	873;"	d
-XV_HdmiTx_GetTime1Ms	xilinx-hdmi-tx/xv_hdmitx.h	349;"	d
+XV_HdmiTx_GetMode	xilinx-hdmi-tx/xv_hdmitx.h	857;"	d
+XV_HdmiTx_GetPixelPackingPhase	xilinx-hdmi-tx/xv_hdmitx.h	902;"	d
+XV_HdmiTx_GetSampleRate	xilinx-hdmi-tx/xv_hdmitx.h	874;"	d
+XV_HdmiTx_GetTime1Ms	xilinx-hdmi-tx/xv_hdmitx.h	350;"	d
 XV_HdmiTx_GetTmdsClk	xilinx-hdmi-tx/xv_hdmitx.c	/^u32 XV_HdmiTx_GetTmdsClk (XV_HdmiTx *InstancePtr,$/;"	f
-XV_HdmiTx_GetVersion	xilinx-hdmi-tx/xv_hdmitx.h	363;"	d
+XV_HdmiTx_GetVersion	xilinx-hdmi-tx/xv_hdmitx.h	364;"	d
 XV_HdmiTx_HandlerType	xilinx-hdmi-tx/xv_hdmitx.h	/^} XV_HdmiTx_HandlerType;$/;"	t	typeref:enum:__anon237
 XV_HdmiTx_INT_LRST	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_INT_LRST(XV_HdmiTx *InstancePtr, u8 Reset)$/;"	f
 XV_HdmiTx_INT_VRST	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_INT_VRST(XV_HdmiTx *InstancePtr, u8 Reset)$/;"	f
 XV_HdmiTx_In32	xilinx-hdmi-tx/xv_hdmitx_hw.h	335;"	d
 XV_HdmiTx_IntrHandler	xilinx-hdmi-tx/xv_hdmitx_intr.c	/^void XV_HdmiTx_IntrHandler(void *InstancePtr)$/;"	f
-XV_HdmiTx_IsMasked	xilinx-hdmi-tx/xv_hdmitx.h	1051;"	d
+XV_HdmiTx_IsMasked	xilinx-hdmi-tx/xv_hdmitx.h	1052;"	d
 XV_HdmiTx_IsStreamConnected	xilinx-hdmi-tx/xv_hdmitx.c	/^int XV_HdmiTx_IsStreamConnected(XV_HdmiTx *InstancePtr)$/;"	f
 XV_HdmiTx_IsStreamScrambled	xilinx-hdmi-tx/xv_hdmitx.c	/^int XV_HdmiTx_IsStreamScrambled(XV_HdmiTx *InstancePtr)$/;"	f
 XV_HdmiTx_LookupConfig	xilinx-hdmi-tx/xv_hdmitx_sinit.c	/^XV_HdmiTx_Config *XV_HdmiTx_LookupConfig(u16 DeviceId)$/;"	f
 XV_HdmiTx_LookupVic	xilinx-hdmi-tx/xv_hdmitx.c	/^u8 XV_HdmiTx_LookupVic(XVidC_VideoMode VideoMode)$/;"	f
-XV_HdmiTx_MaskDisable	xilinx-hdmi-tx/xv_hdmitx.h	919;"	d
-XV_HdmiTx_MaskEnable	xilinx-hdmi-tx/xv_hdmitx.h	938;"	d
-XV_HdmiTx_MaskNoise	xilinx-hdmi-tx/xv_hdmitx.h	959;"	d
-XV_HdmiTx_MaskSetBlue	xilinx-hdmi-tx/xv_hdmitx.h	1029;"	d
-XV_HdmiTx_MaskSetGreen	xilinx-hdmi-tx/xv_hdmitx.h	1008;"	d
-XV_HdmiTx_MaskSetRed	xilinx-hdmi-tx/xv_hdmitx.h	987;"	d
+XV_HdmiTx_MaskDisable	xilinx-hdmi-tx/xv_hdmitx.h	920;"	d
+XV_HdmiTx_MaskEnable	xilinx-hdmi-tx/xv_hdmitx.h	939;"	d
+XV_HdmiTx_MaskNoise	xilinx-hdmi-tx/xv_hdmitx.h	960;"	d
+XV_HdmiTx_MaskSetBlue	xilinx-hdmi-tx/xv_hdmitx.h	1030;"	d
+XV_HdmiTx_MaskSetGreen	xilinx-hdmi-tx/xv_hdmitx.h	1009;"	d
+XV_HdmiTx_MaskSetRed	xilinx-hdmi-tx/xv_hdmitx.h	988;"	d
 XV_HdmiTx_Out32	xilinx-hdmi-tx/xv_hdmitx_hw.h	336;"	d
-XV_HdmiTx_PioDisable	xilinx-hdmi-tx/xv_hdmitx.h	515;"	d
-XV_HdmiTx_PioEnable	xilinx-hdmi-tx/xv_hdmitx.h	498;"	d
-XV_HdmiTx_PioIntrClear	xilinx-hdmi-tx/xv_hdmitx.h	566;"	d
-XV_HdmiTx_PioIntrDisable	xilinx-hdmi-tx/xv_hdmitx.h	549;"	d
-XV_HdmiTx_PioIntrEnable	xilinx-hdmi-tx/xv_hdmitx.h	532;"	d
+XV_HdmiTx_PioDisable	xilinx-hdmi-tx/xv_hdmitx.h	516;"	d
+XV_HdmiTx_PioEnable	xilinx-hdmi-tx/xv_hdmitx.h	499;"	d
+XV_HdmiTx_PioIntrClear	xilinx-hdmi-tx/xv_hdmitx.h	567;"	d
+XV_HdmiTx_PioIntrDisable	xilinx-hdmi-tx/xv_hdmitx.h	550;"	d
+XV_HdmiTx_PioIntrEnable	xilinx-hdmi-tx/xv_hdmitx.h	533;"	d
 XV_HdmiTx_ReadReg	xilinx-hdmi-tx/xv_hdmitx_hw.h	356;"	d
-XV_HdmiTx_Reset	xilinx-hdmi-tx/xv_hdmitx.h	386;"	d
+XV_HdmiTx_Reset	xilinx-hdmi-tx/xv_hdmitx.h	387;"	d
 XV_HdmiTx_Scrambler	xilinx-hdmi-tx/xv_hdmitx.c	/^int XV_HdmiTx_Scrambler(XV_HdmiTx *InstancePtr) {$/;"	f
 XV_HdmiTx_SetAudioChannels	xilinx-hdmi-tx/xv_hdmitx.c	/^int XV_HdmiTx_SetAudioChannels(XV_HdmiTx *InstancePtr, u8 Value)$/;"	f
 XV_HdmiTx_SetAudioFormat	xilinx-hdmi-tx/xv_hdmitx.c	/^int XV_HdmiTx_SetAudioFormat(XV_HdmiTx *InstancePtr, XV_HdmiTx_AudioFormatType Value)$/;"	f
@@ -5512,10 +5513,10 @@ XV_HdmiTx_SetDviMode	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_SetDviMode(XV_H
 XV_HdmiTx_SetGcpAvmuteBit	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_SetGcpAvmuteBit(XV_HdmiTx *InstancePtr)$/;"	f
 XV_HdmiTx_SetGcpClearAvmuteBit	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_SetGcpClearAvmuteBit(XV_HdmiTx *InstancePtr)$/;"	f
 XV_HdmiTx_SetHdmiMode	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_SetHdmiMode(XV_HdmiTx *InstancePtr)$/;"	f
-XV_HdmiTx_SetMode	xilinx-hdmi-tx/xv_hdmitx.h	820;"	d
+XV_HdmiTx_SetMode	xilinx-hdmi-tx/xv_hdmitx.h	821;"	d
 XV_HdmiTx_SetPixelRate	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_SetPixelRate(XV_HdmiTx *InstancePtr)$/;"	f
 XV_HdmiTx_SetSampleRate	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_SetSampleRate(XV_HdmiTx *InstancePtr, u8 SampleRate)$/;"	f
-XV_HdmiTx_SetScrambler	xilinx-hdmi-tx/xv_hdmitx.h	413;"	d
+XV_HdmiTx_SetScrambler	xilinx-hdmi-tx/xv_hdmitx.h	414;"	d
 XV_HdmiTx_SetStream	xilinx-hdmi-tx/xv_hdmitx.c	/^u32 XV_HdmiTx_SetStream(XV_HdmiTx *InstancePtr, XVidC_VideoMode VideoMode,$/;"	f
 XV_HdmiTx_ShowSCDC	xilinx-hdmi-tx/xv_hdmitx.c	/^void XV_HdmiTx_ShowSCDC(XV_HdmiTx *InstancePtr)$/;"	f
 XV_HdmiTx_State	xilinx-hdmi-tx/xv_hdmitx.h	/^} XV_HdmiTx_State;$/;"	t	typeref:enum:__anon238
@@ -5955,7 +5956,8 @@ detected_timings	xilinx-hdmirx.c	/^	struct v4l2_dv_timings detected_timings;$/;"
 dev	phy-vphy.c	/^	struct device *dev;$/;"	m	struct:xvphy_dev	typeref:struct:xvphy_dev::device	file:
 dev	xilinx-hdmirx.c	/^	struct device *dev;$/;"	m	struct:xhdmi_device	typeref:struct:xhdmi_device::device	file:
 dev	xilinx_drm_hdmi.c	/^	struct device *dev;$/;"	m	struct:xlnx_drm_hdmi	typeref:struct:xlnx_drm_hdmi::device	file:
-dev_dbg	xilinx-hdmi-tx/xv_hdmitx.h	161;"	d
+dev_dbg	phy-vphy.c	65;"	d	file:
+dev_dbg	xilinx-hdmi-tx/xv_hdmitx.h	162;"	d
 direction_tx	phy-vphy.c	/^	bool direction_tx;$/;"	m	struct:xvphy_lane	file:
 dp	phy-xilinx-vphy/xhdcp22_rx_i.h	/^	u8 dp[64];$/;"	m	struct:__anon78
 dpms	xilinx_drm_hdmi.c	/^	int dpms;$/;"	m	struct:xlnx_drm_hdmi	file:
@@ -6028,10 +6030,10 @@ hdmi_info_show	xilinx_drm_hdmi.c	/^static ssize_t hdmi_info_show(struct device *
 hdmi_log_show	xilinx-hdmirx.c	/^static ssize_t hdmi_log_show(struct device *sysfs_dev, struct device_attribute *attr,$/;"	f	file:
 hdmi_log_show	xilinx_drm_hdmi.c	/^static ssize_t hdmi_log_show(struct device *sysfs_dev, struct device_attribute *attr,$/;"	f	file:
 hdmi_mutex	xilinx_drm_hdmi.c	/^	struct mutex hdmi_mutex;$/;"	m	struct:xlnx_drm_hdmi	typeref:struct:xlnx_drm_hdmi::mutex	file:
-hdmi_mutex_lock	phy-vphy.c	65;"	d	file:
+hdmi_mutex_lock	phy-vphy.c	67;"	d	file:
 hdmi_mutex_lock	xilinx-hdmirx.c	44;"	d	file:
 hdmi_mutex_lock	xilinx_drm_hdmi.c	60;"	d	file:
-hdmi_mutex_unlock	phy-vphy.c	66;"	d	file:
+hdmi_mutex_unlock	phy-vphy.c	68;"	d	file:
 hdmi_mutex_unlock	xilinx-hdmirx.c	45;"	d	file:
 hdmi_mutex_unlock	xilinx_drm_hdmi.c	61;"	d	file:
 hdmi_stream_is_up	xilinx-hdmirx.c	/^	bool hdmi_stream_is_up;$/;"	m	struct:xhdmi_device	file:

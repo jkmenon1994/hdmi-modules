@@ -2300,6 +2300,14 @@ static int dlnx_hdmi_tx_probe(struct platform_device *pdev)
 		}
 	}
 	dev_info(xhdmi->dev, "probe successful\n");
+        err = dlnx_hdmi_tx_device_init(xhdmi, pdev);
+        if (err) {
+                printk(KERN_ERR "unable to init dlnx-hdmi-tx device");
+                return -EFAULT;
+        }
+
+
+	return ret;
 
 error_phy:
 	dev_info(xhdmi->dev, "probe failed:: error_phy:\n");
@@ -2311,15 +2319,7 @@ error_phy:
 		xhdmi->phy[index] = NULL;
 	}
 
-
-        err = dlnx_hdmi_tx_device_init(xhdmi, pdev);
-        if (err) {
-                printk(KERN_ERR "unable to init dlnx-hdmi-tx device");
-                return -EFAULT;
-        }
-
 	return ret;
-
 }
 
 

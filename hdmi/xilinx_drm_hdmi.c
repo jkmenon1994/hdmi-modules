@@ -817,14 +817,22 @@ static void dlnx_display_mode_set(struct dlnx_hdmi_tx *xhdmi)
 	
 	dev_dbg(xhdmi->dev,"%s\n", __func__);
 	HdmiTxSsPtr = &xhdmi->xv_hdmitxss;
+
+	dev_dbg(xhdmi->dev,"%s2.\n", __func__);
 	VphyPtr = xhdmi->xvphy;
 
+	dev_dbg(xhdmi->dev,"%s3.\n", __func__);
+	
 	hdmi_mutex_lock(&xhdmi->hdmi_mutex);
 	xvphy_mutex_lock(xhdmi->phy[0]);
 	//drm_mode_debug_printmodeline(mode);
 
         id = xhdmi->mode_id;
+
+	dev_dbg(xhdmi->dev,"%s4.\n", __func__);
         adjusted_mode = xlnx_hdmi_modes[id].mode;
+
+	dev_dbg(xhdmi->dev,"%s5.\n", __func__);
 	mode = xlnx_hdmi_modes[id].mode;
         dev_info(xhdmi->dev,"%s: Mode-ID: %d \n",__func__,xhdmi->mode_id);
 
@@ -1665,7 +1673,7 @@ static void dlnx_select_mode(struct dlnx_hdmi_tx *xhdmi, struct hdmi_output_para
         }
 
 
-//      dev_info(xhdmi->dev,"%s: xhdmi->mode_id %d \n", __func__, xhdmi->mode_id);
+	dev_info(xhdmi->dev,"%s: xhdmi->mode_id %d \n", __func__, xhdmi->mode_id);
 }
 
 

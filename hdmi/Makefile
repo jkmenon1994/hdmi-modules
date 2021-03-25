@@ -1,4 +1,4 @@
-obj-m := xilinx-vphy.o xilinx-hdmi-tx.o
+obj-m += xilinx-vphy.o xilinx-hdmi-tx.o
 
 # in same cases only used to check against presence, i.e. >0, actual number is not used
 ccflags-y := -DXPAR_XVPHY_NUM_INSTANCES=4

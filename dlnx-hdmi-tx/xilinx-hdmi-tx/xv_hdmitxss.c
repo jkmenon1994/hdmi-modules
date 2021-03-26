@@ -2071,7 +2071,6 @@ u32 XV_HdmiTxSs_SetStream(XV_HdmiTxSs *InstancePtr,
   XV_HdmiTxSs_LogWrite(InstancePtr, XV_HDMITXSS_LOG_EVT_SETSTREAM, VideoMode);
 #endif
   if(TmdsClock == 0) {
-	  	printk("%s: ............... TMDS clock is zero \n", __func__);
     xdbg_printf(XDBG_DEBUG_GENERAL,
                 "\r\nWarning: Sink does not support HDMI 2.0\r\n");
     xdbg_printf(XDBG_DEBUG_GENERAL,

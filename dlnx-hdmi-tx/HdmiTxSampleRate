@@ -1,0 +1,11 @@
+xilinx-hdmirx.c:661:		VphyPtr->HdmiRxTmdsClockRatio = 0;
+xilinx-hdmirx.c:976:	VphyPtr->HdmiRxTmdsClockRatio = HdmiRxSsPtr->TMDSClockRatio;
+xilinx-hdmirx.c:1001:		XV_HdmiRxSs_SetStream(&xhdmi->xv_hdmirxss, VphyPtr->HdmiRxRefClkHz,
+xilinx-hdmirx.c:1005:		XV_HdmiRxSs_SetStream(&xhdmi->xv_hdmirxss, VphyPtr->HdmiRxRefClkHz,
+xilinx_drm_hdmi.c:604:	XV_HdmiTxSs_SetSamplingRate(HdmiTxSsPtr, VphyPtr->HdmiTxSampleRate);
+xilinx_drm_hdmi.c:1163:	PrevPhyTxRefClock = VphyPtr->HdmiTxRefClkHz;
+xilinx_drm_hdmi.c:1223:	VphyPtr->HdmiTxRefClkHz = TmdsClock;
+xilinx_drm_hdmi.c:1230:	// Set GT TX parameters, this might change VphyPtr->HdmiTxRefClkHz
+xilinx_drm_hdmi.c:1242:	adjusted_mode->clock = VphyPtr->HdmiTxRefClkHz / 1000;
+xilinx_drm_hdmi.c:1257:	dev_dbg(xhdmi->dev,"PrevPhyTxRefClock: %d, NewRefClock: %d\n", PrevPhyTxRefClock, VphyPtr->HdmiTxRefClkHz);
+xilinx_drm_hdmi.c:1258:	if (PrevPhyTxRefClock == VphyPtr->HdmiTxRefClkHz) {

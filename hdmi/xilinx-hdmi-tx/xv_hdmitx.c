@@ -887,7 +887,7 @@ XVidC_3DInfo *Info3D)
                                      ColorFormat,
                                      Bpc);
 
-    printf("%s:................... Tmds clock calculated : %d \n", __func__, TmdsClock);
+    printk("%s:................... Tmds clock calculated : %d \n", __func__, TmdsClock);
 
     /* Store TMDS clock for future reference */
 	InstancePtr->Stream.TMDSClock = TmdsClock;

@@ -907,7 +907,7 @@ XVidC_3DInfo *Info3D)
     XV_HdmiTx_ClockRatio(InstancePtr);
 
     if ((InstancePtr->Stream.IsHdmi20 == (FALSE)) && (TmdsClock > 340000000)) {
-        TmdsClock = 0;
+      //  TmdsClock = 0;
     }
 
     return TmdsClock;

@@ -1,0 +1,42 @@
+xvphy_hdmi.c:1007:			(CmnPtr->PllParams.MRefClkDiv * ChPtr->RxOutDiv * 20);
+xvphy_hdmi.c:1013:			(ChPtr->RxOutDiv * 20);
+xvphy_hdmi.c:1016:		FDruClk = (DruRefClk * ChPtr->PllParams.N1FbDiv *
+xvphy_hdmi.c:1017:			ChPtr->PllParams.N2FbDiv * 2) /
+xvphy_hdmi.c:1018:			(ChPtr->PllParams.MRefClkDiv * ChPtr->RxOutDiv * 20);
+xvphy_hdmi.c:2255:	if (ChPtr->TxDataRefClkSel ==
+xvphy_hdmi.c:2276:			if ((ChPtr->TxDataRefClkSel ==
+xvphy_hdmi.c:2278:				(ChPtr->TxDataRefClkSel ==
+xvphy_hdmi.c:2317:			if ((ChPtr->RxDataRefClkSel ==
+xvphy_hdmi.c:2319:				(ChPtr->RxDataRefClkSel ==
+xvphy_hdmi.c:2441:		QpllDVal = ChPtr->RxOutDiv;
+xvphy_hdmi.c:2442:		CpllDVal = ChPtr->TxOutDiv;
+xvphy_hdmi.c:2445:		CpllDVal = ChPtr->RxOutDiv;
+xvphy_hdmi.c:2446:		QpllDVal = ChPtr->TxOutDiv;
+xvphy_hdmi.c:2481:				ChPtr->PllParams.MRefClkDiv,
+xvphy_hdmi.c:2482:				ChPtr->PllParams.N1FbDiv, ChPtr->PllParams.N2FbDiv,
+xvphy_hdmi.c:2487:		if (((ChPtr->TxDataRefClkSel ==
+xvphy_hdmi.c:2490:			((ChPtr->RxDataRefClkSel ==
+xvphy_hdmi.c:2504:				(TxUsesPll0 ? ChPtr->TxOutDiv : ChPtr->RxOutDiv));
+xvphy_hdmi.c:2508:		if (((ChPtr->TxDataRefClkSel ==
+xvphy_hdmi.c:2511:			((ChPtr->RxDataRefClkSel ==
+xvphy_hdmi.c:2525:				(TxUsesPll0 ? ChPtr->RxOutDiv : ChPtr->TxOutDiv));
+xvphy_i.c:89:	RegVal |= (ChPtr->CpllRefClkSel << XVPHY_REF_CLK_SEL_CPLL_SHIFT);
+xvphy_i.c:103:	RegVal |= (ChPtr->TxDataRefClkSel <<
+xvphy_i.c:107:	RegVal |= (ChPtr->RxDataRefClkSel <<
+xvphy_i.c:113:	RegVal |= (ChPtr->TxOutRefClkSel <<
+xvphy_i.c:117:	RegVal |= (ChPtr->RxOutRefClkSel <<
+xvphy_i.c:181:		ChPtr->DataRefClkSel[Dir] = SysClkDataSel;
+xvphy_i.c:211:		ChPtr->OutRefClkSel[Dir] = SysClkOutSel;
+xvphy_gthe4.c:197:	ChPtr->PllParams.Cdr[0] = 0x0000;
+xvphy_gthe4.c:198:	ChPtr->PllParams.Cdr[1] = 0x0000;
+xvphy_gthe4.c:199:	ChPtr->PllParams.Cdr[3] = 0x0000;
+xvphy_gthe4.c:200:	ChPtr->PllParams.Cdr[4] = 0x0000;
+xvphy_gthe4.c:208:		ChPtr->PllParams.Cdr[2] = 0x0269;
+xvphy_gthe4.c:209:		while (ChPtr->RxOutDiv >>= 1) {
+xvphy_gthe4.c:210:			ChPtr->PllParams.Cdr[2] -= 0x10;
+xvphy_gthe4.c:213:		ChPtr->RxOutDiv = 1 << ((0x0269 - ChPtr->PllParams.Cdr[2]) >> 4);
+xvphy_gthe4.c:586:		DrpVal = ChPtr->PllParams.Cdr[CfgIndex];
+xvphy_gthe4.c:606:		WriteVal = (Xvphy_DrpEncodeIntDataWidth(ChPtr->RxIntDataWidth) & 0x3);
+xvphy_gthe4.c:613:		WriteVal = (Xvphy_DrpEncodeDataWidth(ChPtr->RxDataWidth) & 0xF);
+xvphy_gthe4.c:798:		WriteVal = ((Xvphy_DrpEncodeIntDataWidth(ChPtr->
+xvphy_gthe4.c:806:		WriteVal = (Xvphy_DrpEncodeDataWidth(ChPtr->TxDataWidth) & 0xF);

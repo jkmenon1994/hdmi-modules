@@ -1707,6 +1707,10 @@ void XV_HdmiTxSs_StreamStart(XV_HdmiTxSs *InstancePtr)
   // Set TX color format
   XV_HdmiTx_SetColorFormat(InstancePtr->HdmiTxPtr);
 
+  InstancePtr->HdmiTxPtr->Stream.Video.ColorFormatId = 2;
+  InstancePtr->HdmiTxPtr->Stream.Video.ColorDepth = 12;
+  InstancePtr->HdmiTxPtr->Stream.Video.VmId = 112;
+
   // Set the TMDS Clock
   TmdsClk = XV_HdmiTxSS_SetTMDS(InstancePtr,
 				 InstancePtr->HdmiTxPtr->Stream.Video.VmId,

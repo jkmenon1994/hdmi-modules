@@ -1654,6 +1654,7 @@ static struct attribute_group attr_group = {
 static void dlnx_select_mode(struct dlnx_hdmi_tx *xhdmi, struct hdmi_output_params *hdmi_output)
 {
         int i;
+	XV_HdmiTxSs *HdmiTxSsPtr = &xhdmi->xv_hdmitxss;
 
 #if 0
         dev_info(xhdmi->dev,"%s: hdmi_output->hdisplay: %d \n", __func__, hdmi_output->hdisplay);
@@ -1676,6 +1677,8 @@ static void dlnx_select_mode(struct dlnx_hdmi_tx *xhdmi, struct hdmi_output_para
 	dev_info(xhdmi->dev,"%s: xhdmi->mode_id %d \n", __func__, xhdmi->mode_id);
 
 	dev_info(xhdmi->dev,"%s: Forcing hdmi sink , mode bit in core set for hdmi \n", __func__);
+
+	XV_HdmiTxSs_StreamStart(HdmiTxSsPtr);
 
 	XV_HdmiTxSs_SetVideoStreamType(&xhdmi->xv_hdmitxss, 1);
 

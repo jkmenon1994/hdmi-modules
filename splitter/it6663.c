@@ -144,7 +144,7 @@ static int it6663_probe(struct i2c_client *client,
 	int ret;
 	uint8_t reg_id, reg_clk;
 
-	printk(KERN_WARNING "%s: probing... \n", __func__);
+	printk(KERN_ERR "%s: probing... \n", __func__);
 	/* Check if the adapter supports the needed features */
 	if (!i2c_check_functionality(client->adapter, I2C_FUNC_SMBUS_BYTE_DATA))
 		return -EIO;

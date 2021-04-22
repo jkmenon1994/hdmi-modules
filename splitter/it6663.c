@@ -142,7 +142,7 @@ static int it6663_probe(struct i2c_client *client,
 			const struct i2c_device_id *id)
 {
 	int ret;
-	uint8_t reg_id, reg_clk;
+	unsigned char reg_id, reg_clk, reg_hpd;
 
 	printk(KERN_ERR "%s: probing... \n", __func__);
 	/* Check if the adapter supports the needed features */
@@ -156,7 +156,7 @@ static int it6663_probe(struct i2c_client *client,
 	}
 #endif
 	reg_id = it6663_read(client,0);
- 	printk(KERN_ERR"reg_id :%x \n", reg_id); 
+ 	printk(KERN_ERR"reg_id :0x%x \n", reg_id); 
 
 	dev_info(&client->dev, "probed\n");
 
@@ -165,7 +165,26 @@ static int it6663_probe(struct i2c_client *client,
  	client->addr = 0x38;
 
 	reg_clk = it6663_read(client,0x05);
-	printk(KERN_ERR"reg_clk : %x \n", reg_clk);
+	printk(KERN_ERR"reg_clk : 0x%x \n", reg_clk);
+
+	client->addr = 0x2c;
+	it6663_write(client,0xf1,0x97);
+
+	client->addr = 0x4b;
+	it6663_write(client,0x2c,0x69);
+	it6663_write(client,0x2d,0x6b); 
+	it6663_write(client,0x2e,0x6c);
+	it6663_write(client,0x2f,0x6d);
+	
+	client->addr = 0x36;
+	reg_hpd = it6663_read(client,0x03);
+	printk(KERN_ERR"reg_hpd : 0x%x \n", reg_hpd);
+
+	client->addr = 0x35;
+	reg_hpd = it6663_read(client,0x03);
+	printk(KERN_ERR"reg_hpd : 0x%x \n", reg_hpd);
+
+
 
 #if 0
 	/* initialize to HDMI 1.4 */

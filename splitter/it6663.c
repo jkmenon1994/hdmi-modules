@@ -142,7 +142,7 @@ static int it6663_probe(struct i2c_client *client,
 			const struct i2c_device_id *id)
 {
 	int ret;
-	unsigned char reg_id, reg_clk, reg_hpd;
+	unsigned char reg_id, reg_clk, reg_hpd1, reg_hpd2;
 
 	printk(KERN_ERR "%s: probing... \n", __func__);
 	/* Check if the adapter supports the needed features */
@@ -174,15 +174,15 @@ static int it6663_probe(struct i2c_client *client,
 	it6663_write(client,0x2c,0x69);
 	it6663_write(client,0x2d,0x6b); 
 	it6663_write(client,0x2e,0x6c);
-	it6663_write(client,0x2f,0x6d);
+	it6663_write(client,0x2f,0x6f);
 	
-	client->addr = 0x36;
-	reg_hpd = it6663_read(client,0x03);
-	printk(KERN_ERR"reg_hpd : 0x%x \n", reg_hpd);
-
 	client->addr = 0x35;
-	reg_hpd = it6663_read(client,0x03);
-	printk(KERN_ERR"reg_hpd : 0x%x \n", reg_hpd);
+	reg_hpd1 = it6663_read(client,0x03);
+	printk(KERN_ERR"reg_hpd1 : 0x%x \n", reg_hpd1);
+
+	client->addr = 0x36;
+	reg_hpd2 = it6663_read(client,0x03);
+	printk(KERN_ERR"reg_hpd2 : 0x%x \n", reg_hpd2);
 
 
 

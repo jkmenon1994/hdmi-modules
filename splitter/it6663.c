@@ -28,6 +28,7 @@
 #include <linux/of.h>
 #include <linux/of.h>
 #include <linux/clk-provider.h>
+#include <unistd.h>
 
 MODULE_DESCRIPTION("i2c device driver for it6663 splitter IC");
 MODULE_AUTHOR("jk.menon@ignitarium.com");
@@ -175,7 +176,13 @@ static int it6663_probe(struct i2c_client *client,
 	it6663_write(client,0x2d,0x6b); 
 	it6663_write(client,0x2e,0x6c);
 	it6663_write(client,0x2f,0x6f);
-	
+
+
+	client->addr = 0x36;
+	reg_hpd2 = it6663_read(client,0x03);
+	printk(KERN_ERR"reg_hpd2 : 0x%x \n", reg_hpd2);
+
+
 	client->addr = 0x35;
 	reg_hpd1 = it6663_read(client,0x03);
 	printk(KERN_ERR"reg_hpd1 : 0x%x \n", reg_hpd1);

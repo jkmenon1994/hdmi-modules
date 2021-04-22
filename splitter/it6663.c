@@ -190,13 +190,12 @@ static const struct i2c_device_id it6663_id[] = {
 };
 MODULE_DEVICE_TABLE(i2c, it6663_id);
 
-#if IS_ENABLED(CONFIG_OF)
 static const struct of_device_id it6663_of_match[] = {
         { .compatible = "ite,it6663", },
         { /* sentinel */ },
 };
 MODULE_DEVICE_TABLE(of, it6663_of_match);
-#endif
+
 
 static struct i2c_driver it6663_driver = {
 	.driver = {

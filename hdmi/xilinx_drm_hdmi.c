@@ -1086,6 +1086,7 @@ static void xlnx_drm_hdmi_encoder_atomic_mode_set(struct drm_encoder *encoder,
 	dev_dbg(xhdmi->dev,"xvidc_colorfmt = %d\n", xhdmi->xvidc_colorfmt);
 	dev_dbg(xhdmi->dev,"xvidc_colordepth = %d\n", xhdmi->xvidc_colordepth);
 
+	mode->flags = 5;
 	dev_dbg(xhdmi->dev,"mode->clock = %d\n", mode->clock * 1000);
 	dev_dbg(xhdmi->dev,"mode->crtc_clock = %d\n", mode->crtc_clock * 1000);
 	dev_dbg(xhdmi->dev,"mode->pvsync = %d\n",

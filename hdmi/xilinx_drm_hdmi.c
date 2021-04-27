@@ -821,6 +821,7 @@ static int xlnx_drm_hdmi_connector_mode_valid(struct drm_connector *connector,
 	 * timing table has vdisplay value of 540 for 1080i usecase.
 	 * By this change, doing modetest -M xlnx, will give vdisplay 540 instead of
 	 * 1080 */
+	mode->flags = 5;
 	if(mode->flags & DRM_MODE_FLAG_INTERLACE) {
 		mode->vdisplay = mode->vdisplay / 2;
 		dev_dbg(xhdmi->dev, "For DRM_MODE_FLAG_INTERLACE, divide mode->vdisplay %d\n", mode->vdisplay);

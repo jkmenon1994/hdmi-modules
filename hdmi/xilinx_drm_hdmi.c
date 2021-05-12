@@ -684,7 +684,7 @@ void TxBrdgOverflowCallback(void *CallbackRef)
 void TxBrdgUnderflowCallback(void *CallbackRef)
 {
 	struct xlnx_drm_hdmi *xhdmi = (struct xlnx_drm_hdmi *)CallbackRef;
-	dev_dbg(xhdmi->dev,"TX Video Bridge Underflow\r\n");
+	//dev_dbg(xhdmi->dev,"TX Video Bridge Underflow\r\n");
 }
 
 void TxHdcpAuthenticatedCallback(void *CallbackRef)

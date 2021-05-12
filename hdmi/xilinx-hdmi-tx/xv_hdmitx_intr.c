@@ -312,7 +312,7 @@ void HdmiTx_PioIntrHandler(XV_HdmiTx *InstancePtr)
     /* Bridge Underflow event has occurred */
     if ((Event) & (XV_HDMITX_PIO_IN_BRDG_UNDERFLOW_MASK)) {
 
-	    printk(KERN_WARNING "Bridge Underflow event occured %x \n", Event);
+	   // printk(KERN_WARNING "Bridge Underflow event occured %x \n", Event);
         // Check if user callback has been registered
         if (InstancePtr->IsBrdgUnderflowCallbackSet) {
             InstancePtr->BrdgUnderflowCallback(InstancePtr->BrdgUnderflowRef);

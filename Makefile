@@ -2,6 +2,7 @@ SRC := $(shell pwd)
 
 obj-m	+= hdmi/
 obj-m	+= misc/
+obj-m 	+= splitter/
 
 all:
 	$(MAKE) -C $(KERNEL_SRC) M=$(SRC) O=$(O) modules

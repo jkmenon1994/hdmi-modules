@@ -1,0 +1,679 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABCD_CopyPx	IT6664_Config.h	113;"	d
+ABCD_CopyPx	IT6664_Config.h	140;"	d
+ABCD_CopyPx	IT6664_Config.h	192;"	d
+ACTAR14_9	IT6664_extern.h	173;"	d
+ACTAR16_9	IT6664_extern.h	172;"	d
+ACTAR4_3	IT6664_extern.h	171;"	d
+ACTAR_PIC	IT6664_extern.h	170;"	d
+AMP_TimeOut	IT6664_hdmi2_rx.c	/^iTE_u16 AMP_TimeOut[3];$/;"	v
+AUD16BIT	IT6664_extern.h	157;"	d
+AUD18BIT	IT6664_extern.h	158;"	d
+AUD20BIT	IT6664_extern.h	159;"	d
+AUD24BIT	IT6664_extern.h	160;"	d
+AUDCAL1	IT6664_extern.h	162;"	d
+AUDCAL2	IT6664_extern.h	163;"	d
+AUDCAL3	IT6664_extern.h	164;"	d
+AV	IT6664_extern.h	/^	iTE_u8 AV[5][4];$/;"	m	struct:__anon4
+AdobeRGB	IT6664_extern.h	121;"	d
+AdobeYCC601	IT6664_extern.h	120;"	d
+Auto14done	IT6664_extern.h	/^	iTE_u8 Auto14done;$/;"	m	struct:__anon3
+Auto20done	IT6664_extern.h	/^	iTE_u8 Auto20done;$/;"	m	struct:__anon3
+AutoEQ	IT6664_Config.h	55;"	d
+AutoEQsts	IT6664_extern.h	/^	iTE_u8 AutoEQsts;$/;"	m	struct:__anon3
+AutoPhReSync	IT6664_hdmi2sp.h	44;"	d
+BT2020YCC	IT6664_extern.h	123;"	d
+BT2020_R2Y_F2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE BT2020_R2Y_F2F[18] =$/;"	v
+BT2020_R2Y_F2L	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE BT2020_R2Y_F2L[18] =$/;"	v
+BT2020_R2Y_Offset_F2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE BT2020_R2Y_Offset_F2F[3] =$/;"	v
+BT2020_R2Y_Offset_F2L	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE BT2020_R2Y_Offset_F2L[3] =$/;"	v
+BT2020_Y2R_F2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE BT2020_Y2R_F2F[18] =$/;"	v
+BT2020_Y2R_F2L	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE BT2020_Y2R_F2L[18] =$/;"	v
+BT2020_Y2R_Offset_F2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE BT2020_Y2R_Offset_F2F[3] =$/;"	v
+BT2020_Y2R_Offset_F2L	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE BT2020_Y2R_Offset_F2L[3] =$/;"	v
+BT2020cYCC	IT6664_extern.h	122;"	d
+BUSMODE	IT6664_extern.h	/^	iTE_u8 BUSMODE;$/;"	m	struct:__anon3
+Bond6664	IT6664_Config.h	16;"	d
+Bond6664	IT6664_Config.h	46;"	d
+CD_SET	IT6664_extern.h	/^	iTE_u8 CD_SET;$/;"	m	struct:__anon3
+CEC_AB	IT6664_extern.h	/^	iTE_u8 CEC_AB[4];$/;"	m	struct:__anon2
+CEC_CD	IT6664_extern.h	/^	iTE_u8 CEC_CD[4];$/;"	m	struct:__anon2
+CEC_Timer_Unit	IT6664_hdmi2sp.c	/^	iTE_u8 CEC_Timer_Unit;$/;"	v
+CHB_TargetRS	IT6664_hdmi2_rx.c	/^iTE_u8 CHB_TargetRS[3];$/;"	v
+CLK108M	IT6664_extern.h	96;"	d
+CLK13P5M	IT6664_extern.h	93;"	d
+CLK148P5M	IT6664_extern.h	99;"	d
+CLK27M	IT6664_extern.h	94;"	d
+CLK297M	IT6664_extern.h	100;"	d
+CLK37P125M	IT6664_extern.h	97;"	d
+CLK54M	IT6664_extern.h	95;"	d
+CLK74P25M	IT6664_extern.h	98;"	d
+CP_Done	IT6664_extern.h	/^	iTE_u8 CP_Done;$/;"	m	struct:__anon3
+CP_Fail	IT6664_extern.h	/^	iTE_u8 CP_Fail;$/;"	m	struct:__anon3
+CP_Going	IT6664_extern.h	/^	iTE_u8 CP_Going;$/;"	m	struct:__anon3
+CRCBLimit	IT6664_hdmi2sp.h	38;"	d
+CSCOutColorMode	IT6664_extern.h	/^	iTE_u8 CSCOutColorMode;$/;"	m	struct:__anon3
+CSCOutQ	IT6664_extern.h	/^	iTE_u8 CSCOutQ;$/;"	m	struct:__anon3
+CVOutColorMode	IT6664_extern.h	/^	iTE_u8 CVOutColorMode;$/;"	m	struct:__anon3
+CalChecksum	IT6664_EDID.c	/^iTE_u8 CalChecksum(iTE_u8 edid[],iTE_u8 block)$/;"	f
+CheckBKsv	IT6664_hdmi2_tx.c	/^iTE_u8 CheckBKsv(iTE_u8 ksv[5])$/;"	f
+CheckHPDCnt	IT6664_EDID.c	/^iTE_u8 CheckHPDCnt(void)$/;"	f
+CheckSinkSCDC	IT6664_hdmi2_tx.c	/^iTE_u8 CheckSinkSCDC(iTE_u8 port)$/;"	f
+Check_AMP	IT6664_hdmi2_rx.c	/^void Check_AMP(iTE_u8 Rec_Channel)$/;"	f
+ChessBoard	IT6664_extern.h	177;"	d
+ColorBar	IT6664_extern.h	175;"	d
+ColorClip	IT6664_hdmi2sp.h	32;"	d
+CompareProductID	IT6664_EDID.c	/^iTE_u8 CompareProductID(void)$/;"	f
+CompareResolution	IT6664_EDID.c	/^iTE_u8 CompareResolution(iTE_u8 ref)$/;"	f
+Compose_block0	IT6664_EDID.c	/^iTE_u8 Compose_block0[128];$/;"	v
+Compose_block1	IT6664_EDID.c	/^iTE_u8 Compose_block1[128];$/;"	v
+ContentType	IT6664_extern.h	/^	iTE_u8 ContentType;$/;"	m	struct:__anon3
+CopyMode_Remove4K533	IT6664_Config.h	67;"	d
+DDC125K	IT6664_extern.h	154;"	d
+DDC312K	IT6664_extern.h	155;"	d
+DDC75K	IT6664_extern.h	153;"	d
+DDCSpeed	IT6664_hdmi2sp.h	48;"	d
+DDC_NAK	IT6664_extern.h	/^	iTE_u8 DDC_NAK;$/;"	m	struct:__anon3
+DFE	IT6664_hdmi2_rx.c	/^iTE_u8 DFE[14][3][3];\/\/RS\/CH\/3$/;"	v
+DFEBak	IT6664_hdmi2_rx.c	/^iTE_u8 DFEBak[9];$/;"	v
+DNFreeGo	IT6664_hdmi2sp.h	33;"	d
+DSD	IT6664_extern.h	137;"	d
+DVI	IT6664_extern.h	89;"	d
+DVI_mode	IT6664_extern.h	/^	iTE_u8 DVI_mode[4];$/;"	m	struct:__anon2
+DebugMessage	IT6664_Config.h	17;"	d
+DefaultEdidSet	IT6664_hdmi2_rx.c	/^void DefaultEdidSet(void)$/;"	f
+Depth_Total	IT6664_extern.h	/^	iTE_u8 Depth_Total;$/;"	m	struct:__anon3
+DevCnt_Total	IT6664_extern.h	/^	iTE_u8 DevCnt_Total;$/;"	m	struct:__anon3
+Device	it6663_main.c	/^int Device[3] = {0x01,0x21,0x02};$/;"	v
+Device_off	IT6664_EDID.c	/^iTE_u8 Device_off;$/;"	v
+DisH2Auto	IT6664_hdmi2sp.h	28;"	d
+Disable_RXHDCP	IT6664_Config.h	59;"	d
+Dump_IT666xReg	IT6664_hdmi2_rx.c	/^void  Dump_IT666xReg(void)$/;"	f
+Dump_TxReg	IT6664_hdmi2_tx.c	/^void  Dump_TxReg(iTE_u8 port)\/\/ite_190909$/;"	f
+DynCEA	IT6664_extern.h	126;"	d
+DynVESA	IT6664_extern.h	125;"	d
+EDID0data	IT6664_EDID.c	/^EDIDBlock0 EDID0data[4];\/\/0x6$/;"	v
+EDID0data	IT6664_EDID.c	/^EDIDBlock0 EDID0data[8];\/\/0x6$/;"	v
+EDID1data	IT6664_EDID.c	/^EDIDBlock1 EDID1data[4];\/\/0x4a$/;"	v
+EDID1data	IT6664_EDID.c	/^EDIDBlock1 EDID1data[8];\/\/0x4a$/;"	v
+EDIDCopyDone	IT6664_extern.h	/^	iTE_u8 EDIDCopyDone;$/;"	m	struct:__anon3
+EDIDParseDone	IT6664_extern.h	/^	iTE_u8 EDIDParseDone[4];$/;"	m	struct:__anon2
+EDID_48Bit_Remove	IT6664_EDID.c	/^void EDID_48Bit_Remove(iTE_pu8 arry1)$/;"	f
+EDID_Block0FIX	IT6664_EDID.c	/^iTE_u8 _CODE EDID_Block0FIX[52] =$/;"	v
+EDID_CopyPx	IT6664_Config.h	112;"	d
+EDID_CopyPx	IT6664_Config.h	139;"	d
+EDID_CopyPx	IT6664_Config.h	191;"	d
+EDID_HDMI21_Remove	IT6664_EDID.c	/^void EDID_HDMI21_Remove(iTE_pu8 arry1)$/;"	f
+EDID_HDMI21_VicRemove	IT6664_EDID.c	/^void EDID_HDMI21_VicRemove(iTE_pu8 arry1)$/;"	f
+EDID_ParseVSDB_3Dblock	IT6664_hdmi2_rx.c	/^void EDID_ParseVSDB_3Dblock(struct PARSE3D_STR *pstParse3D)$/;"	f
+EDID_Remove4K533	IT6664_EDID.c	/^void EDID_Remove4K533(iTE_pu8 arry1 ,iTE_u8 block)$/;"	f
+EQ14	IT6664_hdmi2_rx.c	/^iTE_u8 EQ14[3];$/;"	v
+EQ14Going	IT6664_extern.h	/^	iTE_u8 EQ14Going;$/;"	m	struct:__anon3
+EQ20	IT6664_hdmi2_rx.c	/^iTE_u8 EQ20[3];$/;"	v
+EQ20Going	IT6664_extern.h	/^	iTE_u8 EQ20Going;$/;"	m	struct:__anon3
+EQ_sel	IT6664_hdmi2_rx.c	/^iTE_u8 EQ_sel[3];$/;"	v
+En420to444	IT6664_hdmi2sp.h	54;"	d
+En444to420	IT6664_hdmi2sp.h	53;"	d
+EnDDCMasterArb	IT6664_hdmi2sp.h	27;"	d
+EnDither	IT6664_hdmi2sp.h	36;"	d
+EnFFAutoRst	IT6664_hdmi2sp.h	42;"	d
+EnFlagUpdRd	IT6664_hdmi2sp.h	30;"	d
+EnIntEDID	IT6664_Config.h	54;"	d
+EnPLLBufRst	IT6664_hdmi2sp.h	43;"	d
+EnRepeater	IT6664_Config.h	72;"	d
+EnRxHDCP2	IT6664_hdmi2sp.h	56;"	d
+EnRxHP1Rpt	IT6664_Config.h	79;"	d
+EnRxHP1Rpt	IT6664_Config.h	83;"	d
+EnRxHP2Rpt	IT6664_Config.h	80;"	d
+EnRxHP2Rpt	IT6664_Config.h	84;"	d
+EnRxHP2VRRpt	IT6664_extern.h	216;"	d
+EnRxHP2_Dbg	IT6664_hdmi2sp.h	55;"	d
+EnRxHwReauth	IT6664_hdmi2sp.h	57;"	d
+EnSSCPTrgPkt	IT6664_hdmi2sp.h	52;"	d
+EnTXHDCPBeforeRX	IT6664_extern.h	214;"	d
+EnUdFilt	IT6664_hdmi2sp.h	35;"	d
+EnXPLockChk	IT6664_hdmi2sp.h	41;"	d
+EnableTXP0HDCP	IT6664_Config.h	124;"	d
+EnableTXP0HDCP	IT6664_Config.h	176;"	d
+EnableTXP0HDCP	IT6664_Config.h	97;"	d
+EnableTXP1HDCP	IT6664_Config.h	101;"	d
+EnableTXP1HDCP	IT6664_Config.h	128;"	d
+EnableTXP1HDCP	IT6664_Config.h	180;"	d
+EnableTXP2HDCP	IT6664_Config.h	105;"	d
+EnableTXP2HDCP	IT6664_Config.h	132;"	d
+EnableTXP2HDCP	IT6664_Config.h	184;"	d
+EnableTXP3HDCP	IT6664_Config.h	109;"	d
+EnableTXP3HDCP	IT6664_Config.h	136;"	d
+EnableTXP3HDCP	IT6664_Config.h	188;"	d
+Err_Depth_Total	IT6664_extern.h	/^	iTE_u8 Err_Depth_Total;$/;"	m	struct:__anon3
+Err_DevCnt_Total	IT6664_extern.h	/^	iTE_u8 Err_DevCnt_Total;$/;"	m	struct:__anon3
+FWDDCFIFOAcc	IT6664_hdmi2sp.h	46;"	d
+FiFoErrcnt	IT6664_extern.h	/^	iTE_u8 FiFoErrcnt[4];$/;"	m	struct:__anon4
+FireHDCP2	IT6664_hdmi2_tx.c	/^void FireHDCP2(iTE_u8 port)$/;"	f
+FixOCLKD4	IT6664_hdmi2sp.h	17;"	d
+FixPort0_1080P	IT6664_Config.h	143;"	d
+FixPort1_1080P	IT6664_Config.h	144;"	d
+FixPort1_1080P	IT6664_Config.h	194;"	d
+FixPort2_1080P	IT6664_Config.h	145;"	d
+FixPort2_1080P	IT6664_Config.h	195;"	d
+FixPort3_1080P	IT6664_Config.h	146;"	d
+FixPort_Opt	IT6664_Config.h	116;"	d
+FixPort_Opt	IT6664_Config.h	147;"	d
+FixPort_Opt	IT6664_Config.h	196;"	d
+FlagPollSel	IT6664_hdmi2sp.h	31;"	d
+ForceCPDwnVer	IT6664_extern.h	/^	iTE_u8 ForceCPDwnVer;$/;"	m	struct:__anon3
+ForceCVOutColor	IT6664_extern.h	211;"	d
+ForceEnCV2DS	IT6664_extern.h	212;"	d
+ForcePort0_Bypass	IT6664_Config.h	157;"	d
+ForcePort0_Bypass_SkipSCDC	IT6664_Config.h	163;"	d
+ForcePort1_Bypass	IT6664_Config.h	158;"	d
+ForcePort1_Bypass	IT6664_Config.h	203;"	d
+ForcePort1_Bypass_SkipSCDC	IT6664_Config.h	164;"	d
+ForcePort1_Bypass_SkipSCDC	IT6664_Config.h	207;"	d
+ForcePort2_Bypass	IT6664_Config.h	159;"	d
+ForcePort2_Bypass	IT6664_Config.h	204;"	d
+ForcePort2_Bypass_SkipSCDC	IT6664_Config.h	165;"	d
+ForcePort2_Bypass_SkipSCDC	IT6664_Config.h	208;"	d
+ForcePort3_Bypass	IT6664_Config.h	160;"	d
+ForcePort3_Bypass_SkipSCDC	IT6664_Config.h	166;"	d
+ForceROn	IT6664_hdmi2sp.h	23;"	d
+ForceTMDSStb	IT6664_hdmi2sp.h	24;"	d
+ForceTXHDCP	IT6664_extern.h	215;"	d
+ForceTXHDMI2	IT6664_extern.h	/^	iTE_u8 ForceTXHDMI2;$/;"	m	struct:__anon3
+ForceTxCLKStb	IT6664_hdmi2sp.h	21;"	d
+ForceVOut	IT6664_hdmi2sp.h	22;"	d
+FrameRate	IT6664_extern.h	/^    iTE_u16 FrameRate ;$/;"	m	struct:__anon1
+FrmPkt	IT6664_extern.h	148;"	d
+FwEnCV2DS	IT6664_extern.h	213;"	d
+GCP_CD	IT6664_extern.h	/^	iTE_u8 GCP_CD;$/;"	m	struct:__anon3
+GetSteamType	IT6664_extern.h	/^	iTE_u8 GetSteamType;$/;"	m	struct:__anon3
+GrayRamp	IT6664_extern.h	176;"	d
+H14B4Kx2KVIDFMT1	IT6664_extern.h	83;"	d
+H14B4Kx2KVIDFMT2	IT6664_extern.h	84;"	d
+H14B4Kx2KVIDFMT3	IT6664_extern.h	85;"	d
+H14B4Kx2KVIDFMT4	IT6664_extern.h	86;"	d
+HActive	IT6664_extern.h	/^    iTE_u16 HActive ;$/;"	m	struct:__anon1
+HBR	IT6664_extern.h	136;"	d
+HBackPorch	IT6664_extern.h	/^    iTE_u16 HBackPorch ;$/;"	m	struct:__anon1
+HDCPFireCnt	IT6664_extern.h	/^	iTE_u8 HDCPFireCnt[4];$/;"	m	struct:__anon4
+HDCPFireVer	IT6664_extern.h	/^	iTE_u8 HDCPFireVer[4];$/;"	m	struct:__anon2
+HDCPState	IT6664_extern.h	/^	iTE_u8 HDCPState[4];$/;"	m	struct:__anon2
+HDCPTimerCnt	IT6664_extern.h	/^	iTE_u8 HDCPTimerCnt;$/;"	m	struct:__anon3
+HDCPWaitCnt	IT6664_extern.h	/^	iTE_u8 HDCPWaitCnt[4];$/;"	m	struct:__anon2
+HDCP_CopyPx	IT6664_Config.h	141;"	d
+HDCP_CopyPx	IT6664_Config.h	193;"	d
+HDMI	IT6664_extern.h	88;"	d
+HFrontPorch	IT6664_extern.h	/^    iTE_u16 HFrontPorch ;$/;"	m	struct:__anon1
+HP2_DevDepth	IT6664_extern.h	209;"	d
+HP2_DevNum	IT6664_extern.h	210;"	d
+HP2_HDCP1DownStm	IT6664_extern.h	/^	iTE_u8 HP2_HDCP1DownStm;$/;"	m	struct:__anon3
+HP2_HDCP20DownStm	IT6664_extern.h	/^	iTE_u8 HP2_HDCP20DownStm;$/;"	m	struct:__anon3
+HP2_KSVLIST	IT6664_hdmi2sp.c	/^iTE_u8 _CODE HP2_KSVLIST[5] =$/;"	v
+HPD	IT6664_EDID.c	/^static iTE_u8 HPD[4] = {0,0,0,0};$/;"	v	file:
+HPD	IT6664_EDID.c	/^static iTE_u8 HPD[8] = {0,0,0,0,0,0,0,0};$/;"	v	file:
+HPDTimerCnt	IT6664_extern.h	/^	iTE_u8 HPDTimerCnt;$/;"	m	struct:__anon3
+HPD_Debounce	IT6664_Config.h	78;"	d
+HPD_Debounce	IT6664_Config.h	82;"	d
+HPolarity	IT6664_extern.h	/^    iTE_u16 HPolarity ;$/;"	m	struct:__anon1
+HSyncWidth	IT6664_extern.h	/^    iTE_u16 HSyncWidth ;$/;"	m	struct:__anon1
+HTotal	IT6664_extern.h	/^    iTE_u16 HTotal ;$/;"	m	struct:__anon1
+HWDDCFIFOAcc	IT6664_hdmi2sp.h	47;"	d
+HdcpVerChk	IT6664_hdmi2_tx.c	/^iTE_u8 HdcpVerChk(iTE_u8 port)$/;"	f
+HighFrameRate	IT6664_extern.h	/^	iTE_u8 HighFrameRate;\/\/ite_171201$/;"	m	struct:__anon3
+Hneg	IT6664_extern.h	204;"	d
+Hpos	IT6664_extern.h	206;"	d
+I2C_SMBusE	IT6664_IO.c	18;"	d	file:
+I2S	IT6664_extern.h	131;"	d
+INTR	IT6664_extern.h	202;"	d
+IT6663	IT6664_Config.h	174;"	d
+IT6663_C	IT6664_Config.h	48;"	d
+IT6663_C	IT6664_Config.h	93;"	d
+IT6664	IT6664_Config.h	114;"	d
+IT6664	IT6664_Config.h	122;"	d
+IT6664_A	IT6664_Config.h	91;"	d
+IT6664_B	IT6664_Config.h	92;"	d
+IT6664_DeviceSelect	IT6664_IO.c	/^void IT6664_DeviceSelect(iTE_u8 u8Device)$/;"	f
+IT6664_HDRPacketGet	IT6664_hdmi2_rx.c	/^void IT6664_HDRPacketGet(void)\/\/ite_181217$/;"	f
+ITU601	IT6664_extern.h	128;"	d
+ITU709	IT6664_extern.h	129;"	d
+InColorMode	IT6664_extern.h	/^	iTE_u8 InColorMode;$/;"	m	struct:__anon3
+Is_DTD_4K533	IT6664_EDID.c	/^iTE_u8 Is_DTD_4K533(iTE_pu8 DTD)$/;"	f
+LPCM	IT6664_extern.h	134;"	d
+M	IT6664_extern.h	/^	iTE_u8 M[64];$/;"	m	struct:__anon4
+MHL	IT6664_extern.h	90;"	d
+NLPCM	IT6664_extern.h	135;"	d
+NOCSC	IT6664_extern.h	144;"	d
+P0	IT6664_extern.h	21;"	d
+P0_SkipEdid	IT6664_Config.h	150;"	d
+P1	IT6664_extern.h	22;"	d
+P1_SkipEdid	IT6664_Config.h	151;"	d
+P1_SkipEdid	IT6664_Config.h	199;"	d
+P2	IT6664_extern.h	23;"	d
+P2_SkipEdid	IT6664_Config.h	152;"	d
+P2_SkipEdid	IT6664_Config.h	200;"	d
+P3	IT6664_extern.h	24;"	d
+P3_SkipEdid	IT6664_Config.h	153;"	d
+PARSE3D_STR	IT6664_extern.h	/^struct PARSE3D_STR$/;"	s
+PCLK	IT6664_extern.h	/^    iTE_u16 PCLK ;$/;"	m	struct:__anon1
+PICAR16_9	IT6664_extern.h	168;"	d
+PICAR4_3	IT6664_extern.h	167;"	d
+PICAR_NO	IT6664_extern.h	166;"	d
+PROG	IT6664_extern.h	201;"	d
+PixRpt	IT6664_extern.h	/^    iTE_u16 PixRpt;$/;"	m	struct:__anon1
+PortBypass_Opt	IT6664_Config.h	117;"	d
+PortBypass_Opt	IT6664_Config.h	161;"	d
+PortBypass_Opt	IT6664_Config.h	205;"	d
+PortSkipEdid_opt	IT6664_Config.h	154;"	d
+PortSkipEdid_opt	IT6664_Config.h	201;"	d
+Pow	IT6664_hdmi2sp.c	/^iTE_u16 Pow(iTE_u16 x,iTE_u16 y)$/;"	f
+ProductName	IT6664_EDID.c	/^iTE_u8 ProductName[2][0x50];$/;"	v
+ProductName	IT6664_EDID.c	/^iTE_u8 ProductName[4][0x50];$/;"	v
+QuanL4B	IT6664_hdmi2sp.h	37;"	d
+R2Y_F2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE R2Y_F2F[2][18] =$/;"	v
+R2Y_F2L	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE R2Y_F2L[2][18] =$/;"	v
+R2Y_Offset_F2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE R2Y_Offset_F2F[3] =$/;"	v
+R2Y_Offset_F2L	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE R2Y_Offset_F2L[3] =$/;"	v
+RCLK	IT6664_extern.h	/^	iTE_u32 RCLK;$/;"	m	struct:__anon5
+RCLKFreqSel	IT6664_extern.h	91;"	d
+RCLKSrcSel	IT6664_hdmi2sp.h	16;"	d
+RGB2YUV	IT6664_extern.h	145;"	d
+RGB444	IT6664_extern.h	107;"	d
+RS_Value	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE RS_Value[14] =  { 0x7F, 0x7E, 0x3F, 0x3E, 0x1F, 0x1E, 0x0F, 0x0E,$/;"	v
+RXHDCP	IT6664_extern.h	/^	iTE_u8 RXHDCP;$/;"	m	struct:__anon3
+RXHDCP2_chk	IT6664_extern.h	/^	iTE_u8 RXHDCP2_chk;$/;"	m	struct:__anon3
+RXHDCP_SEL	IT6664_extern.h	/^	iTE_u8 RXHDCP_SEL;$/;"	m	struct:__anon3
+RXSCDT	IT6664_extern.h	/^	iTE_u8 RXSCDT;$/;"	m	struct:__anon3
+RX_FiFoRst	IT6664_hdmi2_rx.c	/^void RX_FiFoRst(void)$/;"	f
+RclkAvg	IT6664_hdmi2sp.h	19;"	d
+ReadSipRom	IT6664_hdmi2sp.c	/^iTE_u32 ReadSipRom(void)$/;"	f
+ReadStreamType	IT6664_hdmi2sp.c	/^iTE_u8 ReadStreamType(void)$/;"	f
+RxFixEQNum	IT6664_hdmi2sp.h	18;"	d
+RxHP2SelDone	IT6664_hdmi2sp.h	58;"	d
+RxHdcpChkTx	IT6664_hdmi2_tx.c	/^void RxHdcpChkTx(iTE_u8 port)$/;"	f
+Rx_4K30	IT6664_extern.h	/^	iTE_u8 Rx_4K30;$/;"	m	struct:__anon3
+RxtoggleHPD	IT6664_extern.h	/^	iTE_u8 RxtoggleHPD;$/;"	m	struct:__anon3
+SCDCFlagByte	IT6664_hdmi2sp.h	29;"	d
+SDI_clkstbChk	IT6664_extern.h	/^	iTE_u8 SDI_clkstbChk;$/;"	m	struct:__anon3
+SIP_Mean	IT6664_Config.h	56;"	d
+SPDIF	IT6664_extern.h	132;"	d
+SRC	Makefile	/^SRC := $(shell pwd)$/;"	m
+SSCPOpt	IT6664_hdmi2sp.h	50;"	d
+SSCPPos	IT6664_hdmi2sp.h	49;"	d
+SSCPTest	IT6664_hdmi2sp.h	51;"	d
+STAT_CHECK_DEV_READY	IT6664.h	/^    STAT_CHECK_DEV_READY,$/;"	e	enum:__anon6
+STAT_CHECK_TRAPING	IT6664.h	/^    STAT_CHECK_TRAPING,$/;"	e	enum:__anon6
+STAT_DEV_INIT	IT6664.h	/^    STAT_DEV_INIT,$/;"	e	enum:__anon6
+STAT_IDLE	IT6664.h	/^    STAT_IDLE,$/;"	e	enum:__anon6
+STAT_IDLE2	IT6664.h	/^    STAT_IDLE2,$/;"	e	enum:__anon6
+STAT_MCU_INIT	IT6664.h	/^    STAT_MCU_INIT,$/;"	e	enum:__anon6
+SbSFull	IT6664_extern.h	149;"	d
+SbSHalf	IT6664_extern.h	151;"	d
+ScanMode	IT6664_extern.h	/^    iTE_u16 ScanMode ;$/;"	m	struct:__anon1
+SelDsVic	IT6664_hdmi2_tx.c	/^iTE_u8 SelDsVic(void)$/;"	f
+SeqData	IT6664_extern.h	178;"	d
+SetCVOutColorMode	IT6664_extern.h	/^	iTE_u8 SetCVOutColorMode;$/;"	m	struct:__anon3
+SetCscConvert	IT6664_hdmi2_rx.c	/^void SetCscConvert(void)$/;"	f
+SetDeepColor	IT6664_hdmi2_tx.c	/^void SetDeepColor(iTE_u8 port,iTE_u8 src)$/;"	f
+SetRxHpd	IT6664_hdmi2_rx.c	/^void SetRxHpd(iTE_u8 sts)$/;"	f
+SetTXSource	IT6664_hdmi2_tx.c	/^void SetTXSource(iTE_u8 port)$/;"	f
+Set_DNScale	IT6664_hdmi2_rx.c	/^void Set_DNScale( VTiming pCurVTiming )$/;"	f
+ShowMsg	IT6664_hdmi2_tx.c	/^void ShowMsg(iTE_u8 M[])$/;"	f
+Show_EDID	IT6664_EDID.c	/^void Show_EDID(iTE_pu8 ptr)$/;"	f
+Show_status	IT6664_hdmi2_tx.c	/^void Show_status(void)$/;"	f
+SkewResult	IT6664_hdmi2_rx.c	/^iTE_u8 SkewResult;$/;"	v
+SkipSCDC_Opt	IT6664_Config.h	167;"	d
+SkipSCDC_Opt	IT6664_Config.h	209;"	d
+Support4096DS	IT6664_Config.h	61;"	d
+SupportVesaDTD	IT6664_EDID.c	/^iTE_u8 SupportVesaDTD[4];$/;"	v
+SupportVesaDTD	IT6664_EDID.c	/^iTE_u8 SupportVesaDTD[8];$/;"	v
+Support_HDCP_DownVersion	IT6664_Config.h	62;"	d
+SymEQ	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE SymEQ[2] = {0x86,0x81};$/;"	v
+TDM2CH	IT6664_extern.h	139;"	d
+TDM4CH	IT6664_extern.h	140;"	d
+TDM6CH	IT6664_extern.h	141;"	d
+TDM8CH	IT6664_extern.h	142;"	d
+TXClearSCDC	IT6664_extern.h	/^	iTE_u8 TXClearSCDC;$/;"	m	struct:__anon3
+TXH2RSABusy	IT6664_extern.h	/^	iTE_u8 TXH2RSABusy;$/;"	m	struct:__anon3
+TXHDCP2Done	IT6664_extern.h	/^	iTE_u8 TXHDCP2Done;$/;"	m	struct:__anon3
+TXHP2KSVChkDone	IT6664_extern.h	/^	iTE_u8 TXHP2KSVChkDone;$/;"	m	struct:__anon3
+TXHPD	IT6664_extern.h	/^	iTE_u8 TXHPD[4];$/;"	m	struct:__anon2
+TXHPDsts	IT6664_extern.h	/^	iTE_u8 TXHPDsts;$/;"	m	struct:__anon3
+TXNoDefPhase	IT6664_hdmi2sp.h	45;"	d
+TXSCDC_chk	IT6664_extern.h	/^	iTE_u8 TXSCDC_chk[4];$/;"	m	struct:__anon2
+TXSupport1080p	IT6664_extern.h	/^	iTE_u8 TXSupport1080p[4];$/;"	m	struct:__anon2
+TXSupport420	IT6664_extern.h	/^	iTE_u8 TXSupport420[4];$/;"	m	struct:__anon2
+TXSupport4K30	IT6664_extern.h	/^	iTE_u8 TXSupport4K30[4];$/;"	m	struct:__anon2
+TXSupport4K60	IT6664_extern.h	/^	iTE_u8 TXSupport4K60[4];$/;"	m	struct:__anon2
+TXSupportDC420	IT6664_extern.h	/^	iTE_u8 TXSupportDC420[4];$/;"	m	struct:__anon2
+TXSupportHDR	IT6664_extern.h	/^	iTE_u8 TXSupportHDR[4];$/;"	m	struct:__anon2
+TXSupportOnly420	IT6664_extern.h	/^	iTE_u8 TXSupportOnly420[4];$/;"	m	struct:__anon2
+TXVCLK	IT6664_extern.h	/^	iTE_u32	TXVCLK[4];$/;"	m	struct:__anon5
+TimerInt	IT6664_hdmi2sp.c	/^void TimerInt(void) \/\/ite_191219$/;"	f
+TimerInt0	IT6664_hdmi2sp.c	/^void TimerInt0(void)$/;"	f
+TimerIntFlag	IT6664_extern.h	/^	iTE_u8 TimerIntFlag;$/;"	m	struct:__anon3
+TopBtm	IT6664_extern.h	150;"	d
+TxAFESetDone	IT6664_extern.h	/^	iTE_u8 TxAFESetDone;$/;"	m	struct:__anon3
+TxCLKStbRef	IT6664_hdmi2sp.h	20;"	d
+TxHdcpState	IT6664_extern.h	/^}TxHdcpState;$/;"	t	typeref:enum:TxHdcpState_type
+TxHdcpState_type	IT6664_extern.h	/^typedef enum TxHdcpState_type$/;"	g
+TxOut_DS	IT6664_extern.h	/^	iTE_u8 TxOut_DS[4];$/;"	m	struct:__anon2
+TxPortAdoGatting	IT6664_hdmi2_tx.c	/^void TxPortAdoGatting(iTE_u8 port,iTE_u8 enable)$/;"	f
+TxPortNum	IT6664_Config.h	121;"	d
+TxPortNum	IT6664_Config.h	173;"	d
+TxPortNum	IT6664_Config.h	94;"	d
+TxSrcSel	IT6664_extern.h	/^	iTE_u8 TxSrcSel[4];\/\/ 0: ori   1: CSC   2: conv  3.DS$/;"	m	struct:__anon2
+TxTMDSStbFlag	IT6664_extern.h	/^	iTE_u8 TxTMDSStbFlag;$/;"	m	struct:__anon3
+TxVidStbFlag	IT6664_extern.h	/^	iTE_u8 TxVidStbFlag;$/;"	m	struct:__anon3
+TxVideoState	IT6664_extern.h	/^}TxVideoState;$/;"	t	typeref:enum:TxVideoState_type
+TxVideoState_type	IT6664_extern.h	/^typedef enum TxVideoState_type$/;"	g
+Tx_CP_Done	IT6664_extern.h	/^	Tx_CP_Done,$/;"	e	enum:TxHdcpState_type
+Tx_CP_Going	IT6664_extern.h	/^	Tx_CP_Going,$/;"	e	enum:TxHdcpState_type
+Tx_CP_ReAuth	IT6664_extern.h	/^	Tx_CP_ReAuth,$/;"	e	enum:TxHdcpState_type
+Tx_CP_Reset	IT6664_extern.h	/^	Tx_CP_Reset,$/;"	e	enum:TxHdcpState_type
+Tx_CP_Timeout_SWRty	IT6664_extern.h	/^	Tx_CP_Timeout_SWRty$/;"	e	enum:TxHdcpState_type
+Tx_CP_WaitInt	IT6664_extern.h	/^	Tx_CP_WaitInt=0,$/;"	e	enum:TxHdcpState_type
+Tx_CP_check	IT6664_extern.h	/^	Tx_CP_check,$/;"	e	enum:TxHdcpState_type
+Tx_Video_OK	IT6664_extern.h	/^	Tx_Video_OK$/;"	e	enum:TxVideoState_type
+Tx_Video_Reset	IT6664_extern.h	/^	Tx_Video_Reset,$/;"	e	enum:TxVideoState_type
+Tx_Video_Stable	IT6664_extern.h	/^	Tx_Video_Stable,$/;"	e	enum:TxVideoState_type
+Tx_Video_Stable_off	IT6664_extern.h	/^	Tx_Video_Stable_off,$/;"	e	enum:TxVideoState_type
+Tx_Video_waitInt	IT6664_extern.h	/^	Tx_Video_waitInt = 0,$/;"	e	enum:TxVideoState_type
+USING_1TO8	IT6664_IO.c	16;"	d	file:
+USING_1to8	IT6664_Config.h	15;"	d
+USING_1to8	IT6664_Config.h	42;"	d
+UpSamSel	IT6664_hdmi2sp.h	34;"	d
+VActive	IT6664_extern.h	/^    iTE_u16 VActive ;$/;"	m	struct:__anon1
+VBackPorch	IT6664_extern.h	/^    iTE_u16 VBackPorch ;$/;"	m	struct:__anon1
+VESA1024x600P60	IT6664_extern.h	41;"	d
+VESA1024x768P60	IT6664_extern.h	42;"	d
+VESA1024x768P70	IT6664_extern.h	43;"	d
+VESA1024x768P75	IT6664_extern.h	44;"	d
+VESA1024x768P85	IT6664_extern.h	45;"	d
+VESA1280x1024P60	IT6664_extern.h	56;"	d
+VESA1280x1024P75	IT6664_extern.h	57;"	d
+VESA1280x1024P85	IT6664_extern.h	58;"	d
+VESA1280x768P60	IT6664_extern.h	48;"	d
+VESA1280x768P75	IT6664_extern.h	49;"	d
+VESA1280x768P85	IT6664_extern.h	50;"	d
+VESA1280x768RB60	IT6664_extern.h	47;"	d
+VESA1280x800P60	IT6664_extern.h	52;"	d
+VESA1280x800RB60	IT6664_extern.h	51;"	d
+VESA1280x960P60	IT6664_extern.h	53;"	d
+VESA1280x960P85	IT6664_extern.h	54;"	d
+VESA1360x768P60	IT6664_extern.h	60;"	d
+VESA1366x768P60	IT6664_extern.h	62;"	d
+VESA1366x768RB60	IT6664_extern.h	61;"	d
+VESA1400x1050RB60	IT6664_extern.h	63;"	d
+VESA1440x900P60	IT6664_extern.h	65;"	d
+VESA1440x900RB60	IT6664_extern.h	64;"	d
+VESA1600x1200P60	IT6664_extern.h	69;"	d
+VESA1600x1200P65	IT6664_extern.h	70;"	d
+VESA1600x1200P70	IT6664_extern.h	71;"	d
+VESA1600x1200P75	IT6664_extern.h	72;"	d
+VESA1600x1200P85	IT6664_extern.h	73;"	d
+VESA1600x1200RB60	IT6664_extern.h	68;"	d
+VESA1600x900RB60	IT6664_extern.h	67;"	d
+VESA1680x1050P60	IT6664_extern.h	75;"	d
+VESA1792x1344P60	IT6664_extern.h	76;"	d
+VESA1920x1200P60	IT6664_extern.h	78;"	d
+VESA1920x1200RB60	IT6664_extern.h	77;"	d
+VESA2048x1536RB60	IT6664_extern.h	79;"	d
+VESA2560x1400RB60	IT6664_extern.h	80;"	d
+VESA2560x1600RB60	IT6664_extern.h	81;"	d
+VESA640x350P85	IT6664_extern.h	26;"	d
+VESA640x400P85	IT6664_extern.h	27;"	d
+VESA640x480P60	IT6664_extern.h	29;"	d
+VESA640x480P72	IT6664_extern.h	30;"	d
+VESA640x480P75	IT6664_extern.h	31;"	d
+VESA640x480P85	IT6664_extern.h	32;"	d
+VESA720x400P85	IT6664_extern.h	28;"	d
+VESA800x600P120	IT6664_extern.h	39;"	d
+VESA800x600P56	IT6664_extern.h	34;"	d
+VESA800x600P60	IT6664_extern.h	35;"	d
+VESA800x600P72	IT6664_extern.h	36;"	d
+VESA800x600P75	IT6664_extern.h	37;"	d
+VESA800x600P85	IT6664_extern.h	38;"	d
+VFrontPorch	IT6664_extern.h	/^    iTE_u16 VFrontPorch ;$/;"	m	struct:__anon1
+VIC	IT6664_extern.h	/^    iTE_u16 VIC;$/;"	m	struct:__anon1
+VID10BIT	IT6664_extern.h	103;"	d
+VID12BIT	IT6664_extern.h	104;"	d
+VID16BIT	IT6664_extern.h	105;"	d
+VID8BIT	IT6664_extern.h	102;"	d
+VPolarity	IT6664_extern.h	/^    iTE_u16 VPolarity ;$/;"	m	struct:__anon1
+VSyncWidth	IT6664_extern.h	/^    iTE_u16 VSyncWidth ;$/;"	m	struct:__anon1
+VTiming	IT6664_extern.h	/^} VTiming ;$/;"	t	typeref:struct:__anon1
+VTotal	IT6664_extern.h	/^    iTE_u16 VTotal ;$/;"	m	struct:__anon1
+VideoState	IT6664_extern.h	/^	iTE_u8 VideoState[4];$/;"	m	struct:__anon2
+Vneg	IT6664_extern.h	203;"	d
+Vpos	IT6664_extern.h	205;"	d
+Wait	IT6664_hdmi2_rx.c	/^iTE_u8 Wait;$/;"	v
+XPStableTime	IT6664_hdmi2sp.h	40;"	d
+Y2R_F2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE Y2R_F2F[2][18] =$/;"	v
+Y2R_L2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE Y2R_L2F[2][18] =$/;"	v
+Y2R_Offset_F2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE Y2R_Offset_F2F[3] =$/;"	v
+Y2R_Offset_L2F	IT6664_hdmi2_rx.c	/^iTE_u8 _CODE Y2R_Offset_L2F[3] =$/;"	v
+YCbCr420	IT6664_extern.h	110;"	d
+YCbCr422	IT6664_extern.h	108;"	d
+YCbCr444	IT6664_extern.h	109;"	d
+YUV2RGB	IT6664_extern.h	146;"	d
+_I2C_SMBUS_H_	i2c_smbus.h	2;"	d
+_IT6664_CONFIG_H_	IT6664_Config.h	12;"	d
+_IT6664_EXTERN_H_	IT6664_extern.h	12;"	d
+_IT6664_HDMI2SP_H_	IT6664_hdmi2sp.h	12;"	d
+_IT6664_H_	IT6664.h	12;"	d
+ar_gext	IT6664_IO.c	/^extern_variables ar_gext;$/;"	v
+ar_gext	IT6664_IO.c	/^extern_variables ar_gext[3];$/;"	v
+ar_gu32	IT6664_IO.c	/^extern_32 ar_gu32;$/;"	v
+ar_gu32	IT6664_IO.c	/^extern_32 ar_gu32[3];$/;"	v
+ar_gu8	IT6664_IO.c	/^extern_u8	ar_gu8;$/;"	v
+ar_gu8	IT6664_IO.c	/^extern_u8	ar_gu8[3];$/;"	v
+ar_txmem	IT6664_IO.c	/^it6664_tx ar_txmem;$/;"	v
+ar_txmem	IT6664_IO.c	/^it6664_tx ar_txmem[3];$/;"	v
+bVSDBspport3D	IT6664_extern.h	/^    iTE_u8	bVSDBspport3D;$/;"	m	struct:PARSE3D_STR
+cal_oclk	IT6664_hdmi2sp.c	/^void cal_oclk(void)$/;"	f
+cal_pclk	IT6664_hdmi2sp.c	/^void cal_pclk(iTE_u8 port)$/;"	f
+cal_rclk	IT6664_hdmi2sp.c	/^void cal_rclk( void )$/;"	f
+cal_rxh1_sha	IT6664_hdmi2_tx.c	/^void cal_rxh1_sha( iTE_u8 DevCnt )$/;"	f
+caof_ini	IT6664_hdmi2sp.c	/^void caof_ini( void )$/;"	f
+chgrxbank	IT6664_hdmi2sp.c	/^void chgrxbank(iTE_u8 bankno)$/;"	f
+chgspbank	IT6664_hdmi2sp.c	/^void chgspbank(iTE_u8 bankno)$/;"	f
+chktx_hdcp2_ksv	IT6664_hdmi2_tx.c	/^void chktx_hdcp2_ksv(iTE_u8 port)$/;"	f
+client	i2csmbus.c	/^	struct i2c_client *client;$/;"	m	struct:i2c_smbus	typeref:struct:i2c_smbus::i2c_client	file:
+client	it6663.c	/^	struct i2c_client *client;$/;"	m	struct:clk_tx_linerate	typeref:struct:clk_tx_linerate::i2c_client	file:
+clk	it6663.c	/^	struct clk *clk;$/;"	m	struct:clk_tx_linerate	typeref:struct:clk_tx_linerate::clk	file:
+clk_tx_linerate	it6663.c	/^struct clk_tx_linerate {$/;"	s	file:
+conv	IT6664_extern.h	114;"	d
+csc	IT6664_extern.h	113;"	d
+ddcwait	IT6664_hdmi2_tx.c	/^iTE_u8 ddcwait(iTE_u8 port)$/;"	f
+debug	it6663.c	/^static bool debug;$/;"	v	file:
+detectbus	IT6664_hdmi2sp.c	/^void detectbus(void)$/;"	f
+dev	i2csmbus.c	/^struct i2c_smbus *dev; $/;"	v	typeref:struct:i2c_smbus
+ds	IT6664_extern.h	115;"	d
+extern_32	IT6664_extern.h	/^}extern_32;$/;"	t	typeref:struct:__anon5
+extern_u8	IT6664_extern.h	/^}extern_u8;$/;"	t	typeref:struct:__anon3
+extern_variables	IT6664_extern.h	/^}extern_variables;$/;"	t	typeref:struct:__anon2
+fail_ch	IT6664_hdmi2_rx.c	/^iTE_u8 fail_ch[3];$/;"	v
+format	IT6664_extern.h	/^    iTE_u8 *format;$/;"	m	struct:__anon1
+g_device	IT6664_IO.c	/^iTE_u8 g_device;$/;"	v
+get_vid_info	IT6664_hdmi2_rx.c	/^void get_vid_info(void)$/;"	f
+gext_long	IT6664_IO.c	/^extern_32 *gext_long;$/;"	v
+gext_u8	IT6664_IO.c	/^extern_u8 *gext_u8;$/;"	v
+gext_var	IT6664_IO.c	/^extern_variables *gext_var;$/;"	v
+gmem_tx	IT6664_IO.c	/^it6664_tx *gmem_tx;$/;"	v
+h2rx_edidwr	IT6664_extern.h	420;"	d
+h2rx_ini	IT6664_hdmi2sp.c	/^void h2rx_ini(iTE_u8 port)$/;"	f
+h2rx_irq	IT6664_hdmi2_rx.c	/^void h2rx_irq(void)$/;"	f
+h2rx_rst	IT6664_hdmi2sp.c	/^void h2rx_rst(iTE_u8 port)$/;"	f
+h2rxbrd	IT6664_extern.h	418;"	d
+h2rxrd	IT6664_extern.h	416;"	d
+h2rxset	IT6664_extern.h	417;"	d
+h2rxwr	IT6664_extern.h	415;"	d
+h2sp_irq	IT6664_hdmi2sp.c	/^void h2sp_irq( void )$/;"	f
+h2spbrd	IT6664_extern.h	411;"	d
+h2spbwr	IT6664_extern.h	413;"	d
+h2sprd	IT6664_extern.h	412;"	d
+h2spset	IT6664_extern.h	409;"	d
+h2spwr	IT6664_extern.h	410;"	d
+h2txVclkrst	IT6664_hdmi2_tx.c	/^void h2txVclkrst(iTE_u8 port)$/;"	f
+h2tx_enout	IT6664_hdmi2_tx.c	/^void h2tx_enout(iTE_u8 port)$/;"	f
+h2tx_ini	IT6664_hdmi2sp.c	/^void h2tx_ini(iTE_u8 port)$/;"	f
+h2tx_irq	IT6664_hdmi2_tx.c	/^void h2tx_irq(iTE_u8 port)$/;"	f
+h2tx_pwrdn	IT6664_hdmi2_tx.c	/^void h2tx_pwrdn(iTE_u8 port)$/;"	f
+h2tx_pwron	IT6664_hdmi2_tx.c	/^void h2tx_pwron(iTE_u8 port)$/;"	f
+h2tx_rst	IT6664_hdmi2sp.c	/^void h2tx_rst(iTE_u8 port)$/;"	f
+h2txbrd	IT6664_extern.h	403;"	d
+h2txcom_ini	IT6664_hdmi2sp.c	/^void h2txcom_ini(void)$/;"	f
+h2txcombwr	IT6664_extern.h	407;"	d
+h2txcomrd	IT6664_extern.h	405;"	d
+h2txcomset	IT6664_extern.h	406;"	d
+h2txcomwr	IT6664_extern.h	404;"	d
+h2txrd	IT6664_extern.h	400;"	d
+h2txset	IT6664_extern.h	402;"	d
+h2txwr	IT6664_extern.h	401;"	d
+hdcprd	IT6664_hdmi2_tx.c	/^void hdcprd( iTE_u8 port, iTE_u8 offset, iTE_u8 bytenum )$/;"	f
+hdcpsts	IT6664_hdmi2_tx.c	/^void hdcpsts(iTE_u8 val,iTE_u8 port)$/;"	f
+hdmi2_irq	IT6664_hdmi2sp.c	/^void hdmi2_irq( void )$/;"	f
+hw	it6663.c	/^	struct clk_hw hw;$/;"	m	struct:clk_tx_linerate	typeref:struct:clk_tx_linerate::clk_hw	file:
+i2c_client_init	i2csmbus.c	/^void i2c_client_init(struct i2c_client *client)$/;"	f
+i2c_read_byte	i2csmbus.c	/^int i2c_read_byte(u8 slave_addr, u8 reg, u8 byteno, u8 *data, u8 i2c_bus)$/;"	f
+i2c_smbus	i2csmbus.c	/^struct i2c_smbus {$/;"	s	file:
+i2c_write_byte	i2csmbus.c	/^int i2c_write_byte(u8 slave_addr, u8 reg, u8 byteno, const u8 *val, u8 i2c_bus)$/;"	f
+iTE_Cec_Msg	IT6664_Config.h	27;"	d
+iTE_Cec_Msg	IT6664_Config.h	37;"	d
+iTE_Edid_Msg	IT6664_Config.h	26;"	d
+iTE_Edid_Msg	IT6664_Config.h	36;"	d
+iTE_I2C_ReadBurst	IT6664_IO.c	/^void iTE_I2C_ReadBurst(iTE_u8 u8Adr,iTE_u8 u8Offset,iTE_u8 u8Cnt,iTE_u8* pu8Buf)$/;"	f
+iTE_I2C_ReadBurstP	IT6664_IO.c	/^void iTE_I2C_ReadBurstP(iTE_u8 u8Adr,iTE_u8 port,iTE_u8 u8Offset,iTE_u8 u8Cnt,iTE_u8* pu8Buf)$/;"	f
+iTE_I2C_ReadByte	IT6664_IO.c	/^iTE_u8 iTE_I2C_ReadByte(iTE_u8 u8Adr, iTE_u8 u8Offset)$/;"	f
+iTE_I2C_ReadByteP	IT6664_IO.c	/^iTE_u8 iTE_I2C_ReadByteP(iTE_u8 u8Adr,iTE_u8 port,iTE_u8 u8Offset)$/;"	f
+iTE_I2C_SetByte	IT6664_IO.c	/^void iTE_I2C_SetByte(iTE_u8 u8Adr,iTE_u8 u8Offset,iTE_u8 u8InvMask, iTE_u8 u8Data )$/;"	f
+iTE_I2C_SetByteP	IT6664_IO.c	/^void iTE_I2C_SetByteP(iTE_u8 u8Adr,iTE_u8 port,iTE_u8 u8Offset,iTE_u8 u8InvMask, iTE_u8 u8Data )$/;"	f
+iTE_I2C_WriteBurst	IT6664_IO.c	/^void iTE_I2C_WriteBurst(iTE_u8 u8Adr,iTE_u8 u8Offset,iTE_u8 u8Cnt,iTE_u8* pu8Buf)$/;"	f
+iTE_I2C_WriteBurstP	IT6664_IO.c	/^void iTE_I2C_WriteBurstP(iTE_u8 u8Adr,iTE_u8 port,iTE_u8 u8Offset,iTE_u8 u8Cnt,iTE_u8* pu8Buf)$/;"	f
+iTE_I2C_WriteByte	IT6664_IO.c	/^void iTE_I2C_WriteByte(iTE_u8 u8Adr, iTE_u8 u8Offset, iTE_u8 u8Data)$/;"	f
+iTE_I2C_WriteByteP	IT6664_IO.c	/^void iTE_I2C_WriteByteP(iTE_u8 u8Adr,iTE_u8 port, iTE_u8 u8Offset, iTE_u8 u8Data)$/;"	f
+iTE_Msg	IT6664_Config.h	20;"	d
+iTE_Msg	IT6664_Config.h	29;"	d
+iTE_MsgEQ	IT6664_Config.h	21;"	d
+iTE_MsgEQ	IT6664_Config.h	30;"	d
+iTE_MsgHDCP	IT6664_Config.h	25;"	d
+iTE_MsgHDCP	IT6664_Config.h	34;"	d
+iTE_MsgHDCP	IT6664_Config.h	35;"	d
+iTE_MsgMHL	IT6664_Config.h	24;"	d
+iTE_MsgMHL	IT6664_Config.h	33;"	d
+iTE_MsgRX	IT6664_Config.h	23;"	d
+iTE_MsgRX	IT6664_Config.h	32;"	d
+iTE_MsgTX	IT6664_Config.h	22;"	d
+iTE_MsgTX	IT6664_Config.h	31;"	d
+it6663_driver	it6663.c	/^module_i2c_driver(it6663_driver);$/;"	v
+it6663_driver	it6663.c	/^static struct i2c_driver it6663_driver = {$/;"	v	typeref:struct:i2c_driver	file:
+it6663_id	it6663.c	/^static const struct i2c_device_id it6663_id[] = {$/;"	v	typeref:struct:i2c_device_id	file:
+it6663_of_match	it6663.c	/^static const struct of_device_id it6663_of_match[] = {$/;"	v	typeref:struct:of_device_id	file:
+it6663_probe	it6663.c	/^static int it6663_probe(struct i2c_client *client,$/;"	f	file:
+it6663_read	it6663.c	/^static inline int it6663_read(struct i2c_client *client, u8 reg)$/;"	f	file:
+it6663_remove	it6663.c	/^static int it6663_remove(struct i2c_client *client)$/;"	f	file:
+it6663_write	it6663.c	/^static inline int it6663_write(struct i2c_client *client, u8 reg, u8 value)$/;"	f	file:
+it6664_Audio_Parse	IT6664_EDID.c	/^void it6664_Audio_Parse(iTE_u8 port,iTE_u8 table[],iTE_u8 offset)$/;"	f
+it6664_AutoEQ_State	IT6664_hdmi2_rx.c	/^void it6664_AutoEQ_State(void)$/;"	f
+it6664_Check_HPDsts	IT6664_EDID.c	/^iTE_u8 it6664_Check_HPDsts(void)$/;"	f
+it6664_ComposeEDIDBlock1_Audio	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_Audio(iTE_pu8 ptr,iTE_u8 offset)$/;"	f
+it6664_ComposeEDIDBlock1_Audio_int	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_Audio_int(iTE_pu8 ptr,iTE_u8 offset)$/;"	f
+it6664_ComposeEDIDBlock1_DTD	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_DTD(iTE_pu8 ptr,iTE_u8 offset)$/;"	f
+it6664_ComposeEDIDBlock1_ExtTag	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_ExtTag(iTE_pu8 ptr,iTE_u8 offset , iTE_u8 tag)$/;"	f
+it6664_ComposeEDIDBlock1_ExtTag_int	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_ExtTag_int(iTE_pu8 ptr,iTE_u8 offset , iTE_u8 tag)$/;"	f
+it6664_ComposeEDIDBlock1_Speaker	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_Speaker(iTE_pu8 ptr,iTE_u8 offset)$/;"	f
+it6664_ComposeEDIDBlock1_Speaker_int	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_Speaker_int(iTE_pu8 ptr,iTE_u8 offset)$/;"	f
+it6664_ComposeEDIDBlock1_VIC	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_VIC(iTE_pu8 ptr,iTE_u8 offset,iTE_u8 sup_vsdb2)$/;"	f
+it6664_ComposeEDIDBlock1_VIC_int	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_VIC_int(iTE_pu8 ptr,iTE_u8 offset,iTE_u8 sup_vsdb2)$/;"	f
+it6664_ComposeEDIDBlock1_VSDB1	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_VSDB1(iTE_pu8 ptr,iTE_u8 offset)$/;"	f
+it6664_ComposeEDIDBlock1_VSDB1_int	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_VSDB1_int(iTE_pu8 ptr,iTE_u8 offset)$/;"	f
+it6664_ComposeEDIDBlock1_VSDB2	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_VSDB2(iTE_pu8 ptr,iTE_u8 offset)$/;"	f
+it6664_ComposeEDIDBlock1_VSDB2_int	IT6664_EDID.c	/^iTE_u8 it6664_ComposeEDIDBlock1_VSDB2_int(iTE_pu8 ptr,iTE_u8 offset)$/;"	f
+it6664_DTD2VIC	IT6664_EDID.c	/^iTE_u8 it6664_DTD2VIC(iTE_u8 table[])$/;"	f
+it6664_EDIDCompare	IT6664_EDID.c	/^iTE_u8 it6664_EDIDCompare(iTE_pu8 arry1,iTE_pu8 arry2)$/;"	f
+it6664_EQ14	IT6664_hdmi2_rx.c	/^void it6664_EQ14(iTE_u8 val)$/;"	f
+it6664_EQRst	IT6664_hdmi2_rx.c	/^void it6664_EQRst(void)$/;"	f
+it6664_EQchkOldResult	IT6664_hdmi2_rx.c	/^void it6664_EQchkOldResult(iTE_u8 hdmiver)$/;"	f
+it6664_EXT_Parse	IT6664_EDID.c	/^void it6664_EXT_Parse(iTE_u8 port,iTE_u8 table[],iTE_u8 offset)$/;"	f
+it6664_EdidMode_Switch	IT6664_EDID.c	/^void it6664_EdidMode_Switch(void)$/;"	f
+it6664_Edid_Chk_4KDTD	IT6664_EDID.c	/^void it6664_Edid_Chk_4KDTD(iTE_pu8 arry1 ,iTE_u8 block)$/;"	f
+it6664_Edid_Compose	IT6664_EDID.c	/^void it6664_Edid_Compose(void)$/;"	f
+it6664_Edid_Compose_Int	IT6664_EDID.c	/^void it6664_Edid_Compose_Int(void)$/;"	f
+it6664_Edid_Copy	IT6664_EDID.c	/^void it6664_Edid_Copy(iTE_u8 hpdsts)$/;"	f
+it6664_Edid_DataInit	IT6664_EDID.c	/^void it6664_Edid_DataInit(iTE_u8 port)$/;"	f
+it6664_Edid_Parse	IT6664_EDID.c	/^iTE_u8 it6664_Edid_Parse(iTE_u8 HPDsts)$/;"	f
+it6664_Edid_PhyABCD_Update	IT6664_EDID.c	/^void it6664_Edid_PhyABCD_Update(iTE_pu8 arry1)$/;"	f
+it6664_Edid_block0_parse	IT6664_EDID.c	/^iTE_u8 it6664_Edid_block0_parse(iTE_u8 port,iTE_u8 tmp[])$/;"	f
+it6664_Edid_block1_parse	IT6664_EDID.c	/^iTE_u8 it6664_Edid_block1_parse(iTE_u8 port,iTE_u8 tmp[])$/;"	f
+it6664_ManuEQ	IT6664_hdmi2_rx.c	/^void it6664_ManuEQ(iTE_u8 mode)$/;"	f
+it6664_RPTSAREQ	IT6664_hdmi2_rx.c	/^iTE_u8 it6664_RPTSAREQ(iTE_u8 SKEWOPT,iTE_u8 HDMI_mode)$/;"	f
+it6664_RXHDCP_OFF	IT6664_hdmi2_rx.c	/^void it6664_RXHDCP_OFF(iTE_u8 sts)$/;"	f
+it6664_RXHDCP_Set	IT6664_hdmi2_rx.c	/^void it6664_RXHDCP_Set(iTE_u8 sts)$/;"	f
+it6664_RX_ClockstbChk	IT6664_hdmi2sp.c	/^void it6664_RX_ClockstbChk(void)$/;"	f
+it6664_Read_SKEW	IT6664_hdmi2_rx.c	/^void it6664_Read_SKEW(void)$/;"	f
+it6664_RptBitErr_ms	IT6664_hdmi2_rx.c	/^iTE_u8 it6664_RptBitErr_ms(iTE_u8 Threshold)$/;"	f
+it6664_SetFixEQ	IT6664_hdmi2_rx.c	/^void it6664_SetFixEQ(iTE_u8 val)$/;"	f
+it6664_Set_SAREQ	IT6664_hdmi2_rx.c	/^void it6664_Set_SAREQ(iTE_u8 SKEWOPT)$/;"	f
+it6664_SigleRSSKEW	IT6664_hdmi2_rx.c	/^void it6664_SigleRSSKEW(void)$/;"	f
+it6664_TXCED_monitor	IT6664_hdmi2_tx.c	/^void it6664_TXCED_monitor(iTE_u8 port)$/;"	f
+it6664_Video_Parse	IT6664_EDID.c	/^void it6664_Video_Parse(iTE_u8 port,iTE_u8 table[],iTE_u8 offset)$/;"	f
+it6664_Vsdb1_Parse	IT6664_EDID.c	/^void it6664_Vsdb1_Parse(iTE_u8 port,iTE_u8 table[],iTE_u8 offset)$/;"	f
+it6664_Vsdb2_Parse	IT6664_EDID.c	/^void it6664_Vsdb2_Parse(iTE_u8 port,iTE_u8 table[],iTE_u8 offset)$/;"	f
+it6664_block0_compose	IT6664_EDID.c	/^void it6664_block0_compose(iTE_pu8 arry)$/;"	f
+it6664_block0_compose_int	IT6664_EDID.c	/^void it6664_block0_compose_int(iTE_pu8 arry)$/;"	f
+it6664_block1_compose	IT6664_EDID.c	/^void it6664_block1_compose(iTE_pu8 arry)$/;"	f
+it6664_block1_compose_int	IT6664_EDID.c	/^void it6664_block1_compose_int(iTE_pu8 arry)$/;"	f
+it6664_h2rx_pwdon	IT6664_hdmi2_rx.c	/^void it6664_h2rx_pwdon(void)$/;"	f
+it6664_hdcp_state	IT6664_hdmi2_tx.c	/^void it6664_hdcp_state(iTE_u8 port)$/;"	f
+it6664_hdmi2sp_initial	IT6664_hdmi2sp.c	/^void it6664_hdmi2sp_initial(void)$/;"	f
+it6664_hdmi2sp_rst	IT6664_hdmi2sp.c	/^void it6664_hdmi2sp_rst(void)$/;"	f
+it6664_hdmitx_handler	IT6664_hdmi2_tx.c	/^void it6664_hdmitx_handler(void)$/;"	f
+it6664_hdmitx_video_state	IT6664_hdmi2_tx.c	/^void it6664_hdmitx_video_state(iTE_u8 port)$/;"	f
+it6664_read_edid	IT6664_EDID.c	/^iTE_u8 it6664_read_edid(iTE_u8 port, iTE_u8 block, iTE_u8 offset, iTE_u16 length, iTE_u8 *edid_buffer)$/;"	f
+it6664_read_one_block_edid	IT6664_EDID.c	/^iTE_u8 it6664_read_one_block_edid(iTE_u8 port,iTE_u8 block, iTE_u8 *edid_buffer)$/;"	f
+it6664_tx	IT6664_extern.h	/^}it6664_tx;$/;"	t	typeref:struct:__anon4
+it6664_txvar_init	IT6664_hdmi2_tx.c	/^void it6664_txvar_init(void)$/;"	f
+it6664_var_init	IT6664_hdmi2sp.c	/^void it6664_var_init(void)$/;"	f
+mSleep	IT6664_EDID.c	15;"	d	file:
+mSleep	IT6664_hdmi2_rx.c	14;"	d	file:
+mSleep	IT6664_hdmi2_tx.c	14;"	d	file:
+main	it6663_main.c	/^int main ()$/;"	f
+mhlrxbrd	IT6664_extern.h	396;"	d
+mhlrxbwr	IT6664_extern.h	397;"	d
+mhlrxrd	IT6664_extern.h	394;"	d
+mhlrxset	IT6664_extern.h	398;"	d
+mhlrxwr	IT6664_extern.h	395;"	d
+obj-m	Makefile	/^obj-m := it6663.o $/;"	m
+ori	IT6664_extern.h	112;"	d
+port_offset	IT6664_IO.c	/^iTE_u8 port_offset = 2;$/;"	v
+port_offset	IT6664_IO.c	/^iTE_u8 port_offset = 4;$/;"	v
+rate	it6663.c	/^	unsigned long rate;$/;"	m	struct:clk_tx_linerate	file:
+repeater	IT6664_Config.h	77;"	d
+sYCC601	IT6664_extern.h	119;"	d
+scdcrd	IT6664_hdmi2_tx.c	/^iTE_u8 scdcrd(iTE_u8 port, iTE_u8 offset, iTE_u8 bytenum)$/;"	f
+scdcwr	IT6664_hdmi2_tx.c	/^iTE_u8 scdcwr(iTE_u8 port, iTE_u8 offset, iTE_u8 data)$/;"	f
+setrx_ksv_list	IT6664_hdmi2_tx.c	/^void setrx_ksv_list(iTE_u8 devcnt, iTE_u8 depth, iTE_u8 err_devcnt, iTE_u8 err_depth)$/;"	f
+setup_h2scdc	IT6664_hdmi2_tx.c	/^iTE_u8 setup_h2scdc(iTE_u8 port)$/;"	f
+setup_h2txafe	IT6664_hdmi2_tx.c	/^void setup_h2txafe(iTE_u8 port)$/;"	f
+st3DParse	IT6664_IO.c	/^struct PARSE3D_STR	st3DParse;$/;"	v	typeref:struct:PARSE3D_STR
+tolerr	IT6664_hdmi2_rx.c	/^iTE_u32 tolerr[3];$/;"	v
+txrunhdcp	IT6664_hdmi2_tx.c	/^iTE_u8 txrunhdcp(iTE_u8 port)$/;"	f
+txrunhdcp2	IT6664_hdmi2_tx.c	/^void txrunhdcp2(iTE_u8 port)$/;"	f
+u8	i2c_smbus.h	/^typedef unsigned char u8;$/;"	t
+u8I2CAdr	IT6664_IO.c	/^iTE_u8 u8I2CAdr = 0;$/;"	v
+u8I2CBus	IT6664_IO.c	/^iTE_u8 u8I2CBus = 0;$/;"	v
+u8I2CBus	IT6664_IO.c	/^iTE_u8 u8I2CBus = I2C_SMBusE;$/;"	v
+uc3DBlock	IT6664_extern.h	/^    iTE_u8	uc3DBlock;$/;"	m	struct:PARSE3D_STR
+uc3DEdidStart	IT6664_extern.h	/^    iTE_u8	uc3DEdidStart;$/;"	m	struct:PARSE3D_STR
+uc3DInfor	IT6664_extern.h	/^    iTE_u8	uc3DInfor[32];$/;"	m	struct:PARSE3D_STR
+uc3DTempCnt	IT6664_extern.h	/^    iTE_u8	uc3DTempCnt;$/;"	m	struct:PARSE3D_STR
+ucDtdCnt	IT6664_extern.h	/^    iTE_u8	ucDtdCnt;$/;"	m	struct:PARSE3D_STR
+ucVicCnt	IT6664_extern.h	/^    iTE_u8	ucVicCnt;$/;"	m	struct:PARSE3D_STR
+ucVicStart	IT6664_extern.h	/^    iTE_u8	ucVicStart;$/;"	m	struct:PARSE3D_STR
+xvYCC601	IT6664_extern.h	117;"	d
+xvYCC709	IT6664_extern.h	118;"	d

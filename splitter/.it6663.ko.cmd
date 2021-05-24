@@ -1,0 +1,1 @@
+cmd_/home/ign/hdmi-modules/splitter/it6663.ko := aarch64-xilinx-linux-ld -r  -EL  -maarch64elf -T ./scripts/module-common.lds -T ./arch/arm64/kernel/module.lds  --build-id  -o /home/ign/hdmi-modules/splitter/it6663.ko /home/ign/hdmi-modules/splitter/it6663.o /home/ign/hdmi-modules/splitter/it6663.mod.o ;  true

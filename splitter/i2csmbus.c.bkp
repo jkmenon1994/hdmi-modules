@@ -1,0 +1,84 @@
+#include <linux/module.h>
+#include <linux/i2c.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <errno.h>
+#include "i2c_smbus.h"
+
+
+struct i2c_smbus {
+	struct i2c_client *client;
+};
+
+void i2c_client_init(struct i2c_client *client)
+{
+ 
+  struct i2c_smbus *dev; 
+  dev  = kzalloc(sizeof(*dev), GFP_KERNEL);
+  if (dev == NULL) {
+	printk(KERN_ERR "%s:allocation failed \n",__func__);
+  } 
+
+  dev->client = client; 
+
+}
+
+
+int i2c_read_byte(u8 slave_addr, u8 reg, u8 byteno, u8 *data, u8 i2c_bus)
+{
+  int ret;
+  struct i2c_smbus *dev;
+ 
+  slave_addr = slave_addr >> 1;
+  
+  dev->client->addr = slave_addr;
+  
+  if (ioctl(dev_fd, I2C_SLAVE, slave_addr) < 0) {
+    printf("Failed to set slave address \n");
+    return 0;
+  }
+
+  if(byteno < 2) {
+        *data = i2c_smbus_read_byte_data(dev_fd, reg);
+        if (*data < 0)
+            printf(" i2c transaction failed \n");
+  }
+  else {
+        ret = i2c_smbus_read_i2c_block_data(dev_fd, reg, byteno, data);
+        if(ret < 0)
+           printf("i2c read block transaction failed \n");
+  }
+
+  return 0;
+}
+
+int i2c_write_byte(u8 slave_addr, u8 reg, u8 byteno, const u8 *val, u8 i2c_bus)
+{
+  int ret;
+  slave_addr = slave_addr >> 1;
+
+  if (ioctl(dev_fd, I2C_SLAVE, slave_addr) < 0) {
+    printf("Failed to set slave address \n");
+    return 0;
+  }
+
+  if (byteno < 2) {
+        ret = i2c_smbus_write_byte_data(dev_fd, reg, *val);
+        if (ret < 0)
+           printf(" i2c_smbus_write_byte transaction failed \n");
+  }
+  else {
+       ret = i2c_smbus_write_i2c_block_data(dev_fd, reg, byteno, val);
+        if (ret < 0)
+          printf(" i2c_smbus_write_burst transaction failed \n");
+ }
+
+ return 0;
+
+}
+
+
+

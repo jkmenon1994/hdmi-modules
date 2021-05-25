@@ -537,6 +537,8 @@ static void TxConnectCallback(void *CallbackRef)
 		xhdmi->is_hdmi_20_sink = (xst_hdmi20 == XST_SUCCESS);
 		XVphy_IBufDsEnable(VphyPtr, 0, XVPHY_DIR_TX, (TRUE));
 		XV_HdmiTxSs_StreamStart(HdmiTxSsPtr);
+		dev_dbg(xhdmi->dev,"Showing the SCDC status bits \n");
+		XV_HdmiTxSs_ShowSCDC(HdmiTxSsPtr);
 		/* stream never goes down on disconnect. Force hdcp event */
 		if (xhdmi->hdmi_stream_up &&
 			XV_HdmiTxSs_HdcpIsReady(HdmiTxSsPtr) &&
@@ -909,6 +911,7 @@ static int xlnx_drm_hdmi_get_edid_block(void *data, u8 *buf, unsigned int block,
 
 	/* then copy the requested 128-byte block(s) */
 	memcpy(buf, buffer + block * 128, len);
+	dev_dbg(xhdmi->dev, "EDID Raw data %d \n", *buf);
 	/* free our local buffer */
 	kfree(buffer);
 	return 0;

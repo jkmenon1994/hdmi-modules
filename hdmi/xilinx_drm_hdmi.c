@@ -942,7 +942,7 @@ static int xlnx_drm_hdmi_connector_get_modes(struct drm_connector *connector)
 		xhdmi->have_edid = 0;
 		dev_err(xhdmi->dev, "xlnx_drm_hdmi_get_modes() could not obtain edid, assume <= 1024x768 works.\n");
 		drm_connector_update_edid_property(connector, NULL);
-		return 0;
+	//	return 0;
 	}
 	xhdmi->have_edid = 1;
 

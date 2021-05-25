@@ -203,7 +203,7 @@ void XVphy_InterruptHandler(XVphy *InstancePtr)
 	Xil_AssertVoid(InstancePtr != NULL);
 	Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-	printk("%s: Type of Interrupt received %x \n", IntrStatus);
+	printk("%s: Type of Interrupt received %x \n",__func__, IntrStatus);
 	/* Determine what kind of interrupts have occurred. */
 	IntrStatus = XVphy_ReadReg(InstancePtr->Config.BaseAddr,
 			XVPHY_INTR_STS_REG);

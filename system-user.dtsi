@@ -1,0 +1,332 @@
+/include/ "system-conf.dtsi"
+/ {
+   xlnk {
+      compatible = "xlnx,xlnk-1.0";
+   };
+};
+
+&gem3 {
+	status = "okay";
+	local-mac-address = [00 0a 35 00 02 90];
+	phy-mode = "rgmii-id";
+	phy-handle = <&phy0>;
+	phy0: phy@0 {
+		reg = <0x0>;
+		ti,rx-internal-delay = <0x5>;
+		ti,tx-internal-delay = <0x5>;
+		ti,fifo-depth = <0x1>;
+	};
+};
+
+&i2c1 {
+	status = "okay";
+	clock-frequency = <400000>;
+
+	i2cswitch@70 { /* U7 on UZ3EG SOM, U8 on UZ7EV SOM */
+		compatible = "nxp,pca9542";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		reg = <0x70>;
+		i2c@1 { /* i2c mw 70 0 1 */
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <1>;
+
+			/* Ethernet MAC ID EEPROM */
+                        mac_eeprom@53 { /* U5 on UZ3EG IOCC and U7 on the UZ7EV EVCC */
+                                comptible = "at,24c08";
+                                reg = <0x53>;
+                                status = "disabled";
+                        };
+
+			/* CLOCK2 CONFIG EEPROM */
+			clock_eeprom@52 { /* U5 on the UZ7EV EVCC */
+				compatible = "at,24c08";
+				reg = <0x52>;
+			};
+
+			si5345: clock-generator@6a {
+				reg = <0x6a>;
+				compatible = "silabs,si5345";
+				#clock-cells = <2>;
+				#address-cells = <1>;
+				#size-cells = <0>;
+				clocks = <&ref48>;
+				clock-names = "xtal";
+	
+			};
+
+		};
+	};
+};
+
+
+&qspi {
+	#address-cells = <1>;
+	#size-cells = <0>;
+	status = "okay";
+	is-dual = <1>; /* Set for dual-parallel QSPI config */
+	num-cs = <2>;
+	xlnx,fb-clk = <0x1>;
+	flash0: flash@0 {
+        /* The Flash described below doesn't match our board ("micron,n25qu256a"), but is needed */
+        /* so the Flash MTD partitions are correctly identified in /proc/mtd */
+		compatible = "micron,m25p80"; /* 32MB */
+		#address-cells = <1>;
+		#size-cells = <1>;
+		reg = <0x0>;
+		spi-tx-bus-width = <1>;
+		spi-rx-bus-width = <4>; /* FIXME also DUAL configuration possible */
+		spi-max-frequency = <108000000>; /* Set to 108000000 Based on DC1 spec */
+	};
+};
+
+/* SD0 eMMC, 8-bit wide data bus */
+&sdhci0 {
+	status = "okay";
+	bus-width = <8>;
+	max-frequency = <50000000>;
+};
+
+/* SD1 with level shifter */
+&sdhci1 {
+	status = "okay";
+	max-frequency = <50000000>;
+	no-1-8-v;	/* for 1.0 silicon */
+	status = "disabled";
+};
+
+&sata {
+	status = "disabled";
+};
+
+
+/* ULPI SMSC USB3320 */
+&usb0 {
+	status = "okay";
+};
+
+&dwc3_0 {
+	status = "okay";
+	dr_mode = "host";
+	phy-names = "usb3-phy";
+        snps,usb3_lpm_capable;
+        phys = <&lane2 4 0 2 52000000>;
+};
+
+&amba {
+	usb1@ff9e0000 {
+		dwc3@fe300000 {
+		snps,enable_auto_retry;
+		};
+	};
+
+	ref48: ref48m {
+                compatible = "fixed-clock";
+                #clock-cells = <0>;
+                clock-frequency = <48000000>;
+        };
+
+};
+
+&v_pl_disp {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+};
+
+&amba_pl {
+
+	/* video_clk edited */
+        misc_clk_4: misc_clk_4 {
+		    #clock-cells = <0>;
+		    clock-frequency = <37125000>;
+		    compatible = "fixed-clock";
+	    };
+
+	
+	 v_drm_dmaengine_drv: drm-dmaengine-drv {
+                        compatible = "xlnx,pl-disp";
+                        dmas = <&hdmi_output_v_frmbuf_rd_0 0>;
+                        dma-names = "dma0";
+                        xlnx,vformat = "YUYV";
+                        #address-cells = <1>;
+                        #size-cells = <0>;
+                        pl_disp_port_0: port {
+                                        pl_disp_crtc_0: endpoint{
+                                                remote-endpoint = <&hdmi_encoder>;
+                                        };
+                        };
+
+        };
+
+       hdmi_output_v_frmbuf_rd_0: v_frmbuf_rd@a0110000 {
+                compatible = "xlnx,axi-frmbuf-rd-v2";
+                #dma-cells = <1>;
+                interrupt-parent = <&gic>;
+                interrupts = <0 89 4>;
+                reg = <0x0 0xa0110000 0x0 0x10000>;
+                reset-gpios = <&gpio 79 1>;
+                xlnx,dma-addr-width = <64>;
+                xlnx,vid-formats = "bgr888","rgb888","xbgr8888","xrgb8888","vuy888","xvuy8888","y8","yuyv","uyvy","nv16","nv12";
+        };
+
+      plddr_2k_axi_vdma: v_frmbuf_rd_sdi@a0120000 {
+                compatible = "xlnx,axi-frmbuf-rd-v2";
+                #dma-cells = <1>;
+                interrupt-parent = <&gic>;
+                interrupts = <0 88 4>;
+                reg = <0x0 0xa0120000 0x0 0x10000>;
+                reset-gpios = <&gpio 80 1>;
+                xlnx,dma-addr-width = <64>;
+                xlnx,vid-formats = "bgr888","rgb888","xbgr8888","xrgb8888","vuy888","xvuy8888","y8","yuyv","uyvy","nv16","nv12";
+        };
+
+
+};
+
+
+&HDMI_TX_HDMI_v_hdmi_tx_ss {
+	     clock-names = "s_axi_cpu_aclk", "link_clk", "s_axis_audio_aclk", "video_clk", "s_axis_video_aclk", "txref-clk", "retimer-clk";
+             clocks = <&misc_clk_0>, <&misc_clk_2>, <&misc_clk_0>, <&misc_clk_4>, <&misc_clk_2>, <&si5345 0 1>, <&dp159>;
+	     assigned-clocks = <&si5345 0 1>, <&si5345 1 0>;
+	     assigned-clock-parents = <&si5345 1 0>;
+	     /* Set output 7 to 148.5 MHz using a synth frequency of 594 MHz */
+	     /*assigned-clock-rates = <0>;*/
+	     assigned-clock-rates = <0>, <297000000>;
+	     phy-names = "hdmi-phy0", "hdmi-phy1", "hdmi-phy2";
+             phys = <&vphy_lane0 0 1 1 1>, <&vphy_lane1 0 1 1 1>, <&vphy_lane2 0 1 1 1>;
+             xlnx,input-pixels-per-clock = <4>;
+             ports {
+                   encoder_hdmi_port: port {
+                                        hdmi_encoder: endpoint {
+                                                remote-endpoint = <&pl_disp_crtc_0>;
+                                        };
+                                };
+             };
+};
+
+
+&HDMI_TX_vid_phy_controller {
+                        clock-names = "mgtrefclk0_pad_p_in", "mgtrefclk0_pad_n_in", "vid_phy_tx_axi4s_aclk", "vid_phy_sb_aclk", "vid_phy_axi4lite_aclk", "drpclk";
+                        clocks = <&misc_clk_1>, <&misc_clk_1>, <&misc_clk_2>, <&misc_clk_0>, <&misc_clk_0>, <&misc_clk_0>;
+
+};
+
+&misc_clk_2 {
+	#clock-cells = <0>;
+     	clock-frequency = <58687500>;
+        compatible = "fixed-clock";
+};
+
+
+
+&HDMI_TX_fmch_axi_iic {
+		status = "okay";
+                dp159: hdmi-retimer@5e {
+                        compatible = "ti,dp159";
+                        reg = <0x5e>;
+                        #address-cell = <1>;
+                        #size-cells = <0>;
+                        #clock-cells = <0>;
+                        status = "okay";
+        };
+};
+
+&HDMI_TX_splitter_axi_iic {
+		status = "okay";
+};
+
+&HDMI_TX_v_proc_ss {
+		compatible = "generic-uio";
+};
+
+&SDI_TX_v_proc_ss{
+		compatible = "generic-uio";
+};
+
+&SDI_TX_SDI_sdi_tx_axi_quad_spi {
+		compatible = "generic-uio";
+};
+
+&SDI_TX_SDI_sdi_tx_axi_gpio {
+		compatible = "generic-uio";
+};
+
+&RX_PATH_SDI_RX_v_smpte_uhdsdi_rx_ss_0 {
+                clock-names = "sdi_rx_clk", "s_axi_aclk", "video_out_clk";
+                clocks = <&misc_clk_1>, <&misc_clk_0>, <&misc_clk_1>;
+                sdirx_ports0: ports {
+
+                        sdirx_port0: port {
+                                        xlnx,video-format = <0x0>;
+                                        xlnx,video-width = <10>;
+
+                                        sdix_output0: endpoint {
+                                        };
+
+                                };
+                };
+};
+
+&RX_PATH_SDI_RX_v_smpte_uhdsdi_rx_ss_1 {
+                clock-names = "sdi_rx_clk", "s_axi_aclk", "video_out_clk";
+                clocks = <&misc_clk_1>, <&misc_clk_0>, <&misc_clk_1>;
+                sdirx_ports1: ports {
+
+                        sdirx_port1: port {
+                                        xlnx,video-format = <0x0>;
+                                        xlnx,video-width = <10>;
+
+                                        sdix_output1: endpoint {
+                                        };
+
+                                };
+                };
+};
+
+
+&RX_PATH_SDI_RX_v_smpte_uhdsdi_rx_ss_2 {
+                clock-names = "sdi_rx_clk", "s_axi_aclk", "video_out_clk";
+                clocks = <&misc_clk_1>, <&misc_clk_0>, <&misc_clk_1>;
+                sdirx_ports2: ports {
+
+                        sdirx_port2: port {
+                                        xlnx,video-format = <0x0>;
+                                        xlnx,video-width = <10>;
+
+                                        sdix_output2: endpoint {
+                                        };
+
+                                };
+                };
+};
+
+&RX_PATH_SDI_RX_v_smpte_uhdsdi_rx_ss_3 {
+                clock-names = "sdi_rx_clk", "s_axi_aclk", "video_out_clk";
+                clocks = <&misc_clk_1>, <&misc_clk_0>, <&misc_clk_1>;
+                sdirx_ports3: ports {
+
+                        sdirx_port3: port {
+                                        xlnx,video-format = <0x0>;
+                                        xlnx,video-width = <10>;
+
+                                        sdix_output3: endpoint {
+                                        };
+
+                                };
+                };
+};
+
+
+&programming_logic_config_axi_lite_slave_v2 {
+		status = "okay";
+};
+
+
+&SDI_TX_SDI_v_smpte_uhdsdi_tx_ss {
+		compatible = "dlnx,sdi-tx";
+                interrupt-names = "sdi_tx_irq";
+                interrupt-parent = <&gic>;
+                interrupts = <0 106 4>;
+};

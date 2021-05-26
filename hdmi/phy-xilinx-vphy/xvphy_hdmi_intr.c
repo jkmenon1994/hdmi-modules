@@ -482,10 +482,13 @@ void XVphy_HdmiCpllLockHandler(XVphy *InstancePtr)
 	}
 	/* TX is using CPLL. */
 	else {
+		printk(KERN_WARNING "%s: TX is usin CPLL \n", __func__);
+
 		/* Determine which channel(s) to operate on. */
 		ChId = XVphy_GetRcfgChId(InstancePtr, 0, XVPHY_DIR_TX, TxPllType);
 
 		if (XVphy_IsPllLocked(InstancePtr, 0, ChId) == XST_SUCCESS) {
+			printk(KERN_WARNING "%s: CPLL is locked \n", __func__);
 			/* Log, lock */
 			XVphy_LogWrite(InstancePtr, XVPHY_LOG_EVT_CPLL_LOCK, 1);
 #if (XPAR_VPHY_0_TRANSCEIVER == XVPHY_GTXE2)
@@ -496,6 +499,8 @@ void XVphy_HdmiCpllLockHandler(XVphy *InstancePtr)
 					XVPHY_DIR_TX, FALSE);
 
 			for (Id = Id0; Id <= Id1; Id++) {
+				printk(KERN_WARNING "%s setting the Txstate to XVPHY_GT_STATE_RESET \n", __func__);
+
 				InstancePtr->Quads[0].Plls[XVPHY_CH2IDX(Id)].
 					TxState = XVPHY_GT_STATE_RESET;
 			}
@@ -528,6 +533,9 @@ void XVphy_HdmiGtTxResetDoneLockHandler(XVphy *InstancePtr)
 
 	XVphy_LogWrite(InstancePtr, XVPHY_LOG_EVT_TX_RST_DONE, 0);
 
+	printk(KERN_WARNING "%s: \n", __func__);
+	
+
 	if ((InstancePtr->Config.XcvrType == XVPHY_GT_TYPE_GTHE3) ||
             (InstancePtr->Config.XcvrType == XVPHY_GT_TYPE_GTHE4) ||
             (InstancePtr->Config.XcvrType == XVPHY_GT_TYPE_GTYE4)) {
@@ -547,6 +555,8 @@ void XVphy_HdmiGtTxResetDoneLockHandler(XVphy *InstancePtr)
 
 			/* TX ready callback. */
 			if (InstancePtr->HdmiTxReadyCallback) {
+				printk(KERN_WARNING "%s: Tx Ready callback...... \n", __func__);
+
 				InstancePtr->HdmiTxReadyCallback(
 						InstancePtr->HdmiTxReadyRef);
 			}

@@ -843,7 +843,7 @@ static int xlnx_drm_hdmi_connector_mode_valid(struct drm_connector *connector,
 	 * timing table has vdisplay value of 540 for 1080i usecase.
 	 * By this change, doing modetest -M xlnx, will give vdisplay 540 instead of
 	 * 1080 */
-	mode->flags = 5;
+	//mode->flags = 5;
 	if(mode->flags & DRM_MODE_FLAG_INTERLACE) {
 		mode->vdisplay = mode->vdisplay / 2;
 		dev_dbg(xhdmi->dev, "For DRM_MODE_FLAG_INTERLACE, divide mode->vdisplay %d\n", mode->vdisplay);
@@ -1108,7 +1108,7 @@ static void xlnx_drm_hdmi_encoder_atomic_mode_set(struct drm_encoder *encoder,
 	dev_dbg(xhdmi->dev,"xvidc_colorfmt = %d\n", xhdmi->xvidc_colorfmt);
 	dev_dbg(xhdmi->dev,"xvidc_colordepth = %d\n", xhdmi->xvidc_colordepth);
 
-	mode->flags = 5;
+	//mode->flags = 5;
 	dev_dbg(xhdmi->dev,"mode->clock = %d\n", mode->clock * 1000);
 	dev_dbg(xhdmi->dev,"mode->crtc_clock = %d\n", mode->crtc_clock * 1000);
 	dev_dbg(xhdmi->dev,"mode->pvsync = %d\n",
